@@ -1,0 +1,604 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="bdl-guide/index.html"><strong aria-hidden="true">1.</strong> BDL Guide</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bdl-guide/user-interface/index.html"><strong aria-hidden="true">1.1.</strong> 第十七章 用户界面</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bdl-guide/user-interface/container-widget/index.html"><strong aria-hidden="true">1.1.1.</strong> 控件与容器</a></li><li class="chapter-item expanded "><a href="bdl-guide/user-interface/genero-studio/index.html"><strong aria-hidden="true">1.1.2.</strong> Genero Studio使用</a></li><li class="chapter-item expanded "><a href="bdl-guide/user-interface/4fd-compile/index.html"><strong aria-hidden="true">1.1.3.</strong> 4FD文件编辑与编译</a></li><li class="chapter-item expanded "><a href="bdl-guide/user-interface/menu/index.html"><strong aria-hidden="true">1.1.4.</strong> MENU—第一个有界面作业</a></li><li class="chapter-item expanded "><a href="bdl-guide/user-interface/input/index.html"><strong aria-hidden="true">1.1.5.</strong> INPUT—从画面输入资料</a></li><li class="chapter-item expanded "><a href="bdl-guide/user-interface/display/index.html"><strong aria-hidden="true">1.1.6.</strong> DISPLAY—显示到画面</a></li><li class="chapter-item expanded "><a href="bdl-guide/user-interface/construct/index.html"><strong aria-hidden="true">1.1.7.</strong> CONSTRUCT—更方便的数SQL查询条件</a></li><li class="chapter-item expanded "><a href="bdl-guide/user-interface/dialog/index.html"><strong aria-hidden="true">1.1.8.</strong> DIALOG—混合输入</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h2 id="布局"><a class="header" href="#布局">布局</a></h2>
+<p><img src="bdl-guide/user-interface/container-widget/image/e71c4af7-8285-4331-bddc-72a09de6e8b6-Untitled.png" alt="e71c4af7-8285-4331-bddc-72a09de6e8b6-Untitled.png" /></p>
+<p>布局有两种方式，垂直和水平，多个容器要放在一个布局中</p>
+<p><img src="bdl-guide/user-interface/container-widget/image/f0dd70a3-3817-48ff-905f-1a7d96834c20-Untitled.png" alt="f0dd70a3-3817-48ff-905f-1a7d96834c20-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/60f24ffa-8760-46e0-8b01-e75b2c59a758-Untitled.png" alt="60f24ffa-8760-46e0-8b01-e75b2c59a758-Untitled.png" /></p>
+<h2 id="容器"><a class="header" href="#容器">容器</a></h2>
+<p><img src="bdl-guide/user-interface/container-widget/image/607cbc0f-4dd4-4c8d-bd72-0082583e0bdb-Untitled.png" alt="607cbc0f-4dd4-4c8d-bd72-0082583e0bdb-Untitled.png" /></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">名称</th><th style="text-align: left">功能说明</th></tr></thead><tbody>
+<tr><td style="text-align: left">Folder</td><td style="text-align: left">以切页方式的空白画布</td></tr>
+<tr><td style="text-align: left">Grid</td><td style="text-align: left">简易空白画布</td></tr>
+<tr><td style="text-align: left">ScrollGrid</td><td style="text-align: left">有卷轴的空白画布</td></tr>
+<tr><td style="text-align: left">Table</td><td style="text-align: left">以表格方式显示阵列资料</td></tr>
+<tr><td style="text-align: left">Tree</td><td style="text-align: left">以层次结构展示的阵列资料</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>Folder</li>
+</ul>
+<p>当摆放元件空间不足时（或是需要滚动画面，操作上较麻烦时），即可使用切页的功能，以资料夹的形式将资料性质相近的栏位，切分在同样的 page 当中。</p>
+<p>制作时可在页签位置以鼠标右键新增、删除页面。</p>
+<p>编译时若该页签内没有任何元件，则编译会失败，且系统会显示有空白页签存在。 页签上显示字符串仍需在属性视窗指定。</p>
+<pre><code>    Genero Studio 
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/0c843996-27cc-4387-9b0b-a7f346e9623a-Untitled.png" alt="0c843996-27cc-4387-9b0b-a7f346e9623a-Untitled.png" /></p>
+<pre><code>    画面预览
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/c95b0e1c-21d6-4265-a7ce-0aca7f4334f2-Untitled.png" alt="c95b0e1c-21d6-4265-a7ce-0aca7f4334f2-Untitled.png" /></p>
+<ul>
+<li>Grid</li>
+</ul>
+<p>可将此容器视为一块空白的画布，布置在上方的元件都可以显示在画面相对位置上。</p>
+<p>Grid 只能处理<code>非阵列资料</code>。Grid 不可以被安排在其他 Grid 容器之内。</p>
+<pre><code>    Genero Studio 
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/f5310bd0-ffab-4bea-a714-5d7969b921cf-Untitled.png" alt="f5310bd0-ffab-4bea-a714-5d7969b921cf-Untitled.png" /></p>
+<pre><code>    画面预览
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/92428006-a102-4f7e-b053-89ae2ee55fba-Untitled.png" alt="92428006-a102-4f7e-b053-89ae2ee55fba-Untitled.png" /></p>
+<ul>
+<li>ScrollGrid</li>
+</ul>
+<p>在 Genero Studio 中，此容器与 Grid 相同，均作为处理<code>非阵列资料</code>用。与 Grid 容器的差异仅在可使用滚动轴，可以滚动画面。不能用于显示阵列资料。</p>
+<pre><code>    Genero Studio 
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/2da1ec19-2acc-4367-bbaf-f4d18e4cab22-Untitled.png" alt="2da1ec19-2acc-4367-bbaf-f4d18e4cab22-Untitled.png" /></p>
+<pre><code>    画面预览
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/23470bc7-4f99-46e6-a694-21442e74a9ae-Untitled.png" alt="23470bc7-4f99-46e6-a694-21442e74a9ae-Untitled.png" /></p>
+<ul>
+<li>Table</li>
+</ul>
+<p>使用 TABLE 即是以表格方式显示阵列资料，此方式有许多的优点，这些优点都是系统提供的，不需要额外再撰写程序码即可使用；</p>
+<p>包含：动态排序、栏位隐藏、显示或移动等。 在设计时期改变 Table 高度时，会自动增减资料的行数。 在 Table 物件上按鼠标右键，在弹出式选单可以新增或移除栏位。</p>
+<p>另外可以直接以鼠标拖曳改变栏位的顺序。</p>
+<p>编写时须注意：</p>
+<pre><code>- 使用 TABLE 物件时，资料（Record）一定是横列，没有直垂直排列。
+
+- 编写时须到各栏位的属性中进行形态、对应数据库等资料的设定或变更。
+
+
+
+
+
+    Genero Studio 
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/c73b573b-5471-474c-b5ab-a1e21743d48d-Untitled.png" alt="c73b573b-5471-474c-b5ab-a1e21743d48d-Untitled.png" /></p>
+<pre><code>    画面预览
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/d188a914-fb01-4616-bda5-4e7913f07fc9-Untitled.png" alt="d188a914-fb01-4616-bda5-4e7913f07fc9-Untitled.png" /></p>
+<ul>
+<li><s>Tree</s></li>
+</ul>
+<p>Tree 树状图预览时和 Table 是一样的，当有资料的资料，树状图是有层级结构的。</p>
+<p>当节点展开时，可以展开上下级结构。</p>
+<pre><code>    Genero Studio 
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/c2f21f39-5983-4d39-b13c-67fbc74ca43a-Untitled.png" alt="c2f21f39-5983-4d39-b13c-67fbc74ca43a-Untitled.png" /></p>
+<pre><code>    画面预览
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/8869601f-6452-48fa-8afa-6cddfed0976e-Untitled.png" alt="8869601f-6452-48fa-8afa-6cddfed0976e-Untitled.png" /></p>
+<h2 id="控件"><a class="header" href="#控件">控件</a></h2>
+<ul>
+<li>Label</li>
+</ul>
+<p>定义显示值用的栏位，可区分为下列三类。</p>
+<pre><code>- StaticLabel
+
+    静态文字标签，可设定宽度、 前景色等。
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/cf7b372a-b6e0-45ef-9a10-0c4021f668a5-Untitled.png" alt="cf7b372a-b6e0-45ef-9a10-0c4021f668a5-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/7a35e226-a728-45a5-8de3-df7fcf21c092-Untitled.png" alt="7a35e226-a728-45a5-8de3-df7fcf21c092-Untitled.png" /></p>
+<pre><code>- Text
+
+    StaticLabel 可以和 Text 相互转换。Text 字符数自动决定大小的基本静态文字标签。无法自行设定宽度。
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/a90d95dd-4ea8-4ceb-939f-d1f09087cd73-Untitled.png" alt="a90d95dd-4ea8-4ceb-939f-d1f09087cd73-Untitled.png" /></p>
+<pre><code>- FormFieldLabel
+
+    动态标签，代码可以控制值的显示
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/acd78964-0e5d-408f-9cac-3893e36eead3-Untitled.png" alt="acd78964-0e5d-408f-9cac-3893e36eead3-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/7731963b-8569-4761-85bd-f87889b893cb-Untitled.png" alt="7731963b-8569-4761-85bd-f87889b893cb-Untitled.png" /></p>
+<ul>
+<li>
+<p>Edit</p>
+<p>定义一个编辑栏位。属于 FormField 物件，可设定与资料栏位的关联。</p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/e674dd69-f127-4601-bc53-a031172b64c6-Untitled.png" alt="e674dd69-f127-4601-bc53-a031172b64c6-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/88a046b4-c2c0-4691-805e-548ed75e426c-Untitled.png" alt="88a046b4-c2c0-4691-805e-548ed75e426c-Untitled.png" /></p>
+<ul>
+<li>
+<p>ButtonEdit</p>
+<p>定义一个编辑栏位的元件，可透过右侧按钮以触发某一事件。通常用在串连与此栏位输入时有关的动作，例如查询合法可用资料等。</p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/267dbf66-a593-472e-850b-80cbca5616f6-Untitled.png" alt="267dbf66-a593-472e-850b-80cbca5616f6-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/4b8c52db-5d78-496f-bd6e-857ca1a44122-Untitled.png" alt="4b8c52db-5d78-496f-bd6e-857ca1a44122-Untitled.png" /></p>
+<ul>
+<li>
+<p>ComboBox</p>
+<p>定义一个可利用下拉功能选值的编辑栏位，若输入资料只有几种值可供选择时，建议采用 RadioGroup 方式来限缩使用者可输入的内容（参阅 RadioGroup）。属于 FormField 物件，可设定与资料栏位的关联。</p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/12060c6d-1e78-4368-9e74-9d46c9b5a108-Untitled.png" alt="12060c6d-1e78-4368-9e74-9d46c9b5a108-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/db2981e1-938f-4b17-90cf-f1f81fb6279d-Untitled.png" alt="db2981e1-938f-4b17-90cf-f1f81fb6279d-Untitled.png" /></p>
+<pre><code>选项对话视窗:
+
+可管理 ComboBox 的选项，也可以按字母顺序排列选项的 Text。
+</code></pre>
+<p><img src="bdl-guide/user-interface/container-widget/image/89d529a3-e37d-4ec9-8e09-6bed742155d1-Untitled.png" alt="89d529a3-e37d-4ec9-8e09-6bed742155d1-Untitled.png" /></p>
+<ul>
+<li>
+<p>DateEdit</p>
+<p>定义一个日期编辑，按右侧钮可带出 Client 端万年历选择视窗。日期显示格式由主机端 DBDATE 环境变量控制。</p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/697de885-74bd-4785-84a3-2198a9831375-Untitled.png" alt="697de885-74bd-4785-84a3-2198a9831375-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/9f0031f1-9a1a-4d68-8ffd-02c01342094b-Untitled.png" alt="9f0031f1-9a1a-4d68-8ffd-02c01342094b-Untitled.png" /></p>
+<ul>
+<li>
+<p>CheckBox</p>
+<p>当栏位选项只有两种选择时（如：是或否，0 或 1，100 或 200 等），就可以采用此种输入型态执行输入。</p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/7666af02-6fad-4454-91fc-3dc1d784e894-Untitled.png" alt="7666af02-6fad-4454-91fc-3dc1d784e894-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/3bba0d60-ea50-4f29-9531-a0aa8be35be3-Untitled.png" alt="3bba0d60-ea50-4f29-9531-a0aa8be35be3-Untitled.png" /></p>
+<ul>
+<li>
+<p>HLine</p>
+<p>水平分隔线</p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/6c4f3155-c9db-4946-8924-cc563add8106-Untitled.png" alt="6c4f3155-c9db-4946-8924-cc563add8106-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/0ca20be1-813f-40ed-b881-afcd500879ef-Untitled.png" alt="0ca20be1-813f-40ed-b881-afcd500879ef-Untitled.png" /></p>
+<ul>
+<li>
+<p>TextEdit</p>
+<p>定义可编辑多行的栏位，输入长度当超过画面预留长度时，会自动出现卷轴。</p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/f78fe55f-9ace-48a3-9180-fe18ce9e6c07-Untitled.png" alt="f78fe55f-9ace-48a3-9180-fe18ce9e6c07-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/b870670a-23d7-4a4f-bb20-9053f830a70a-Untitled.png" alt="b870670a-23d7-4a4f-bb20-9053f830a70a-Untitled.png" /></p>
+<ul>
+<li>
+<p><s>Button</s></p>
+<p>定义一个按钮以触发某一 4GL 中已写定的 ON ACTION 段。</p>
+<p>建议除了特别的 ACTION 有需要在 Layout 内布置按键外，一般作业可不必布置.</p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/22e9ab7c-5200-4870-8de1-8e82155c229b-Untitled.png" alt="22e9ab7c-5200-4870-8de1-8e82155c229b-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/a5b6cd7f-c87e-4176-b3fa-7360f892550a-Untitled.png" alt="a5b6cd7f-c87e-4176-b3fa-7360f892550a-Untitled.png" /></p>
+<ul>
+<li>
+<p><s>RadioGroup</s></p>
+<p>定义一个可用选择方式输入资料的输入栏位，此种选择方式会将选项清单展示在画面上（ComboBox 不会展开显示，可参照 ComboBox 说明），故若需要采用此输入形态，要注意画面空间是否足够。</p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/45f9b3ad-f1ea-4ee5-9628-5f0e2a2327a2-Untitled.png" alt="45f9b3ad-f1ea-4ee5-9628-5f0e2a2327a2-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/d9334cec-8726-4757-90e3-eca1439e2f92-Untitled.png" alt="d9334cec-8726-4757-90e3-eca1439e2f92-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/1a11fd7d-f9ad-4952-badf-04e436cfea47-Untitled.png" alt="1a11fd7d-f9ad-4952-badf-04e436cfea47-Untitled.png" /></p>
+<ul>
+<li><s>Canvas</s></li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/2cfbb3a9-ac54-4534-a90e-b8540090edb4-Untitled.png" alt="2cfbb3a9-ac54-4534-a90e-b8540090edb4-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/07c57d38-8a63-4356-9107-479c2b6843e3-Untitled.png" alt="07c57d38-8a63-4356-9107-479c2b6843e3-Untitled.png" /></p>
+<ul>
+<li><s>ProgressBar</s></li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/4c5aa7e1-229f-4cf4-8349-d95cad54e068-Untitled.png" alt="4c5aa7e1-229f-4cf4-8349-d95cad54e068-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/b25ad8f1-0a36-4e80-9db5-74870f64053d-Untitled.png" alt="b25ad8f1-0a36-4e80-9db5-74870f64053d-Untitled.png" /></p>
+<ul>
+<li><s>TimeEdit</s></li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/47c03e56-6d6b-43e8-981e-62cd81cceab2-Untitled.png" alt="47c03e56-6d6b-43e8-981e-62cd81cceab2-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/745a9702-5ce6-4432-8dc3-121489cbbcf5-Untitled.png" alt="745a9702-5ce6-4432-8dc3-121489cbbcf5-Untitled.png" /></p>
+<ul>
+<li>
+<p><s>Image</s></p>
+</li>
+<li>
+<p><s>Slider</s></p>
+</li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/dbfdebd2-da65-42e4-b43e-1ae1d370ad8d-Untitled.png" alt="dbfdebd2-da65-42e4-b43e-1ae1d370ad8d-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/1548104d-5fa4-4274-8be2-9d6a4b3f2a10-Untitled.png" alt="1548104d-5fa4-4274-8be2-9d6a4b3f2a10-Untitled.png" /></p>
+<ul>
+<li><s>SpinEdit</s></li>
+</ul>
+<p><img src="bdl-guide/user-interface/container-widget/image/3f93bb5b-9b3c-4e7b-a670-43dbb0d473b2-Untitled.png" alt="3f93bb5b-9b3c-4e7b-a670-43dbb0d473b2-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/container-widget/image/e6f7ce2e-f4be-40ad-b128-90337116e55f-Untitled.png" alt="e6f7ce2e-f4be-40ad-b128-90337116e55f-Untitled.png" /></p>
+<ul>
+<li><s>WebComponent</s></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="structure-结构"><a class="header" href="#structure-结构">Structure 结构</a></h1>
+<h2 id="screen-record-画面字段结构"><a class="header" href="#screen-record-画面字段结构">Screen Record 画面字段结构</a></h2>
+<p><img src="bdl-guide/user-interface/genero-studio/image/d44570ab-fbb7-4c6b-b600-f763493533b6-Untitled.png" alt="d44570ab-fbb7-4c6b-b600-f763493533b6-Untitled.png" /></p>
+<p>每一个添加到画面文件中的字段，都会自动添加到record记录上，每个表格会变为一组，不在表格中的字段顺序不需要关注。</p>
+<p><img src="bdl-guide/user-interface/genero-studio/image/f64a5bb8-6e04-48d8-837a-883061329f10-Untitled.png" alt="f64a5bb8-6e04-48d8-837a-883061329f10-Untitled.png" /></p>
+<p>表格record 的名称和字段的顺序，是你在4gl代码中使用时要注意的，所以这里顺序需要注意。</p>
+<h1 id="properties-属性"><a class="header" href="#properties-属性">Properties 属性</a></h1>
+<h3 id="name-字段名"><a class="header" href="#name-字段名">name 字段名</a></h3>
+<p><img src="bdl-guide/user-interface/genero-studio/image/6a08925b-4119-482e-a41b-29a56fdf3831-Untitled.png" alt="6a08925b-4119-482e-a41b-29a56fdf3831-Untitled.png" /></p>
+<p>字段的名称一般设置为表字段即可，<code>apa01</code>、<code>apa_file.apa01</code> 都是一样的，<code>apa_file</code>是表名，一般不需要，我们自己建立的时候，不需要加表名。</p>
+<p>如果字段重复，也可以取其它名称，如果<code>apa01_1</code>、或者其它符合标识符规则的命名，如果在程序中要使用这个字段，请使用一个方便使用的字段名。</p>
+<h3 id="posxpoxy-字段位置"><a class="header" href="#posxpoxy-字段位置">posX,poxY 字段位置</a></h3>
+<h3 id="gridwidthgridheight-字段大小"><a class="header" href="#gridwidthgridheight-字段大小">gridWidth，gridHeight 字段大小</a></h3>
+<p><img src="bdl-guide/user-interface/genero-studio/image/36c91395-4c11-487b-8663-c388c9d944f5-Untitled.png" alt="36c91395-4c11-487b-8663-c388c9d944f5-Untitled.png" /></p>
+<p>字段的大小和位置，一般是我们用鼠标拖动的，但是也可以在这里做微调。</p>
+<h3 id="noentry-不需录入"><a class="header" href="#noentry-不需录入">noEntry 不需录入</a></h3>
+<h3 id="notnull-不为空"><a class="header" href="#notnull-不为空">notNull 不为空</a></h3>
+<h3 id="required-必须录入"><a class="header" href="#required-必须录入">required 必须录入</a></h3>
+<h3 id="case-大小写"><a class="header" href="#case-大小写">case 大小写</a></h3>
+<p><img src="bdl-guide/user-interface/genero-studio/image/7b8ffa21-2363-4850-b441-85d542d7aeb2-Untitled.png" alt="7b8ffa21-2363-4850-b441-85d542d7aeb2-Untitled.png" /></p>
+<p>设置字段录入时候的属性，设置为大写，录入字母时自动转化为大写</p>
+<h3 id="hidden-隐藏"><a class="header" href="#hidden-隐藏">hidden 隐藏</a></h3>
+<p><img src="bdl-guide/user-interface/genero-studio/image/a0282cbe-a442-4083-8f4b-834534731419-Untitled.png" alt="a0282cbe-a442-4083-8f4b-834534731419-Untitled.png" /></p>
+<p>设置后字段依然存在，但是用户无法看到此字段</p>
+<h3 id="image-图片buttonedit使用zoom"><a class="header" href="#image-图片buttonedit使用zoom">image 图片（buttonEdit使用zoom）</a></h3>
+<h3 id="action-buttonedit-使用controlp"><a class="header" href="#action-buttonedit-使用controlp">action （buttonEdit 使用controlp）</a></h3>
+<p><img src="bdl-guide/user-interface/genero-studio/image/25ea3ac6-491d-4d82-8bb5-d51175cc3195-Untitled.png" alt="25ea3ac6-491d-4d82-8bb5-d51175cc3195-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/genero-studio/image/53f0472b-027a-4c45-b12b-11a2e1a84835-Untitled.png" alt="53f0472b-027a-4c45-b12b-11a2e1a84835-Untitled.png" /></p>
+<p>只有ButtonEdit控件需要设置这两个数量，image设置开窗按钮的图片，action 是控制什么时候出发开窗这个动作</p>
+<h3 id="items-下拉框等空间使用"><a class="header" href="#items-下拉框等空间使用">items （下拉框等空间使用）</a></h3>
+<p><img src="bdl-guide/user-interface/genero-studio/image/eaaef2e4-cb24-46c5-80f8-34ebb6fa8b8a-Untitled.png" alt="eaaef2e4-cb24-46c5-80f8-34ebb6fa8b8a-Untitled.png" /></p>
+<p>下拉框空间中，可以通过items选项设置下拉框可以使用的元素</p>
+<h3 id="valuechededvalueuncheked-单选框控件使用"><a class="header" href="#valuechededvalueuncheked-单选框控件使用">valueCheded、valueUncheked （单选框控件使用）</a></h3>
+<p><img src="bdl-guide/user-interface/genero-studio/image/e74c33bd-d483-462a-b76b-86fe906142eb-Untitled.png" alt="e74c33bd-d483-462a-b76b-86fe906142eb-Untitled.png" /></p>
+<p>单选框，选中和未选中可以设置一个值，当选择时为Y，未选中为N。默认为1和0。</p>
+<h3 id="text-单选框等控件使用-字段名称"><a class="header" href="#text-单选框等控件使用-字段名称">text （单选框等控件使用） 字段名称</a></h3>
+<p><img src="bdl-guide/user-interface/genero-studio/image/99590474-2e68-4ac9-a5de-fd9b380bfc95-Untitled.png" alt="99590474-2e68-4ac9-a5de-fd9b380bfc95-Untitled.png" /></p>
+<p>单选框还可以设置text，会显示到单选框后</p>
+<h1 id="tab-order-默认顺序"><a class="header" href="#tab-order-默认顺序">Tab Order 默认顺序</a></h1>
+<p><img src="bdl-guide/user-interface/genero-studio/image/d67dda5a-7ad5-4fa7-ad3e-10e5b83e2526-Untitled.png" alt="d67dda5a-7ad5-4fa7-ad3e-10e5b83e2526-Untitled.png" /></p>
+<p>Tab Order控制在输入时，字段的顺序。当没有4gl代码强制控制字段顺序时，按<strong>entry</strong>或者<strong>tab</strong>键，会按照此序号顺序依次录入。</p>
+<h1 id="布局-1"><a class="header" href="#布局-1">布局</a></h1>
+<p><img src="bdl-guide/user-interface/genero-studio/image/568773e3-d7cb-4ce4-b022-f9b827b76e9a-Untitled.png" alt="568773e3-d7cb-4ce4-b022-f9b827b76e9a-Untitled.png" /></p>
+<p>多个容器在同一个层级的时候，需要将他们设置一个布局，垂直或者水平显示。</p>
+<p><img src="bdl-guide/user-interface/genero-studio/image/9d23cd65-14cf-4308-9a08-7f75ed3615a7-Untitled.png" alt="9d23cd65-14cf-4308-9a08-7f75ed3615a7-Untitled.png" /></p>
+<p>如果不小心设置错，可以点击布局 <strong>Break Layout</strong>后重新设置</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="规格画面编写"><a class="header" href="#规格画面编写">规格画面编写</a></h1>
+<h2 id="复制类似作业"><a class="header" href="#复制类似作业">复制类似作业</a></h2>
+<p>找一个画面类似的作业，将作业对应的4fd文件下载下来修改使用。</p>
+<h3 id="单档作业"><a class="header" href="#单档作业">单档作业</a></h3>
+<ul>
+<li>表单作业</li>
+</ul>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/4534ea2b-b2a8-4dcc-b59c-b159ad8ea10c-Untitled.png" alt="4534ea2b-b2a8-4dcc-b59c-b159ad8ea10c-Untitled.png" /></p>
+<ul>
+<li>表格作业</li>
+</ul>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/c1aab5fc-4894-4f2e-839c-c941906a7eb9-Untitled.png" alt="c1aab5fc-4894-4f2e-839c-c941906a7eb9-Untitled.png" /></p>
+<h3 id="双档作业"><a class="header" href="#双档作业">双档作业</a></h3>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/eacdec93-98f3-433e-b462-021d6453f0c1-Untitled.png" alt="eacdec93-98f3-433e-b462-021d6453f0c1-Untitled.png" /></p>
+<h3 id="查询作业"><a class="header" href="#查询作业">查询作业</a></h3>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/197c7d2b-18ba-46b1-9e5b-80aea62bedce-Untitled.png" alt="197c7d2b-18ba-46b1-9e5b-80aea62bedce-Untitled.png" /></p>
+<h3 id="报表作业"><a class="header" href="#报表作业">报表作业</a></h3>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/3c3ff17d-5c88-469f-bf7d-f0aff6f09cc7-Untitled.png" alt="3c3ff17d-5c88-469f-bf7d-f0aff6f09cc7-Untitled.png" /></p>
+<h2 id="从零开始"><a class="header" href="#从零开始">从零开始</a></h2>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/75d40245-b2d3-4d1b-b24e-4ea4c2bfbd2c-Untitled.png" alt="75d40245-b2d3-4d1b-b24e-4ea4c2bfbd2c-Untitled.png" /></p>
+<ul>
+<li><strong>新增4fd文件</strong></li>
+</ul>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/02a33c33-ca1a-43c4-91d6-9f3b4dbe3745-Untitled.png" alt="02a33c33-ca1a-43c4-91d6-9f3b4dbe3745-Untitled.png" /></p>
+<ul>
+<li>将需要的控件拖拽到空白画布上</li>
+</ul>
+<h1 id="画面编译过程"><a class="header" href="#画面编译过程">画面编译过程</a></h1>
+<ul>
+<li><strong>r.f2 42f 文件</strong></li>
+</ul>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/ad7a1162-567a-4e3c-b312-ebce7bea1450-Untitled.png" alt="ad7a1162-567a-4e3c-b312-ebce7bea1450-Untitled.png" /></p>
+<ul>
+<li><strong>r.gf 2 p</strong></li>
+</ul>
+<p>预览画面，并将字段说明产生p_per多语言档文件</p>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/d6ba9167-3b47-44f6-bb5f-8254d4409183-Untitled.png" alt="d6ba9167-3b47-44f6-bb5f-8254d4409183-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/1cccb6b6-bf02-41a6-87a0-1e0ea46e8c62-Untitled.png" alt="1cccb6b6-bf02-41a6-87a0-1e0ea46e8c62-Untitled.png" /></p>
+<ul>
+<li><strong>p_per 多语言文档</strong></li>
+</ul>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/44ef204d-ebed-41f7-8b32-a2975944cfe0-Untitled.png" alt="44ef204d-ebed-41f7-8b32-a2975944cfe0-Untitled.png" /></p>
+<p><img src="bdl-guide/user-interface/4fd-compile/image/1e48210c-c20e-4cbb-a96e-7264eec5c56c-Untitled.png" alt="1e48210c-c20e-4cbb-a96e-7264eec5c56c-Untitled.png" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="windows"><a class="header" href="#windows">Windows</a></h1>
+<pre><code class="language-4gl">open window czz_w with form &quot;czz/42f/czzi001&quot;
+call cl_ui_init()  -- 这lib函数为初始化画面，如果不调用会出现一个空窗口。
+...
+close czz_w 
+</code></pre>
+<p><del>Form</del></p>
+<pre><code class="language-sql">open form czz_w from &quot;czz/42f/czzi001&quot;
+display form czz_w
+...
+close form czz_w
+</code></pre>
+<h1 id="menu"><a class="header" href="#menu">MENU</a></h1>
+<p>开启窗口(window)后，我们必须对画面进行一些操作，否则，开启后就关闭，画面并不会显示什么。</p>
+<p>这里就是第一个语法MENU。</p>
+<pre><code class="language-sql">database ds
+main
+    open window act_w with form &quot;czz/42f/czzi001&quot;
+
+    menu &quot;&quot;
+        command &quot;a.add&quot; #menu 功能名称&quot;a.新增&quot;，a 为快速键
+            message &quot;a.add&quot;
+
+        command &quot;u.modi&quot;
+            message &quot;u.modi&quot;
+            
+        command &quot;q.qry&quot;
+            message &quot;q.qry&quot;
+
+        command key (control-a) # control-a 为快速键且
+            message &quot;control-a&quot; #此功能不show menu 上
+
+        command &quot;exit&quot;
+            close window act_w
+            exit program
+            
+        on action click_me
+            message &quot;click_me&quot;
+    end menu
+end main
+</code></pre>
+<h3 id="command-click"><a class="header" href="#command-click"><del>command ‘click’</del></a></h3>
+<p>右侧生成一个按钮，如果是”a.click”的形式，a是这个按钮的快捷键。</p>
+<p>在command ‘click’ 下方</p>
+<h3 id="command-keycontrol-a"><a class="header" href="#command-keycontrol-a"><del>command key(control-a)</del></a></h3>
+<p>仅快捷键，不会产生按钮</p>
+<h3 id="on-action-click"><a class="header" href="#on-action-click">on action click</a></h3>
+<p>产生按钮，但名称不能重复</p>
+<h2 id="message"><a class="header" href="#message">MESSAGE</a></h2>
+<p><img src="bdl-guide/user-interface/menu/image/08445d8b-9cb3-4717-8ac5-c457b383edd4-Untitled.png" alt="08445d8b-9cb3-4717-8ac5-c457b383edd4-Untitled.png" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="从其它字段输入"><a class="header" href="#从其它字段输入">从其它字段输入</a></h1>
+<h1 id="从table输入"><a class="header" href="#从table输入">从Table输入</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="显示到其它类型字段"><a class="header" href="#显示到其它类型字段">显示到其它类型字段</a></h1>
+<pre><code class="language-sql">display &quot;123&quot; to field1
+</code></pre>
+<pre><code class="language-sql">define l_name record
+	filed1   varchar(20), 
+  field2   varchar(40),
+	field3   decimal(10,2)
+end record
+display by name l_name.*
+-- 等同以下写法
+display l_name.field1,l_name.field2,l_name.field3 to field1,field2,field3
+-- 如果结构体成员名称和要显示到的字段名称不相同，则必须指定栏位名称，不能用.*方式
+display l_name.field1,l_name.field2,l_name.field3 to fieldok,filedno,field3
+</code></pre>
+<h1 id="显示到table"><a class="header" href="#显示到table">显示到Table</a></h1>
+<p>使用table，需要一个和table的字段类型一致的结构体数组，即4fd文件中的table<strong>字段名称</strong>和<strong>类型</strong>与4gl中结构体数组的<strong>成员名称</strong>和<strong>类型</strong>要保持一直</p>
+<pre><code class="language-sql">define l_list dynamic array of record
+	field1 varchar(20),
+	field2 decimal(20,6),
+	field3 varchar(30),
+	field4 integer
+end record
+
+-- l_list 是4gl中的结构体数组名称
+-- s_list 是4fd画面中表格的name名称
+display array l_list to s_list.*
+end display
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="mermaid.min.js"></script>
+        <script src="mermaid-init.js"></script>
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
