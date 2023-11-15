@@ -4,7 +4,31 @@
         <link>https://darcyjoven.com/posts/</link>
         <description>所有文章 | DARCY&#39;S BLOG</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
-            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 15 Nov 2023 18:30:02 &#43;0800</lastBuildDate><atom:link href="https://darcyjoven.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 15 Nov 2023 19:30:06 &#43;0800</lastBuildDate><atom:link href="https://darcyjoven.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>tiptop gp 常用的函数和编程方式</title>
+    <link>https://darcyjoven.com/tiptop-gp-%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/</link>
+    <pubDate>Wed, 15 Nov 2023 19:30:06 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tiptop-gp-%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/</guid>
+    <description><![CDATA[excel汇入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 DEFINE xlapp INTEGER DEFINE xlwb INTEGER]]></description>
+</item>
+<item>
+    <title>tiptop 效能排查</title>
+    <link>https://darcyjoven.com/tiptop-%E6%95%88%E8%83%BD%E6%8E%92%E6%9F%A5/</link>
+    <pubDate>Wed, 15 Nov 2023 19:30:06 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tiptop-%E6%95%88%E8%83%BD%E6%8E%92%E6%9F%A5/</guid>
+    <description><![CDATA[环境变量FGLSQLDEBUG 此环境变量，控制运行程序时，后台显示日期的等级。 最高等级为9，取消设置命令为unset FGLSQLDEBUG 将环境变量设置为9 后，]]></description>
+</item>
+<item>
+    <title>oracle 常用命令与SQL</title>
+    <link>https://darcyjoven.com/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/</link>
+    <pubDate>Wed, 15 Nov 2023 19:30:05 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/</guid>
+    <description><![CDATA[清楚查询缓存 1 2 3 ALTERSYSTEMFLUSHSHARED_POOL;ALTERSYSTEMFLUSHBUFFER_CACHE;ALTERSYSTEMFLUSHGLOBALCONTEXT; 分析表结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 --① 分析表的所有字段，所有索引，所有索引字段。其中：① = ② analyze]]></description>
+</item>
+<item>
     <title>ssh密钥使用</title>
     <link>https://darcyjoven.com/ssh%E5%AF%86%E9%92%A5%E4%BD%BF%E7%94%A8/</link>
     <pubDate>Wed, 15 Nov 2023 18:30:02 &#43;0800</pubDate>
@@ -59,14 +83,6 @@
     <author>darcy</author>
     <guid>https://darcyjoven.com/sql-in-error/</guid>
     <description><![CDATA[假设存在两个表： 1 2 3 4 5 6 7 8 9 createtabledarcy1(ima01varchar(40),ima02varchar(40),ima021varchar(200));createtabledarcy2(ima01varchar(40),ima02varchar(40)) 运行下面代码不会出错，darcy2虽然没有ima021字段，但是SQL能匹配到darcy1有ima021]]></description>
-</item>
-<item>
-    <title>oracle最近运行SQL查询</title>
-    <link>https://darcyjoven.com/oracle-run-sql/</link>
-    <pubDate>Wed, 15 Nov 2023 15:50:10 &#43;0800</pubDate>
-    <author>darcy</author>
-    <guid>https://darcyjoven.com/oracle-run-sql/</guid>
-    <description><![CDATA[最近运行平均时间较长SQL查询 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 select*from(selectsa.SQL_TEXT,sa.SQL_FU]]></description>
 </item>
 </channel>
 </rss>

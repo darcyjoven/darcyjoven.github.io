@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>oracle 常用命令与SQL - DARCY&#39;S BLOG</title><meta name="Description" content="darcy&#39;s blog"><meta property="og:title" content="oracle 常用命令与SQL" />
+<meta property="og:description" content="清楚查询缓存 1 2 3 ALTERSYSTEMFLUSHSHARED_POOL;ALTERSYSTEMFLUSHBUFFER_CACHE;ALTERSYSTEMFLUSHGLOBALCONTEXT; 分析表结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 --① 分析表的所有字段，所有索引，所有索引字段。其中：① = ② analyze" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://darcyjoven.com/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/" /><meta property="og:image" content="https://darcyjoven.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-15T19:30:05+08:00" />
+<meta property="article:modified_time" content="2023-11-15T19:30:05+08:00" /><meta property="og:site_name" content="DARCY&#39;S BLOG" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://darcyjoven.com/logo.png"/>
+
+<meta name="twitter:title" content="oracle 常用命令与SQL"/>
+<meta name="twitter:description" content="清楚查询缓存 1 2 3 ALTERSYSTEMFLUSHSHARED_POOL;ALTERSYSTEMFLUSHBUFFER_CACHE;ALTERSYSTEMFLUSHGLOBALCONTEXT; 分析表结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 --① 分析表的所有字段，所有索引，所有索引字段。其中：① = ② analyze"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://darcyjoven.com/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/" /><link rel="prev" href="https://darcyjoven.com/ssh%E5%AF%86%E9%92%A5%E4%BD%BF%E7%94%A8/" /><link rel="next" href="https://darcyjoven.com/tiptop-%E6%95%88%E8%83%BD%E6%8E%92%E6%9F%A5/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "oracle 常用命令与SQL",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/darcyjoven.com\/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql\/"
+        },"image": ["https:\/\/darcyjoven.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "oracle, sql, 运维","wordcount":  783 ,
+        "url": "https:\/\/darcyjoven.com\/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql\/","datePublished": "2023-11-15T19:30:05+08:00","dateModified": "2023-11-15T19:30:05+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "darcy","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/darcyjoven.com\/images\/avatar.png",
+                    "width":  600 ,
+                    "height":  600 
+                }},"author": {
+                "@type": "Person",
+                "name": "darcy"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://sql.darcyjoven.com" rel="noopener noreffer" target="_blank"> SQL </a><a class="menu-item" href="https://bdl.darcyjoven.com" rel="noopener noreffer" target="_blank"> BDL </a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://sql.darcyjoven.com" title="" rel="noopener noreffer" target="_blank">SQL</a><a class="menu-item" href="https://bdl.darcyjoven.com" title="" rel="noopener noreffer" target="_blank">BDL</a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">oracle 常用命令与SQL</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="darcyjoven.com" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>darcy</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>系统运维</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023年 11月15日">2023年 11月15日</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 783 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#清楚查询缓存">清楚查询缓存</a></li>
+    <li><a href="#分析表结构">分析表结构</a></li>
+    <li><a href="#优化器">优化器</a></li>
+    <li><a href="#查询被删除的表">查询被删除的表</a></li>
+    <li><a href="#清理临时表空间">清理临时表空间</a></li>
+    <li><a href="#查询某个时间之前的表状态闪回">查询某个时间之前的表状态（闪回）</a></li>
+    <li><a href="#查询单个table占用磁盘空间">查询单个table占用磁盘空间</a></li>
+    <li><a href="#在备份中仅恢复部分表">在备份中仅恢复部分表</a></li>
+    <li><a href="#增加表空间">增加表空间</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="清楚查询缓存">清楚查询缓存</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">ALTER</span><span class="w"> </span><span class="k">SYSTEM</span><span class="w"> </span><span class="n">FLUSH</span><span class="w"> </span><span class="n">SHARED_POOL</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">ALTER</span><span class="w"> </span><span class="k">SYSTEM</span><span class="w"> </span><span class="n">FLUSH</span><span class="w"> </span><span class="n">BUFFER_CACHE</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">ALTER</span><span class="w"> </span><span class="k">SYSTEM</span><span class="w"> </span><span class="n">FLUSH</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="n">CONTEXT</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="分析表结构">分析表结构</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">--① 分析表的所有字段，所有索引，所有索引字段。其中：① = ②
+</span><span class="c1"></span><span class="k">analyze</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="n">compute</span><span class="w"> </span><span class="k">statistics</span><span class="p">;</span><span class="w">  
+</span><span class="w"></span><span class="c1">--② 分析表的所有字段，所有索引，所有索引字段。其中：① = ②
+</span><span class="c1"></span><span class="k">analyze</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="n">compute</span><span class="w"> </span><span class="k">statistics</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">indexes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">columns</span><span class="p">;</span><span class="w">   
+</span><span class="w"></span><span class="c1">--③ 只分析所有有索引的字段
+</span><span class="c1"></span><span class="k">analyze</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="n">compute</span><span class="w"> </span><span class="k">statistics</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">indexes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">indexed</span><span class="w"> </span><span class="n">columns</span><span class="p">;</span><span class="w">  
+</span><span class="w">
+</span><span class="w"></span><span class="c1">--④ 抽样估算法
+</span><span class="c1"></span><span class="k">analyze</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="n">estimate</span><span class="w"> </span><span class="k">statistics</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="n">percent</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c1">--⑤ 删除分析数据
+</span><span class="c1"></span><span class="k">analyze</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">statistics</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">analyze</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">statistics</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">indexes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">indexed</span><span class="w"> </span><span class="n">columns</span><span class="p">;</span><span class="w"> 
+</span><span class="w">
+</span><span class="w"></span><span class="c1">--查看表的统计信息
+</span><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="k">table_name</span><span class="p">,</span><span class="n">num_rows</span><span class="p">,</span><span class="n">blocks</span><span class="p">,</span><span class="n">empty_blocks</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">user_tables</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">table_name</span><span class="o">=</span><span class="s1">&#39;student&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">analyze</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">glaq_t</span><span class="w"> </span><span class="n">compute</span><span class="w"> </span><span class="k">statistics</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="优化器">优化器</h2>
+<ul>
+<li>优先查询前25笔</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span><span class="w"> </span><span class="cm">/*+ FIRST_ROWS(25) */</span><span class="w"> </span><span class="n">employee_id</span><span class="p">,</span><span class="w"> </span><span class="n">department_id</span><span class="w">
+</span><span class="w"></span><span class="k">FROM</span><span class="w">   </span><span class="n">hr</span><span class="p">.</span><span class="n">employees</span><span class="w">
+</span><span class="w"></span><span class="k">WHERE</span><span class="w">  </span><span class="n">department_id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>强制走索引</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span><span class="w"> </span><span class="cm">/*+index(a)*/</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sfb_file</span><span class="w"> 
+</span><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">sfa_file</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">sfa01</span><span class="o">=</span><span class="w"> </span><span class="n">sfb01</span><span class="w"> 
+</span><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ima_file</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">ima01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sfb05</span><span class="w">
+</span><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ima_file</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">ima01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sfa03</span><span class="w">
+</span><span class="w"></span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ima_file</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">ima01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sfa27</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="查询被删除的表">查询被删除的表</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span><span class="w"> </span><span class="n">object_name</span><span class="p">,</span><span class="n">original_name</span><span class="p">,</span><span class="n">partition_name</span><span class="p">,</span><span class="k">type</span><span class="p">,</span><span class="n">ts_name</span><span class="p">,</span><span class="n">createtime</span><span class="p">,</span><span class="n">droptime</span><span class="w">
+</span><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="n">recyclebin</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>恢复删除的表</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="n">flashback</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">test_drop</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">before</span><span class="w"> </span><span class="k">drop</span><span class="p">;</span><span class="err">或</span><span class="w">
+</span><span class="w"></span><span class="n">flashback</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="s2">&#34;BIN$hgcd$0&#34;</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">before</span><span class="w"> </span><span class="k">drop</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="清理临时表空间">清理临时表空间</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">set</span><span class="w"> </span><span class="n">linesize</span><span class="w"> </span><span class="mi">132</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">set</span><span class="w"> </span><span class="n">pagesize</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">set</span><span class="w"> </span><span class="n">timing</span><span class="w"> </span><span class="k">off</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">spool</span><span class="w"> </span><span class="n">drop_tables</span><span class="p">.</span><span class="k">sql</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;drop table &#39;</span><span class="o">||</span><span class="k">OWNER</span><span class="o">||</span><span class="s1">&#39;.&#39;</span><span class="o">||</span><span class="k">TABLE_name</span><span class="o">||</span><span class="s1">&#39; purge;&#39;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dba_tables</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;TEMPTABS&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">spool</span><span class="w"> </span><span class="k">off</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">@</span><span class="n">drop_tables</span><span class="p">.</span><span class="k">sql</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="查询某个时间之前的表状态闪回">查询某个时间之前的表状态（闪回）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">sfb_file</span><span class="w">
+</span><span class="w"></span><span class="k">as</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="n">to_timestamp</span><span class="p">(</span><span class="s1">&#39;2021-09-22 15:30:00&#39;</span><span class="p">,</span><span class="s1">&#39;yyyy-mm-dd hh24:mi:ss&#39;</span><span class="p">)</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="查询单个table占用磁盘空间">查询单个table占用磁盘空间</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">  </span><span class="k">select</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">tablespace_name</span><span class="p">,</span><span class="n">t</span><span class="p">.</span><span class="k">owner</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">segment_name</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">segment_type</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">bytes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1024</span><span class="p">)</span><span class="w"> </span><span class="n">mb</span><span class="w">
+</span><span class="w">  </span><span class="k">from</span><span class="w"> </span><span class="n">dba_segments</span><span class="w"> </span><span class="n">t</span><span class="w">
+</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">segment_type</span><span class="o">=</span><span class="s1">&#39;TABLE&#39;</span><span class="w">
+</span><span class="w">	</span><span class="k">AND</span><span class="w"> </span><span class="n">tablespace_name</span><span class="w"> </span><span class="o">=</span><span class="s1">&#39;TEMPTABS&#39;</span><span class="w">
+</span><span class="w">  </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">tablespace_name</span><span class="p">,</span><span class="n">t</span><span class="p">.</span><span class="k">OWNER</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">segment_name</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">segment_type</span><span class="w">
+</span><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="w">
+</span><span class="w"></span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">mb</span><span class="w"> </span><span class="k">desc</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="在备份中仅恢复部分表">在备份中仅恢复部分表</h2>
+<ul>
+<li>
+<p>准备号dmp备份文件</p>
+</li>
+<li>
+<p>建立临时测试库</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sqlplus system/manager@topprod
+   create user test1 identified by test1 default tablespace dbs1<span class="p">;</span>
+   grant connect,resource to test1<span class="p">;</span>
+   commit<span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>恢复表</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">imp system/manager@topprod <span class="nv">file</span><span class="o">=</span>/u3/backup/Wed/exp_KT_20210203.dmp 
+ <span class="nv">fromuser</span><span class="o">=</span>kt <span class="nv">touser</span><span class="o">=</span>test1 <span class="nv">tables</span><span class="o">=</span>gen_file,eci_file
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="增加表空间">增加表空间</h2>
+<ul>
+<li>
+<p>命令查询表空间是否足够</p>
+</li>
+<li>
+<p>查询表空间文件位置</p>
+</li>
+<li>
+<p>增加合适大小表空间文件</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">alter tablespace xx add datafile <span class="s1">&#39;xxx.dbf&#39;</span> size 4G<span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023年 11月15日</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            
+                            <a class="link-to-markdown" href="https://github.com/darcyjoven/darcyjoven.github.io/edit/main/content/posts/2023-11/oracle%20%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e4%b8%8eSQL/index.zh-cn.md" target="_blank">修改原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://darcyjoven.com/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/" data-title="oracle 常用命令与SQL" data-hashtags="oracle,sql,运维"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://darcyjoven.com/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/" data-hashtag="oracle"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://darcyjoven.com/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/" data-title="oracle 常用命令与SQL"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://darcyjoven.com/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/" data-title="oracle 常用命令与SQL"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://darcyjoven.com/oracle-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%B8%8Esql/" data-title="oracle 常用命令与SQL"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/oracle/">oracle</a>,&nbsp;<a href="/tags/sql/">sql</a>,&nbsp;<a href="/tags/%E8%BF%90%E7%BB%B4/">运维</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/ssh%E5%AF%86%E9%92%A5%E4%BD%BF%E7%94%A8/" class="prev" rel="prev" title="ssh密钥使用"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>ssh密钥使用</a>
+            <a href="/tiptop-%E6%95%88%E8%83%BD%E6%8E%92%E6%9F%A5/" class="next" rel="next" title="tiptop 效能排查">tiptop 效能排查<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="darcyjoven.com" target="_blank">darcy</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"gitalk":{"admin":["darcyjoven"],"clientID":"6e52f9e4425ed0457dba","clientSecret":"31a9b51e366577dbc3da944c7e9ab64bd33f480a","id":"2023-11-15T19:30:05.835058226+08:00","owner":"darcyjoven","repo":"blog-comments","title":"oracle 常用命令与SQL"}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
