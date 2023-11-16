@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>效能常规处理流程 - DARCY&#39;S BLOG</title><meta name="Description" content="darcy&#39;s blog"><meta property="og:title" content="效能常规处理流程" />
+<meta property="og:description" content="效能常规处理方法 大量作业都卡顿 当客户反馈所有作业都卡顿时，应当先检查服务器得基本状态，并保留截图，以便后面反馈给SE。 可检查得项目如下： 表空" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://darcyjoven.com/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/" /><meta property="og:image" content="https://darcyjoven.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-16T15:30:21+08:00" />
+<meta property="article:modified_time" content="2023-11-16T15:30:21+08:00" /><meta property="og:site_name" content="DARCY&#39;S BLOG" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://darcyjoven.com/logo.png"/>
+
+<meta name="twitter:title" content="效能常规处理流程"/>
+<meta name="twitter:description" content="效能常规处理方法 大量作业都卡顿 当客户反馈所有作业都卡顿时，应当先检查服务器得基本状态，并保留截图，以便后面反馈给SE。 可检查得项目如下： 表空"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://darcyjoven.com/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/" /><link rel="prev" href="https://darcyjoven.com/%E6%96%B0%E5%A2%9Eblog/" /><link rel="next" href="https://darcyjoven.com/fgl-bdl%E8%AF%AD%E8%A8%80%E9%9B%86%E6%88%90java%E5%8C%85/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "效能常规处理流程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/darcyjoven.com\/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B\/"
+        },"image": ["https:\/\/darcyjoven.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "tiptop gp, oracle, sql, bdl, 运维, T100, erp","wordcount":  2172 ,
+        "url": "https:\/\/darcyjoven.com\/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B\/","datePublished": "2023-11-16T15:30:21+08:00","dateModified": "2023-11-16T15:30:21+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "darcy","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/darcyjoven.com\/images\/avatar.png",
+                    "width":  600 ,
+                    "height":  600 
+                }},"author": {
+                "@type": "Person",
+                "name": "darcy"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://sql.darcyjoven.com" rel="noopener noreffer" target="_blank"> SQL </a><a class="menu-item" href="https://bdl.darcyjoven.com" rel="noopener noreffer" target="_blank"> BDL </a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://sql.darcyjoven.com" title="" rel="noopener noreffer" target="_blank">SQL</a><a class="menu-item" href="https://bdl.darcyjoven.com" title="" rel="noopener noreffer" target="_blank">BDL</a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">效能常规处理流程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="darcyjoven.com" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>darcy</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>系统运维</a>&nbsp;<a href="/categories/%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>编程问题</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023年 11月16日">2023年 11月16日</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2172 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#大量作业都卡顿">大量作业都卡顿</a></li>
+    <li><a href="#sql-trace-分析">SQL TRACE 分析</a>
+      <ul>
+        <li><a href="#导致索引失败">导致索引失败</a></li>
+        <li><a href="#改写部分sql">改写部分sql</a></li>
+      </ul>
+    </li>
+    <li><a href="#案例分享">案例分享</a>
+      <ul>
+        <li><a href="#执行次数过多">执行次数过多</a></li>
+        <li><a href="#流程调整优化">流程调整优化</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="效能常规处理方法">效能常规处理方法</h1>
+<h2 id="大量作业都卡顿">大量作业都卡顿</h2>
+<p>当客户反馈所有作业都卡顿时，应当先检查服务器得基本状态，并保留截图，以便后面反馈给SE。</p>
+<p>可检查得项目如下：</p>
+<ol>
+<li>
+<p>表空间状况和磁盘使用情况</p>
+<ul>
+<li>
+<p>已使用百分比，若将近100%，请截图提交SE处理。</p>
+</li>
+<li>
+<p>的控件使用情况，如超过90%可以尝试增加后再查看系统卡顿情况。</p>
+</li>
+<li>
+<p>表空间使用情况，使用超过90%和可用连续空间不足10M，都会导致作业使用卡顿，增加表空间后再查看卡顿情况。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>检查系统负载情况</p>
+<p>运行命令<code>top</code>后按<code>c</code></p>
+<ul>
+<li>
+<p>命令关闭）后再查看效能。</p>
+</li>
+<li>
+<p>数量如果超过5，表示系统负载很大。遇到这周情况请直接截图提交SE。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>检查CPU，内存登占用情况</p>
+<ul>
+<li>
+<p>cpu（s）：cpu 总使用率（不大于40%为负载正常）</p>
+</li>
+<li>
+<p>使用不多，代表内存空间足够</p>
+</li>
+</ul>
+<blockquote>
+<p>不建议测试IO性能，测试过程中可能导致正常运行进程闪退，如果怀疑可以交由SE处理</p>
+</blockquote>
+</li>
+<li>
+<p>检查数据库响应时间</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<p>CREATE TABLE test_t (test001 VARCHAR(20));
+DROP TABLE test_t;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="w">
+</span><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="err">处理。</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="err">检查</span><span class="n">AP和DB的网络连接速度</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="o">-</span><span class="w"> </span><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">ps</span><span class="w"> </span><span class="o">-</span><span class="n">ef</span><span class="o">|</span><span class="n">grep</span><span class="w"> </span><span class="n">ora_smon</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="err">运行命令</span><span class="w"> </span><span class="o">`</span><span class="n">ping</span><span class="w"> </span><span class="err">$</span><span class="n">FGLSERVER</span><span class="o">`</span><span class="w"> </span><span class="err">检测网络延迟，若</span><span class="o">`</span><span class="kt">time</span><span class="o">`</span><span class="w"> </span><span class="err">时间超过</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="n">ms</span><span class="err">，需要注意网络延迟，如果数值特别高超过</span><span class="mi">300</span><span class="n">ms</span><span class="err">，请直接联系客户，请客户先解决网络问题。</span><span class="w">
+</span><span class="w"></span><span class="err">需注意</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c1">## 个别作业效能分析步骤
+</span><span class="c1"></span><span class="w">
+</span><span class="w"></span><span class="err">可按照下面步骤排查：</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="err">判断是否需要清除</span><span class="n">ORACLE缓存</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="err">直接执行作业，如果执行速度和客户反馈的不一样，例如：客户反馈审核要</span><span class="mi">2</span><span class="err">分钟，还原后重新审核只要几秒钟。</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="err">这个时候需要执行一下清除</span><span class="n">ORACLE缓存的语句</span><span class="err">，清除复杂</span><span class="n">SQL的缓存</span><span class="err">，之后再继续测试效能。</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="o">```</span><span class="k">sql</span><span class="w">
+</span><span class="w"></span><span class="k">ALTER</span><span class="w"> </span><span class="n">SYSTEM</span><span class="w"> </span><span class="k">FLUSH</span><span class="w"> </span><span class="n">SHARED_POOL</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">ALTER</span><span class="w"> </span><span class="n">SYSTEM</span><span class="w"> </span><span class="k">FLUSH</span><span class="w"> </span><span class="n">BUFFER_CACHE</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">ALTER</span><span class="w"> </span><span class="n">SYSTEM</span><span class="w"> </span><span class="k">FLUSH</span><span class="w"> </span><span class="n">GLOBAL</span><span class="w"> </span><span class="n">CONTEXT</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>
+<p>使用效能工具分析作业情况</p>
+<ul>
+<li>
+<p>工具运行作业分析即可</p>
+</li>
+<li>
+<p><code>FGLSQLDEBUG</code></p>
+</li>
+</ul>
+<p>运行下面两个命令，开启日志开启后，运行命令会将每个连接数据库语句执行状况在后台显示出来。</p>
+<p><code>FGLSQLDEBUG=9</code></p>
+<p><code>export FGLSQLDEBUG</code></p>
+<p>指定日志目录运行作业</p>
+<p><code>exe2 aapt110 &gt;&gt; aapt110.lixwz.log 2&gt;&amp;1</code></p>
+<p>作业运行后关掉，运行一下命令开始分析日志</p>
+<p><code>$FGLRUN $DS4GL/bin/fgldebug.42r aapt110.lixwz.log</code></p>
+ <aside>
+</li>
+</ol>
+<p>💡 目录下若没有 fgldebug相关文件，需要先将效能工具相关文件上传到此目录，并运行chmod 777 fgldebug* 给与运行权限。</p>
+</aside>
+<ol>
+<li>分析效能工具执行结果</li>
+</ol>
+<p>RUN_TIME 为总运行时间，AVG_TIME为平均一次运行时间，主要关注这两列。</p>
+<ul>
+<li>在进行sql分析之前，先对比标准主机，是否有追单。也关注下相关表索引是否和标准主机一致。</li>
+<li>平均运行时间长，可根据<code>PROG_NAME</code>和<code>RUN_LINE</code> 抓取到运行的sql，进行<code>SQL TRACE</code>分析优化</li>
+<li>平均运行时间正常，总运行时间长，即单个sql运行次数比较多。程序逻辑需要调整，例如：将<code>FOREACH</code> 操作改成临时表操作，借助数据库完成资料处理。</li>
+</ul>
+<h2 id="sql-trace-分析">SQL TRACE 分析</h2>
+<p>使用<code>plsql</code>按<code>F5</code>进入<code>SQL TRACE</code></p>
+<ul>
+<li>
+<p>索引查询</p>
+</li>
+<li>
+<p>修改一下，可能就不走索引查询，查询时间也增加了很多。</p>
+</li>
+</ul>
+<h3 id="导致索引失败">导致索引失败</h3>
+<ol>
+<li>
+<p>索引字段使用函数，如：<code>substr(ima01,1,2)='10'</code></p>
+</li>
+<li>
+<p>新建表索引信息还未建立完成，<code>analyze table ima_file compute statistics;</code> 运行分析一下</p>
+</li>
+<li>
+<p>使用<code>&lt;&gt;</code>、<code>not in</code> 、<code>not exist</code></p>
+</li>
+<li>
+<p>表的资料比较少</p>
+</li>
+<li>
+<p>单独的&gt;、&lt;</p>
+</li>
+<li>
+<p><code>like &quot;%_&quot;</code> 百分号在前</p>
+</li>
+<li>
+<p>单独引用复合索引里非第一位置的索引列，例如：索引为<code>(ima01,ima02,ima03)</code>条件为ima01 = &lsquo;MISC&rsquo; ima02 =&lsquo;MISC&rsquo; ima03 = &lsquo;MISC&rsquo; <code>ima02 = 'MISC'</code></p>
+</li>
+<li>
+<p>字符型字段为数字时在where条件里不添加引号,(自动走转换函数)</p>
+</li>
+<li>
+<p>当变量采用的是times变量，而表的字段采用的是date变量时.或相反情况</p>
+</li>
+<li>
+<p>索引失效，可以考虑重建索引，<code>rebuild online</code></p>
+</li>
+<li>
+<p>索引列空值</p>
+</li>
+<li>
+<p>查询资料已超过总资料一定比例，默认是30%</p>
+</li>
+</ol>
+<h3 id="改写部分sql">改写部分sql</h3>
+<ol>
+<li>
+<p><code>not in</code> 、<code>in</code> 、<code>not exist</code> 、<code>exist</code>
+可以用<code>left join</code> 或者 <code>inner join</code> 相互替代，那种效率高用哪种。</p>
+</li>
+<li>
+<p>增加条件</p>
+</li>
+</ol>
+<p>条件前置，避免查出资料太多</p>
+<ol>
+<li><code>UPDATE</code> 优化
+复杂条件的<code>UPDATE</code>语句，可以优化为<code>MERGE</code>方式。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">--优化前
+</span><span class="c1"></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">q802_cfc_tmp</span><span class="w"> </span><span class="n">o</span><span class="w">
+</span><span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">sum_qc</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">       </span><span class="k">SELECT</span><span class="w"> </span><span class="n">NVL</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">cfc15</span><span class="o">*</span><span class="n">cfc18</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cfc_file</span><span class="w"> </span><span class="n">c1</span><span class="w">
+</span><span class="w">        </span><span class="k">WHERE</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">cfc05</span><span class="o">&lt;</span><span class="mi">2021</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">cfc05</span><span class="o">=</span><span class="mi">2021</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc06</span><span class="o">&lt;</span><span class="mi">9</span><span class="p">))</span><span class="w">
+</span><span class="w">          </span><span class="k">AND</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc21</span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc22</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc01</span><span class="o">=</span><span class="mi">1</span><span class="w">
+</span><span class="w">          </span><span class="k">AND</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc07</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">cfc07</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc11</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">cfc11</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc17</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">cfc17</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">--优化后
+</span><span class="c1"></span><span class="n">MERGE</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">q802_cfc_tmp</span><span class="w"> </span><span class="n">c1</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">       </span><span class="k">SELECT</span><span class="w"> </span><span class="n">cfc07</span><span class="p">,</span><span class="n">cfc11</span><span class="p">,</span><span class="n">cfc17</span><span class="p">,</span><span class="n">NVL</span><span class="p">(</span><span class="k">SUM</span><span class="p">(</span><span class="n">cfc15</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cfc18</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">sum_qc</span><span class="w">
+</span><span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">cfc_file</span><span class="w">
+</span><span class="w">        </span><span class="k">WHERE</span><span class="p">(</span><span class="w"> </span><span class="n">cfc05</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2021</span><span class="w">
+</span><span class="w">                </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">                    </span><span class="n">cfc05</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2021</span><span class="w">
+</span><span class="w">                    </span><span class="k">AND</span><span class="w"> </span><span class="n">cfc06</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">9</span><span class="w">
+</span><span class="w">                </span><span class="p">)</span><span class="w">
+</span><span class="w">            </span><span class="p">)</span><span class="w">
+</span><span class="w">            </span><span class="k">AND</span><span class="w"> </span><span class="n">cfc21</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="w">            </span><span class="k">AND</span><span class="w"> </span><span class="n">cfc22</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="w">            </span><span class="k">AND</span><span class="w"> </span><span class="n">cfc01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="w">        </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">cfc07</span><span class="p">,</span><span class="n">cfc11</span><span class="p">,</span><span class="n">cfc17</span><span class="w">
+</span><span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="n">o</span><span class="w">
+</span><span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="p">(</span><span class="w">  </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc07</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">cfc07</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc11</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">cfc11</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">cfc17</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">cfc17</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span><span class="w">    </span><span class="k">WHEN</span><span class="w"> </span><span class="n">MATCHED</span><span class="w">  </span><span class="k">THEN</span><span class="w"> </span><span class="k">UPDATE</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">c1</span><span class="p">.</span><span class="n">sum_qc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">sum_qc</span><span class="w">
+</span><span class="w">
+</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>临时表增加索引，执行中分析表</li>
+</ol>
+<p>临时表处理的资料比较多时，可以适当增加索引</p>
+<p><code>CREATE INDEX xcck_tmp_i02 ON xcck_tmp (xcckld,xcck003,xcck004,xcck005,xcck047)</code></p>
+<p>如果是<code>INSERT</code>，<code>UPDATE</code>，<code>DELETE</code>语句比较卡顿还可以在执行前分析一下表，看效能是否改善</p>
+<ul>
+<li>
+<p>T100 直接运行函数</p>
+<p><code>cl_db_generate_analyze(&quot;xcck_tmp&quot;)</code></p>
+</li>
+<li>
+<p>TOPGP 可以使用下列命令</p>
+<p><code>EXECUTE IMMEDIATE &quot;analyze table xccd_t estimate statistics&quot;</code></p>
+</li>
+</ul>
+<h2 id="案例分享">案例分享</h2>
+<h3 id="执行次数过多">执行次数过多</h3>
+<p>平均执行时间0.06左右，不算高，但执行次数多达5W多次。
+拉取其中sql分析</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">sfe04</span><span class="p">),</span><span class="k">MIN</span><span class="p">(</span><span class="n">sfe04</span><span class="p">)</span><span class="w">
+</span><span class="w">  </span><span class="k">INTO</span><span class="w"> </span><span class="n">g_tc_xea</span><span class="p">[</span><span class="n">g_cnt</span><span class="p">].</span><span class="n">hp_fddrq</span><span class="p">,</span><span class="n">g_tc_xea</span><span class="p">[</span><span class="n">g_cnt</span><span class="p">].</span><span class="n">hp_scfddrq</span><span class="w">
+</span><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">sfe_file</span><span class="p">,</span><span class="n">sfb_file</span><span class="w">
+</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sfbud02</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g_tc_xea</span><span class="p">[</span><span class="n">g_cnt</span><span class="p">].</span><span class="n">tc_xea01</span><span class="w">
+</span><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">sfb01</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;538%&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">sfb01</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;540%&#39;</span><span class="p">)</span><span class="w">
+</span><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">sfb01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sfe01</span><span class="w">
+</span><span class="w">
+</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>没有索引，将sfbud02增加索引，效果并不好（增加索引后效果不好记得删除）</p>
+</li>
+<li>
+<p>，但无法进行下一步优化</p>
+</li>
+<li>
+<p>是直接通过临时表取值，可以考虑直接将需要的字段再中间中处理</p>
+</li>
+</ul>
+<p>所以将所有<code>SELECT</code>语句改为更新临时表字段形式，然后<code>FOREACH</code>直接取值即可（临时表可能需要增加字段）</p>
+<ul>
+<li>
+<p>执行前先更新中间表</p>
+</li>
+<li>
+<p>优化后，总执行时间已经减少了很多。</p>
+</li>
+<li>
+<p>只需要执行一次，时间在0.1秒。</p>
+</li>
+</ul>
+<h3 id="流程调整优化">流程调整优化</h3>
+<p>用户反馈，此作业批量抛转时，速度很慢。</p>
+<ol>
+<li>
+<p>查询需要1分多钟</p>
+</li>
+<li>
+<p>查询出结果后，勾选收款单号，每次都需要转圈很长时间才可以继续勾选</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>形式，速度有所改善，保留。</p>
+</li>
+<li>
+<p>发现每次勾选收款单号之后，都会重新运行一遍单身显示得函数，所以导致批量抛转操作很慢。注释掉勾选后重新查询得逻辑，速度明显快很多，勾选不再需要等待。</p>
+</li>
+</ul>
+<aside>
+💡 客制作业经常出现此类问题，测试时资料比较少，被忽略掉，这类问题优化时有限考虑mark掉不必要得流程。
+</aside>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023年 11月16日</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            
+                            <a class="link-to-markdown" href="https://github.com/darcyjoven/darcyjoven.github.io/edit/main/content/posts/2023-11/%e6%95%88%e8%83%bd%e5%b8%b8%e8%a7%84%e5%a4%84%e7%90%86%e6%b5%81%e7%a8%8b/index.zh-cn.md" target="_blank">修改原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://darcyjoven.com/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/" data-title="效能常规处理流程" data-hashtags="tiptop gp,oracle,sql,bdl,运维,T100,erp"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://darcyjoven.com/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/" data-hashtag="tiptop gp"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://darcyjoven.com/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/" data-title="效能常规处理流程"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://darcyjoven.com/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/" data-title="效能常规处理流程"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://darcyjoven.com/%E6%95%88%E8%83%BD%E5%B8%B8%E8%A7%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/" data-title="效能常规处理流程"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/tiptop-gp/">tiptop gp</a>,&nbsp;<a href="/tags/oracle/">oracle</a>,&nbsp;<a href="/tags/sql/">sql</a>,&nbsp;<a href="/tags/bdl/">bdl</a>,&nbsp;<a href="/tags/%E8%BF%90%E7%BB%B4/">运维</a>,&nbsp;<a href="/tags/t100/">T100</a>,&nbsp;<a href="/tags/erp/">erp</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E6%96%B0%E5%A2%9Eblog/" class="prev" rel="prev" title="新增BLOG"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>新增BLOG</a>
+            <a href="/fgl-bdl%E8%AF%AD%E8%A8%80%E9%9B%86%E6%88%90java%E5%8C%85/" class="next" rel="next" title="fgl bdl语言集成java包">fgl bdl语言集成java包<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="darcyjoven.com" target="_blank">darcy</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"gitalk":{"admin":["darcyjoven"],"clientID":"6e52f9e4425ed0457dba","clientSecret":"31a9b51e366577dbc3da944c7e9ab64bd33f480a","id":"2023-11-16T15:30:21.016367553+08:00","owner":"darcyjoven","repo":"blog-comments","title":"效能常规处理流程"}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
