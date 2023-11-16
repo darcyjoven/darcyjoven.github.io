@@ -1,7 +1,7 @@
 ---
 title: oracle最近运行SQL查询
 subTitle: ""
-date: 2023-11-15T15:50:10.908751823+08:00
+date: 2023-11-16T10:34:05.191846192+08:00
 author: darcy
 authorLink: darcyjoven.com
 resources: []
@@ -9,7 +9,7 @@ tags:
 - oracle
 - sql
 categories:
-- 数据库运维
+- 系统运维
 toc:
   enable: true
   auto: true

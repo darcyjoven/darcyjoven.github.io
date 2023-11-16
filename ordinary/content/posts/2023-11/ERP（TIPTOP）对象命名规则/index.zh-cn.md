@@ -1,7 +1,7 @@
 ---
 title: ERP（TIPTOP）对象命名规则
 subTitle: ""
-date: 2023-11-15T16:03:43.634994152+08:00
+date: 2023-11-16T10:34:27.76711856+08:00
 author: darcy
 authorLink: darcyjoven.com
 resources: []
