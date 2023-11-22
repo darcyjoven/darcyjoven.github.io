@@ -2,23 +2,23 @@
 
 ## 布局
 
-![e71c4af7-8285-4331-bddc-72a09de6e8b6-Untitled.png](image/e71c4af7-8285-4331-bddc-72a09de6e8b6-Untitled.png)
+![Untitled5NbswCISR.png](./image/Untitled5NbswCISR.png)
 
 布局有两种方式，垂直和水平，多个容器要放在一个布局中
 
 
 
-    
+  
 
-![f0dd70a3-3817-48ff-905f-1a7d96834c20-Untitled.png](image/f0dd70a3-3817-48ff-905f-1a7d96834c20-Untitled.png)
+    ![Untitled5HbyQCIIRz.png](./image/Untitled5HbyQCIIRz.png)
 
-    
+  
 
-![60f24ffa-8760-46e0-8b01-e75b2c59a758-Untitled.png](image/60f24ffa-8760-46e0-8b01-e75b2c59a758-Untitled.png)
+    ![UntitledcHbsQCIIRm.png](./image/UntitledcHbsQCIIRm.png)
 
 ## 容器
 
-![607cbc0f-4dd4-4c8d-bd72-0082583e0bdb-Untitled.png](image/607cbc0f-4dd4-4c8d-bd72-0082583e0bdb-Untitled.png)
+![UntitledcHxyQCSIgZ.png](./image/UntitledcHxyQCSIgZ.png)
 
 |名称|功能说明|
 |:-|:-|
@@ -30,17 +30,17 @@
 
 
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
 - Folder
 
@@ -52,17 +52,17 @@
 
 
 
-    
+  
 
-        Genero Studio 
+    Genero Studio 
 
-![0c843996-27cc-4387-9b0b-a7f346e9623a-Untitled.png](image/0c843996-27cc-4387-9b0b-a7f346e9623a-Untitled.png)
+    ![Untitled5HxyQjISRM.png](./image/Untitled5HxyQjISRM.png)
 
-    
+  
 
-        画面预览
+    画面预览
 
-![c95b0e1c-21d6-4265-a7ce-0aca7f4334f2-Untitled.png](image/c95b0e1c-21d6-4265-a7ce-0aca7f4334f2-Untitled.png)
+    ![UntitledcNxyQjSIR7.png](./image/UntitledcNxyQjSIR7.png)
 
 - Grid
 
@@ -72,17 +72,17 @@ Grid 只能处理`非阵列资料`。Grid 不可以被安排在其他 Grid 容�
 
 
 
-    
+  
 
-        Genero Studio 
+    Genero Studio 
 
-![f5310bd0-ffab-4bea-a714-5d7969b921cf-Untitled.png](image/f5310bd0-ffab-4bea-a714-5d7969b921cf-Untitled.png)
+    ![UntitledcNxyQjSIgV.png](./image/UntitledcNxyQjSIgV.png)
 
-    
+  
 
-        画面预览
+    画面预览
 
-![92428006-a102-4f7e-b053-89ae2ee55fba-Untitled.png](image/92428006-a102-4f7e-b053-89ae2ee55fba-Untitled.png)
+    ![UntitledcHbyQjISgI.png](./image/UntitledcHbyQjISgI.png)
 
 - ScrollGrid
 
@@ -90,17 +90,17 @@ Grid 只能处理`非阵列资料`。Grid 不可以被安排在其他 Grid 容�
 
 
 
-    
+  
 
-        Genero Studio 
+    Genero Studio 
 
-![2da1ec19-2acc-4367-bbaf-f4d18e4cab22-Untitled.png](image/2da1ec19-2acc-4367-bbaf-f4d18e4cab22-Untitled.png)
+    ![UntitledcHbswCISRN.png](./image/UntitledcHbswCISRN.png)
 
-    
+  
 
-        画面预览
+    画面预览
 
-![23470bc7-4f99-46e6-a694-21442e74a9ae-Untitled.png](image/23470bc7-4f99-46e6-a694-21442e74a9ae-Untitled.png)
+    ![UntitledcHxswCISRv.png](./image/UntitledcHxswCISRv.png)
 
 - Table
 
@@ -112,29 +112,29 @@ Grid 只能处理`非阵列资料`。Grid 不可以被安排在其他 Grid 容�
 
 编写时须注意：
 
-    - 使用 TABLE 物件时，资料（Record）一定是横列，没有直垂直排列。
+  - 使用 TABLE 物件时，资料（Record）一定是横列，没有直垂直排列。
 
-    - 编写时须到各栏位的属性中进行形态、对应数据库等资料的设定或变更。
+  - 编写时须到各栏位的属性中进行形态、对应数据库等资料的设定或变更。
 
 
 
-    
+  
 
-        Genero Studio 
+    Genero Studio 
 
-![c73b573b-5471-474c-b5ab-a1e21743d48d-Untitled.png](image/c73b573b-5471-474c-b5ab-a1e21743d48d-Untitled.png)
-
-        
+    ![Untitled5NxswjSSRO.png](./image/Untitled5NxswjSSRO.png)
 
     
 
-        画面预览
+  
 
-![d188a914-fb01-4616-bda5-4e7913f07fc9-Untitled.png](image/d188a914-fb01-4616-bda5-4e7913f07fc9-Untitled.png)
+    画面预览
 
-        
+    ![Untitled5NbswCSSRF.png](./image/Untitled5NbswCSSRF.png)
 
-- <s>Tree</s>
+    
+
+- ~~Tree~~
 
 Tree 树状图预览时和 Table 是一样的，当有资料的资料，树状图是有层级结构的。
 
@@ -142,17 +142,17 @@ Tree 树状图预览时和 Table 是一样的，当有资料的资料，树状�
 
 
 
-    
+  
 
-        Genero Studio 
+    Genero Studio 
 
-![c2f21f39-5983-4d39-b13c-67fbc74ca43a-Untitled.png](image/c2f21f39-5983-4d39-b13c-67fbc74ca43a-Untitled.png)
+    ![UntitledcHxywCSSgc.png](./image/UntitledcHxywCSSgc.png)
 
-    
+  
 
-        画面预览
+    画面预览
 
-![8869601f-6452-48fa-8afa-6cddfed0976e-Untitled.png](image/8869601f-6452-48fa-8afa-6cddfed0976e-Untitled.png)
+    ![UntitledcNxywCIIgp.png](./image/UntitledcNxywCIIgp.png)
 
 ## 控件
 
@@ -160,241 +160,247 @@ Tree 树状图预览时和 Table 是一样的，当有资料的资料，树状�
 
 定义显示值用的栏位，可区分为下列三类。
 
-    - StaticLabel
+  - StaticLabel
 
-        静态文字标签，可设定宽度、 前景色等。
+    静态文字标签，可设定宽度、 前景色等。
 
-    
-
-        
-
-![cf7b372a-b6e0-45ef-9a10-0c4021f668a5-Untitled.png](image/cf7b372a-b6e0-45ef-9a10-0c4021f668a5-Untitled.png)
-
-        
-
-![7a35e226-a728-45a5-8de3-df7fcf21c092-Untitled.png](image/7a35e226-a728-45a5-8de3-df7fcf21c092-Untitled.png)
-
-    - Text
-
-        StaticLabel 可以和 Text 相互转换。Text 字符数自动决定大小的基本静态文字标签。无法自行设定宽度。
-
-![a90d95dd-4ea8-4ceb-939f-d1f09087cd73-Untitled.png](image/a90d95dd-4ea8-4ceb-939f-d1f09087cd73-Untitled.png)
-
-    - FormFieldLabel
-
-        动态标签，代码可以控制值的显示
+  
 
     
 
-        
+      ![UntitledcHbyQjIIRh.png](./image/UntitledcHbyQjIIRh.png)
 
-![acd78964-0e5d-408f-9cac-3893e36eead3-Untitled.png](image/acd78964-0e5d-408f-9cac-3893e36eead3-Untitled.png)
+    
 
-        
+      ![UntitledcNbyQjSSgo.png](./image/UntitledcNbyQjSSgo.png)
 
-![7731963b-8569-4761-85bd-f87889b893cb-Untitled.png](image/7731963b-8569-4761-85bd-f87889b893cb-Untitled.png)
+  - Text
+
+    StaticLabel 可以和 Text 相互转换。Text 字符数自动决定大小的基本静态文字标签。无法自行设定宽度。
+
+    ![Untitled5NbywjSIg0.png](./image/Untitled5NbywjSIg0.png)
+
+  - FormFieldLabel
+
+    动态标签，代码可以控制值的显示
+
+  
+
+    
+
+      ![Untitled5NbswjSIg1.png](./image/Untitled5NbswjSIg1.png)
+
+    
+
+      ![UntitledcHxywjSSRx.png](./image/UntitledcHxywjSSRx.png)
 
 - Edit
 
-    定义一个编辑栏位。属于 FormField 物件，可设定与资料栏位的关联。
+  定义一个编辑栏位。属于 FormField 物件，可设定与资料栏位的关联。
+
+  
 
     
 
-        
+      ![Untitled5HxsQjISg-.png](./image/Untitled5HxsQjISg-.png)
 
-![e674dd69-f127-4601-bc53-a031172b64c6-Untitled.png](image/e674dd69-f127-4601-bc53-a031172b64c6-Untitled.png)
+    
 
-        
-
-![88a046b4-c2c0-4691-805e-548ed75e426c-Untitled.png](image/88a046b4-c2c0-4691-805e-548ed75e426c-Untitled.png)
+      ![UntitledcHxyQjSSgf.png](./image/UntitledcHxyQjSSgf.png)
 
 - ButtonEdit
 
-    定义一个编辑栏位的元件，可透过右侧按钮以触发某一事件。通常用在串连与此栏位输入时有关的动作，例如查询合法可用资料等。
+  定义一个编辑栏位的元件，可透过右侧按钮以触发某一事件。通常用在串连与此栏位输入时有关的动作，例如查询合法可用资料等。
+
+  
 
     
 
-        
+      ![Untitled5NbsQCSIgY.png](./image/Untitled5NbsQCSIgY.png)
 
-![267dbf66-a593-472e-850b-80cbca5616f6-Untitled.png](image/267dbf66-a593-472e-850b-80cbca5616f6-Untitled.png)
+      
 
-            
+    
 
-        
-
-![4b8c52db-5d78-496f-bd6e-857ca1a44122-Untitled.png](image/4b8c52db-5d78-496f-bd6e-857ca1a44122-Untitled.png)
+      ![UntitledcNbywCIIgP.png](./image/UntitledcNbywCIIgP.png)
 
 - ComboBox
 
-    定义一个可利用下拉功能选值的编辑栏位，若输入资料只有几种值可供选择时，建议采用 RadioGroup 方式来限缩使用者可输入的内容（参阅 RadioGroup）。属于 FormField 物件，可设定与资料栏位的关联。
+  定义一个可利用下拉功能选值的编辑栏位，若输入资料只有几种值可供选择时，建议采用 RadioGroup 方式来限缩使用者可输入的内容（参阅 RadioGroup）。属于 FormField 物件，可设定与资料栏位的关联。
+
+  
 
     
 
-        
+      ![Untitled5NbywCIIgs.png](./image/Untitled5NbywCIIgs.png)
 
-![12060c6d-1e78-4368-9e74-9d46c9b5a108-Untitled.png](image/12060c6d-1e78-4368-9e74-9d46c9b5a108-Untitled.png)
+    
 
-        
+      ![UntitledcNbsQjSIR8.png](./image/UntitledcNbsQjSIR8.png)
 
-![db2981e1-938f-4b17-90cf-f1f81fb6279d-Untitled.png](image/db2981e1-938f-4b17-90cf-f1f81fb6279d-Untitled.png)
+  选项对话视窗:
 
-    选项对话视窗:
+  可管理 ComboBox 的选项，也可以按字母顺序排列选项的 Text。
 
-    可管理 ComboBox 的选项，也可以按字母顺序排列选项的 Text。
-
-![89d529a3-e37d-4ec9-8e09-6bed742155d1-Untitled.png](image/89d529a3-e37d-4ec9-8e09-6bed742155d1-Untitled.png)
+  ![Untitled5HbswjISRQ.png](./image/Untitled5HbswjISRQ.png)
 
 - DateEdit
 
-    定义一个日期编辑，按右侧钮可带出 Client 端万年历选择视窗。日期显示格式由主机端 DBDATE 环境变量控制。
+  定义一个日期编辑，按右侧钮可带出 Client 端万年历选择视窗。日期显示格式由主机端 DBDATE 环境变量控制。
+
+  
 
     
 
-        
+      ![Untitled5NxsQjSIR_.png](./image/Untitled5NxsQjSIR_.png)
 
-![697de885-74bd-4785-84a3-2198a9831375-Untitled.png](image/697de885-74bd-4785-84a3-2198a9831375-Untitled.png)
+    
 
-        
-
-![9f0031f1-9a1a-4d68-8ffd-02c01342094b-Untitled.png](image/9f0031f1-9a1a-4d68-8ffd-02c01342094b-Untitled.png)
+      ![Untitled5NxsQjSIgu.png](./image/Untitled5NxsQjSIgu.png)
 
 - CheckBox
 
-    当栏位选项只有两种选择时（如：是或否，0 或 1，100 或 200 等），就可以采用此种输入型态执行输入。
+  当栏位选项只有两种选择时（如：是或否，0 或 1，100 或 200 等），就可以采用此种输入型态执行输入。
+
+  
 
     
 
-        
+      ![UntitledcNxyQCIIRr.png](./image/UntitledcNxyQCIIRr.png)
 
-![7666af02-6fad-4454-91fc-3dc1d784e894-Untitled.png](image/7666af02-6fad-4454-91fc-3dc1d784e894-Untitled.png)
+    
 
-        
-
-![3bba0d60-ea50-4f29-9531-a0aa8be35be3-Untitled.png](image/3bba0d60-ea50-4f29-9531-a0aa8be35be3-Untitled.png)
+      ![Untitled5HbyQCSSgj.png](./image/Untitled5HbyQCSSgj.png)
 
 - HLine
 
-    水平分隔线
+  水平分隔线
+
+  
 
     
 
-        
+      ![UntitledcNbswCSIRq.png](./image/UntitledcNbswCSIRq.png)
 
-![6c4f3155-c9db-4946-8924-cc563add8106-Untitled.png](image/6c4f3155-c9db-4946-8924-cc563add8106-Untitled.png)
+    
 
-        
-
-![0ca20be1-813f-40ed-b881-afcd500879ef-Untitled.png](image/0ca20be1-813f-40ed-b881-afcd500879ef-Untitled.png)
+      ![UntitledcNxswjIIR6.png](./image/UntitledcNxswjIIR6.png)
 
 - TextEdit
 
-    定义可编辑多行的栏位，输入长度当超过画面预留长度时，会自动出现卷轴。
+  定义可编辑多行的栏位，输入长度当超过画面预留长度时，会自动出现卷轴。
+
+  
 
     
 
-        
-
-![f78fe55f-9ace-48a3-9180-fe18ce9e6c07-Untitled.png](image/f78fe55f-9ace-48a3-9180-fe18ce9e6c07-Untitled.png)
-
-        
-
-![b870670a-23d7-4a4f-bb20-9053f830a70a-Untitled.png](image/b870670a-23d7-4a4f-bb20-9053f830a70a-Untitled.png)
-
-- <s>Button</s>
-
-    定义一个按钮以触发某一 4GL 中已写定的 ON ACTION 段。
-
-    建议除了特别的 ACTION 有需要在 Layout 内布置按键外，一般作业可不必布置.
+      ![Untitled5HxyQCIIRR.png](./image/Untitled5HxyQCIIRR.png)
 
     
 
-        
+      ![Untitled5HxswCSIgk.png](./image/Untitled5HxswCSIgk.png)
 
-![22e9ab7c-5200-4870-8de1-8e82155c229b-Untitled.png](image/22e9ab7c-5200-4870-8de1-8e82155c229b-Untitled.png)
+- ~~Button~~
 
-        
+  定义一个按钮以触发某一 4GL 中已写定的 ON ACTION 段。
 
-![a5b6cd7f-c87e-4176-b3fa-7360f892550a-Untitled.png](image/a5b6cd7f-c87e-4176-b3fa-7360f892550a-Untitled.png)
+  建议除了特别的 ACTION 有需要在 Layout 内布置按键外，一般作业可不必布置.
 
-- <s>RadioGroup</s>
-
-    定义一个可用选择方式输入资料的输入栏位，此种选择方式会将选项清单展示在画面上（ComboBox 不会展开显示，可参照 ComboBox 说明），故若需要采用此输入形态，要注意画面空间是否足够。
+  
 
     
 
-        
-
-![45f9b3ad-f1ea-4ee5-9628-5f0e2a2327a2-Untitled.png](image/45f9b3ad-f1ea-4ee5-9628-5f0e2a2327a2-Untitled.png)
-
-![d9334cec-8726-4757-90e3-eca1439e2f92-Untitled.png](image/d9334cec-8726-4757-90e3-eca1439e2f92-Untitled.png)
-
-        
-
-![1a11fd7d-f9ad-4952-badf-04e436cfea47-Untitled.png](image/1a11fd7d-f9ad-4952-badf-04e436cfea47-Untitled.png)
-
-- <s>Canvas</s>
+      ![UntitledcNxywjIIgi.png](./image/UntitledcNxywjIIgi.png)
 
     
 
-        
+      ![UntitledcHbyQCIIRW.png](./image/UntitledcHbyQCIIRW.png)
 
-![2cfbb3a9-ac54-4534-a90e-b8540090edb4-Untitled.png](image/2cfbb3a9-ac54-4534-a90e-b8540090edb4-Untitled.png)
+- ~~RadioGroup~~
 
-        
+  定义一个可用选择方式输入资料的输入栏位，此种选择方式会将选项清单展示在画面上（ComboBox 不会展开显示，可参照 ComboBox 说明），故若需要采用此输入形态，要注意画面空间是否足够。
 
-![07c57d38-8a63-4356-9107-479c2b6843e3-Untitled.png](image/07c57d38-8a63-4356-9107-479c2b6843e3-Untitled.png)
-
-- <s>ProgressBar</s>
+  
 
     
 
-        
+      ![UntitledcNxywjIIRG.png](./image/UntitledcNxywjIIRG.png)
 
-![4c5aa7e1-229f-4cf4-8349-d95cad54e068-Untitled.png](image/4c5aa7e1-229f-4cf4-8349-d95cad54e068-Untitled.png)
-
-        
-
-![b25ad8f1-0a36-4e80-9db5-74870f64053d-Untitled.png](image/b25ad8f1-0a36-4e80-9db5-74870f64053d-Untitled.png)
-
-- <s>TimeEdit</s>
+      ![UntitledcHxywCIIRn.png](./image/UntitledcHxywCIIRn.png)
 
     
 
-        
+      ![Untitled5HbyQjIIg4.png](./image/Untitled5HbyQjIIg4.png)
 
-![47c03e56-6d6b-43e8-981e-62cd81cceab2-Untitled.png](image/47c03e56-6d6b-43e8-981e-62cd81cceab2-Untitled.png)
+- ~~Canvas~~
 
-        
-
-![745a9702-5ce6-4432-8dc3-121489cbbcf5-Untitled.png](image/745a9702-5ce6-4432-8dc3-121489cbbcf5-Untitled.png)
-
-- <s>Image</s>
-
-- <s>Slider</s>
+  
 
     
 
-        
-
-![dbfdebd2-da65-42e4-b43e-1ae1d370ad8d-Untitled.png](image/dbfdebd2-da65-42e4-b43e-1ae1d370ad8d-Untitled.png)
-
-        
-
-![1548104d-5fa4-4274-8be2-9d6a4b3f2a10-Untitled.png](image/1548104d-5fa4-4274-8be2-9d6a4b3f2a10-Untitled.png)
-
-- <s>SpinEdit</s>
+      ![Untitled5NbyQjSSgS.png](./image/Untitled5NbyQjSSgS.png)
 
     
 
-        
+      ![UntitledcHbyQjIIRH.png](./image/UntitledcHbyQjIIRH.png)
 
-![3f93bb5b-9b3c-4e7b-a670-43dbb0d473b2-Untitled.png](image/3f93bb5b-9b3c-4e7b-a670-43dbb0d473b2-Untitled.png)
+- ~~ProgressBar~~
 
-        
+  
 
-![e6f7ce2e-f4be-40ad-b128-90337116e55f-Untitled.png](image/e6f7ce2e-f4be-40ad-b128-90337116e55f-Untitled.png)
+    
 
-- <s>WebComponent</s>
+      ![Untitled5NbsQjSIRD.png](./image/Untitled5NbsQjSIRD.png)
+
+    
+
+      ![Untitled5HxsQCIIRd.png](./image/Untitled5HxsQCIIRd.png)
+
+- ~~TimeEdit~~
+
+  
+
+    
+
+      ![UntitledcHxswCSSgK.png](./image/UntitledcHxswCSSgK.png)
+
+    
+
+      ![Untitled5NxswCSSg5.png](./image/Untitled5NxswCSSg5.png)
+
+- ~~Image~~
+
+- ~~Slider~~
+
+  
+
+    
+
+      ![Untitled5NbsQjSSgt.png](./image/Untitled5NbsQjSSgt.png)
+
+    
+
+      ![Untitled5NxyQjIIg2.png](./image/Untitled5NxyQjIIg2.png)
+
+- ~~SpinEdit~~
+
+  
+
+    
+
+      ![UntitledcHxyQjSSRT.png](./image/UntitledcHxyQjSSRT.png)
+
+    
+
+      ![UntitledcHbyQjSIgA.png](./image/UntitledcHbyQjSIgA.png)
+
+- ~~WebComponent~~
+
+
+
+
+
+
 
 
 
