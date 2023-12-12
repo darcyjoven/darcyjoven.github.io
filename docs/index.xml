@@ -4,9 +4,17 @@
         <link>https://darcyjoven.com/</link>
         <description>darcy&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
-            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Nov 2023 15:30:23 &#43;0800</lastBuildDate>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 12 Dec 2023 05:31:00 &#43;0000</lastBuildDate>
             <atom:link href="https://darcyjoven.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>接口的DEBUG</title>
+    <link>https://darcyjoven.com/debug-in-webservice/</link>
+    <pubDate>Tue, 12 Dec 2023 05:31:00 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/debug-in-webservice/</guid>
+    <description><![CDATA[接口的DEBUG 前提 普通作业的debug你已经会使用，后面会出一篇普通debug的使用。 事先准备 下载可以抛砖测试的api测试软件，如soap]]></description>
+</item>
+<item>
     <title>ERP网络需求</title>
     <link>https://darcyjoven.com/erp%E7%BD%91%E7%BB%9C%E9%9C%80%E6%B1%82/</link>
     <pubDate>Thu, 16 Nov 2023 15:30:23 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>darcy</author>
     <guid>https://darcyjoven.com/mdbook%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/</guid>
     <description><![CDATA[windows 安装 RUST 官网下载 rustup-init.exe，linux系统按照sh文件安装 (https://www.rust-lang.org/)[https://www.rust-lang.org/] 不安装多余文件，选择3然后安装RUSTUP。 安装默认carg]]></description>
-</item>
-<item>
-    <title>ERP（TIPTOP）对象命名规则</title>
-    <link>https://darcyjoven.com/erptiptop%E5%AF%B9%E8%B1%A1%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/</link>
-    <pubDate>Thu, 16 Nov 2023 10:34:27 &#43;0800</pubDate>
-    <author>darcy</author>
-    <guid>https://darcyjoven.com/erptiptop%E5%AF%B9%E8%B1%A1%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/</guid>
-    <description><![CDATA[模组清单 模组看起来很多，常用的只有下面几个： AAP 应付账款 ABM 产品结构系统 产品BOM结构 AEC 工艺与工作站系统 产品的工艺资料 AGL 总账会计 AIM 库存料件资料管]]></description>
 </item>
 </channel>
 </rss>
