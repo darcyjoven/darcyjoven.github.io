@@ -1,24 +1,5 @@
----
-title: 如何DEBUG TIPTOP ERP作业
-subTitle: ""
-date: 2023-12-12T08:15:00Z
-author: darcy
-authorLink: darcyjoven.com
-tags:
-- debug
-- erp
-- tiptop gp
-- T100
-categories:
-- ERP问题
-toc:
-  enable: true
-  auto: true
-linkToMarkdown: true
-code:
-  copy: true
-slug: debugintiptop
----
+# 如何DEBUG TIPTOP ERP作业
+
 
 
 # 如何DEBUG TIPTOP ERP作业
@@ -142,6 +123,7 @@ bdl中支持一些命令，可以方便debug，这里说一些比较常用的类
 ![UntitledjQU-OJvIRo.png](./image/UntitledjQU-OJvIRo.png)
 
 `watch g_user if g_user='tiptop’` ，当g_user变量变为’tiptop‘时，自动暂停
+
 
 
 
