@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>新增BLOG - DARCY&#39;S BLOG</title><meta name="Description" content="darcy&#39;s blog"><meta property="og:title" content="新增BLOG" />
+<meta property="og:description" content="引入fglExt.h头文件 fglExt.h 在$FGLDIR/include/f2c目录下，我们需要用到暴露函数的结构体UsrFunction和出栈popv" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://darcyjoven.com/%D1%9Eblog/" /><meta property="og:image" content="https://darcyjoven.com/logo.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-16T14:30:06+08:00" />
+<meta property="article:modified_time" content="2023-11-16T14:30:06+08:00" /><meta property="og:site_name" content="DARCY&#39;S BLOG" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://darcyjoven.com/logo.png" /><meta name="twitter:title" content="新增BLOG"/>
+<meta name="twitter:description" content="引入fglExt.h头文件 fglExt.h 在$FGLDIR/include/f2c目录下，我们需要用到暴露函数的结构体UsrFunction和出栈popv"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://darcyjoven.com/%D1%9Eblog/" /><link rel="prev" href="https://darcyjoven.com/mdbook/" /><link rel="next" href="https://darcyjoven.com/%D1%84%D1%83%D0%B8%D1%82%D1%9E/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "新增BLOG",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/darcyjoven.com\/%D1%9Eblog\/"
+        },"image": ["https:\/\/darcyjoven.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "c语言, linux, bdl","wordcount":  1552 ,
+        "url": "https:\/\/darcyjoven.com\/%D1%9Eblog\/","datePublished": "2023-11-16T14:30:06+08:00","dateModified": "2023-11-16T14:30:06+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "darcy","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/darcyjoven.com\/images\/avatar.png",
+                    "width":  600 ,
+                    "height":  600 
+                }},"author": {
+                "@type": "Person",
+                "name": "darcy"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/md/bdl"> BDL </a><a class="menu-item" href="/md/help"> help </a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%D1%9Eblog/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/md/bdl" title="">BDL</a><a class="menu-item" href="/md/help" title="">help</a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%D1%9Eblog/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">新增BLOG</h1><h2 class="single-subtitle">本文介绍BDL中如何调用C语言动态链接库。</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="darcyjoven.com" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>darcy</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>编程问题</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023年 11月16日">2023年 11月16日</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1552 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#引入fglexth头文件">引入<code>fglExt.h</code>头文件</a></li>
+    <li><a href="#编写代码">编写代码</a>
+      <ul>
+        <li><a href="#项目结构">项目结构</a></li>
+        <li><a href="#逻辑函数">逻辑函数</a></li>
+        <li><a href="#向外暴露函数">向外暴露函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#编译">编译</a></li>
+    <li><a href="#调用">调用</a></li>
+    <li><a href="#源码">源码</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="引入fglexth头文件">引入<code>fglExt.h</code>头文件</h2>
+<p><code>fglExt.h</code> 在<code>$FGLDIR/include/f2c</code>目录下，我们需要用到暴露函数的结构体<code>UsrFunction</code>和出栈<code>popvchar</code>入栈<code>pushvchar</code>函数。</p>
+<blockquote>
+<p>返回值和参数值不同类型请用不同的出栈入栈函数，popint、pushint等</p>
+</blockquote>
+<p>以下示例，使用C语言新增函数<code>base64Decode</code>、<code>base64Encode</code>，用来base64格式的编码和解码。</p>
+<h2 id="编写代码">编写代码</h2>
+<h3 id="项目结构">项目结构</h3>
+<p>为了方便后期维护，我将功能函数和函数暴露定义放在量个文件中，如下所示。</p>
+<ul>
+<li>
+<p><code>base64.c</code></p>
+</li>
+<li>
+<p><code>base64ext.c</code></p>
+</li>
+</ul>
+<p>功能函数就是实际处理逻辑，功能暴露函数定义了运行中传参、返回值个数、需要暴露的函数名称等参数。</p>
+<p>为了后续可以增加多个函数，所以将暴露函数文件单独写。后面要引入其它功能函数，直接在这个文件中添加即可。实际你写在一个文件中也是没问题的。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>c代码路径<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">源代码的路径可以在服务器任何位置，只要在服务器能够编译即可。</div>
+        </div>
+    </div>
+<h3 id="逻辑函数">逻辑函数</h3>
+<p>我的代码中主要函数是这两个，一个编码一个解码，若要希望BDL能直接调用，需要封装一下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span>	<span class="nf">base64_decode</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span>	<span class="nf">base64_encode</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>函数的签名为<code>int func(int);</code>，此函数返回的是返回值数量，参数为BDL调用时的数量。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">base64Encode</span><span class="p">(</span><span class="kt">int</span> <span class="n">in_num</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">src</span><span class="p">[</span><span class="n">sz</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="o">*</span><span class="n">ret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// assert需导入断言库&lt;assert.h&gt;，可以不用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">assert</span><span class="p">(</span><span class="n">in_num</span><span class="o">==</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 取参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// popvchar取出当前栈最上面的参数，需导入头文件&#34;f2c/fglExt.h&#34;，才能使用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 如果有多个参数，第一次取得值是最后一个参数，后入先出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">popvchar</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">sz</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">src</span> <span class="o">==</span> <span class="err">&#39;\\</span><span class="mi">0</span><span class="err">&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// pushvchar 返回值，如果有两个返回值，则调用两次pushvchar
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nf">pushvchar</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ret</span> <span class="o">=</span> <span class="nf">base64_encode</span><span class="p">(</span><span class="n">src</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">pushvchar</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">ret</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="向外暴露函数">向外暴露函数</h3>
+<p>处理逻辑处理，还需要向外部暴露函数。<code>base64ext.c</code></p>
+<p>暴露函数得时候，使用一个结构体UsrFunction数组，其中：</p>
+<ul>
+<li>
+<p>是结束标志，必须以这个结束</p>
+</li>
+<li>
+<p>每一行都是向BDL暴露一个函数</p>
+</li>
+<li>
+<p>第一个参数为暴露得函数名，即BDL中要调用得名字</p>
+</li>
+<li>
+<p><code>int func(int)</code></p>
+</li>
+<li>
+<p>第三个参数为参数数量</p>
+</li>
+<li>
+<p>第四个参数为返回值数量</p>
+</li>
+<li>
+<p>，表示数量可以变</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;f2c/fglExt.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 申明函数签名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">base64Encode</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">base64Decode</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">UsrFunction</span> <span class="n">usrFunctions</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="s">&#34;base64Decode&#34;</span><span class="p">,</span> <span class="n">base64Decode</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="s">&#34;base64Encode&#34;</span><span class="p">,</span> <span class="n">base64Encode</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="编译">编译</h2>
+<ol>
+<li>编译c源文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gcc -c -I <span class="nv">$FGLDIR</span>/include -fPIC base64.c
+</span></span><span class="line"><span class="cl">gcc -c -I <span class="nv">$FGLDIR</span>/include -fPIC base64ext.c
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此步将在当前目录产生对应的.o文件。</p>
+<ol>
+<li>链接为so文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gcc -shared -o libbase64.so base64.o base64ext.o -L<span class="nv">$FGLDIR</span>/lib -lfgl
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此步产生so文件，so文件是我们运行时需要的文件，其它文件运行时都不需要。</p>
+<ol>
+<li>so文件移动到<code>$FGLLDPATH</code>的目录中</li>
+</ol>
+<p><code>$FGLLDPATH</code>目录可以在<code>$TOP/bin/tiptop_env</code>文件中设置，所有的42m目录都在<code>$FGLLDPATH</code>中。</p>
+<h2 id="调用">调用</h2>
+<p>在BDL中只要importhi后即可使用这两个函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">import</span><span class="w"> </span><span class="n">libbase64</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">function</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">define</span><span class="w"> </span><span class="n">str1</span><span class="p">,</span><span class="w"> </span><span class="n">str2</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">call</span><span class="w"> </span><span class="n">base64Encode</span><span class="p">(</span><span class="s2">&#34;Hello World!&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">returning</span><span class="w"> </span><span class="n">str1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">call</span><span class="w"> </span><span class="n">base64Decode</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span><span class="w"> </span><span class="n">returning</span><span class="w"> </span><span class="n">str2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">display</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">display</span><span class="w"> </span><span class="s2">&#34;str1 is &#34;</span><span class="o">||</span><span class="n">str1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">display</span><span class="w"> </span><span class="s2">&#34;str2 is &#34;</span><span class="o">||</span><span class="n">str2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="w"> </span><span class="k">function</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="源码">源码</h2>
+<p><code>base64.c</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;assert.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;f2c/fglExt.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span>	<span class="nf">base64_decode</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span>	<span class="nf">base64_encode</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">base64Encode</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">base64Decode</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span>	<span class="nf">base64_decode</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">imap</span><span class="p">[</span><span class="mi">79</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">62</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">63</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">61</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">38</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">49</span><span class="p">,</span><span class="mi">50</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">rest_count</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">buf_idx</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">flen</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">flen</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;=&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">flen</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">buflen</span> <span class="o">=</span> <span class="n">flen</span><span class="o">*</span><span class="mi">6</span><span class="o">/</span><span class="mi">8</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">buf</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="nf">malloc</span><span class="p">(</span><span class="n">buflen</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">memset</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="err">&#39;\\</span><span class="mi">0</span><span class="err">&#39;</span><span class="p">,</span><span class="n">buflen</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">flen</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="n">imap</span><span class="p">[</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">43</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">mcount</span> <span class="o">=</span> <span class="n">rest_count</span> <span class="o">==</span><span class="mi">0</span><span class="o">?-</span><span class="mi">2</span><span class="o">:</span><span class="mi">6</span><span class="o">-</span><span class="n">rest_count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c0</span> <span class="o">=</span> <span class="p">(</span><span class="n">mcount</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">?</span><span class="n">c</span><span class="o">&gt;&gt;</span><span class="nl">mcount</span><span class="p">:</span><span class="n">c</span><span class="o">&lt;&lt;-</span><span class="n">mcount</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">buf</span><span class="p">[</span><span class="n">buf_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">buf</span><span class="p">[</span><span class="n">buf_idx</span><span class="p">]</span> <span class="o">|</span> <span class="n">c0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">rest_count</span><span class="o">=</span> <span class="n">mcount</span> <span class="o">&lt;</span><span class="mi">0</span> <span class="o">?</span> <span class="o">-</span><span class="nl">mcount</span> <span class="p">:</span> <span class="mi">8</span><span class="o">-</span><span class="n">mcount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">mcount</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">buf</span><span class="p">[</span><span class="o">++</span><span class="n">buf_idx</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="o">&lt;&lt;</span><span class="n">rest_count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">buf</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span>	<span class="nf">base64_encode</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="n">map</span><span class="p">[</span><span class="mi">65</span><span class="p">]</span><span class="o">=</span><span class="s">&#34;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span><span class="nf">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">buflen</span> <span class="o">=</span> <span class="n">len</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">4</span><span class="p">;</span><span class="c1">//缺位补齐1 俩等号2 最后0-1位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">buf</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="n">buflen</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">memset</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="err">&#39;\\</span><span class="mi">0</span><span class="err">&#39;</span><span class="p">,</span><span class="n">buflen</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="n">a</span> <span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">rest_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">buf_idx</span> <span class="o">=</span><span class="mi">0</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">last</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">=</span> <span class="p">(</span><span class="n">last</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="mi">6</span><span class="o">-</span><span class="n">rest_count</span><span class="p">))</span><span class="o">&amp;</span><span class="mi">63</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">get_count</span> <span class="o">=</span> <span class="mi">6</span><span class="o">-</span><span class="n">rest_count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">|</span>  <span class="p">(</span> <span class="n">c</span> <span class="o">&gt;&gt;</span><span class="p">(</span><span class="mi">8</span><span class="o">-</span><span class="n">get_count</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">		<span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">=</span><span class="n">map</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]];</span>
+</span></span><span class="line"><span class="cl">		<span class="n">rest_count</span> <span class="o">=</span> <span class="mi">8</span><span class="o">-</span><span class="n">get_count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">last</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">index</span> <span class="o">=</span> <span class="n">index</span><span class="o">==</span><span class="mi">2</span><span class="o">?</span><span class="mi">0</span><span class="o">:</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">index</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span><span class="n">map</span><span class="p">[</span><span class="n">c</span><span class="o">&amp;</span><span class="mi">63</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">memcpy</span><span class="p">(</span><span class="n">buf</span><span class="o">+</span><span class="n">buf_idx</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">buf_idx</span><span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">rest_count</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">last</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">index</span><span class="o">!=</span><span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">=</span> <span class="n">last</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="mi">6</span><span class="o">-</span><span class="n">rest_count</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">63</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">=</span><span class="n">map</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]];</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">memcpy</span><span class="p">(</span><span class="n">buf</span><span class="o">+</span><span class="n">buf_idx</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">buf</span><span class="p">[</span><span class="n">buf_idx</span><span class="o">+</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;=&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">buf</span><span class="p">[</span><span class="n">buf_idx</span><span class="o">+</span><span class="n">index</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span> <span class="n">rest_count</span> <span class="o">==</span><span class="mi">2</span> <span class="o">?</span> <span class="sc">&#39;=&#39;</span><span class="o">:</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">buf</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">base64Encode</span><span class="p">(</span><span class="kt">int</span> <span class="n">in_num</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">src</span><span class="p">[</span><span class="n">sz</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="o">*</span><span class="n">ret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">assert</span><span class="p">(</span><span class="n">in_num</span><span class="o">==</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 取参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">popvchar</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">sz</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">src</span> <span class="o">==</span> <span class="err">&#39;\\</span><span class="mi">0</span><span class="err">&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">pushvchar</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ret</span> <span class="o">=</span> <span class="nf">base64_encode</span><span class="p">(</span><span class="n">src</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">pushvchar</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">ret</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">base64Decode</span><span class="p">(</span><span class="kt">int</span> <span class="n">in_num</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">src</span><span class="p">[</span><span class="n">sz</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="o">*</span><span class="n">ret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">assert</span><span class="p">(</span><span class="n">in_num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 取参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">popvchar</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">sz</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">src</span> <span class="o">==</span> <span class="err">&#39;\\</span><span class="mi">0</span><span class="err">&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">pushvchar</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ret</span> <span class="o">=</span> <span class="nf">base64_decode</span><span class="p">(</span><span class="n">src</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">pushvchar</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="nf">strlen</span><span class="p">(</span><span class="n">ret</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>base64ext.c</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;f2c/fglExt.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">base64Encode</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">base64Decode</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">UsrFunction</span> <span class="n">usrFunctions</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="s">&#34;base64Decode&#34;</span><span class="p">,</span> <span class="n">base64Decode</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="s">&#34;base64Encode&#34;</span><span class="p">,</span> <span class="n">base64Encode</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023年 11月16日</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%D1%9Eblog/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://darcyjoven.com/%D1%9Eblog/" data-title="新增BLOG" data-hashtags="c语言,linux,bdl"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://darcyjoven.com/%D1%9Eblog/" data-hashtag="c语言"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://darcyjoven.com/%D1%9Eblog/" data-title="新增BLOG"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://darcyjoven.com/%D1%9Eblog/" data-title="新增BLOG"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://darcyjoven.com/%D1%9Eblog/" data-title="新增BLOG"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>,&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/bdl/">Bdl</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/mdbook/" class="prev" rel="prev" title="mdbook安装过程"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>mdbook安装过程</a>
+            <a href="/%D1%84%D1%83%D0%B8%D1%82%D1%9E/" class="next" rel="next" title="磁盘空间不足无法复制账套解决">磁盘空间不足无法复制账套解决<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.124.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="darcyjoven.com" target="_blank">darcy</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"gitalk":{"admin":["darcyjoven"],"clientID":"6e52f9e4425ed0457dba","clientSecret":"31a9b51e366577dbc3da944c7e9ab64bd33f480a","id":"2023-11-16T14:30:06.399752829+08:00","owner":"darcyjoven","repo":"blog-comments","title":"新增BLOG"}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,48 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>系统运维 - 分类 - DARCY&#39;S BLOG</title>
+        <link>https://darcyjoven.com/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/</link>
+        <description>系统运维 - 分类 - DARCY&#39;S BLOG</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</lastBuildDate><atom:link href="https://darcyjoven.com/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
+    <title>效能常规处理流程</title>
+    <link>https://darcyjoven.com/%D0%B7%D0%B3%D1%86%D0%B6%D1%8D%D1%9E/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/%D0%B7%D0%B3%D1%86%D0%B6%D1%8D%D1%9E/</guid>
+    <description><![CDATA[效能常规处理方法 大量作业都卡顿 当客户反馈所有作业都卡顿时，应当先检查服务器得基本状态，并保留截图，以便后面反馈给SE。 可检查得项目如下： 表空]]></description>
+</item>
+<item>
+    <title>oracle最近运行SQL查询</title>
+    <link>https://darcyjoven.com/oracle-run-sql/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:05 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/oracle-run-sql/</guid>
+    <description><![CDATA[最近运行平均时间较长SQL查询 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 select * from (select sa.SQL_TEXT, sa.SQL_FULLTEXT, sa.EXECUTIONS &#34;执行次数&#34;, round(sa.ELAPSED_TIME / 1000000, 2) &#34;总执行时间&#3]]></description>
+</item>
+<item>
+    <title>in嵌套错误字段问题</title>
+    <link>https://darcyjoven.com/sql-in-error/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:04 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/sql-in-error/</guid>
+    <description><![CDATA[假设存在两个表： 1 2 3 4 5 6 7 8 9 create table darcy1( ima01 varchar(40), ima02 varchar(40), ima021 varchar(200) ); create table darcy2( ima01 varchar(40), ima02 varchar(40) ) 运行下面代码不会出错，darcy2虽然没有ima021字段，但是SQL]]></description>
+</item>
+<item>
+    <title>tiptop 效能排查</title>
+    <link>https://darcyjoven.com/tiptop-%D0%B7%D1%89/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:02 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tiptop-%D0%B7%D1%89/</guid>
+    <description><![CDATA[环境变量FGLSQLDEBUG 此环境变量，控制运行程序时，后台显示日期的等级。 最高等级为9，取消设置命令为unset FGLSQLDEBUG 将环境变量设置为9 后，]]></description>
+</item>
+<item>
+    <title>oracle 常用命令与SQL</title>
+    <link>https://darcyjoven.com/oracle-%D0%B3%D1%8E%D1%8Bsql/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:00 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/oracle-%D0%B3%D1%8E%D1%8Bsql/</guid>
+    <description><![CDATA[清楚查询缓存 1 2 3 ALTER SYSTEM FLUSH SHARED_POOL; ALTER SYSTEM FLUSH BUFFER_CACHE; ALTER SYSTEM FLUSH GLOBAL CONTEXT; 分析表结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 --① 分析表的所有字段，所有索引，所有索引字段。其]]></description>
+</item>
+</channel>
+</rss>

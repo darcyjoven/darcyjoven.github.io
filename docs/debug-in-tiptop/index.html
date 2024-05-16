@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>如何DEBUG TIPTOP ERP作业 - DARCY&#39;S BLOG</title><meta name="Description" content="darcy&#39;s blog"><meta property="og:title" content="如何DEBUG TIPTOP ERP作业" />
+<meta property="og:description" content="如何DEBUG TIPTOP ERP作业 是否有权限DEBUG debug需要tiptop账号，如果你没有tiptop账号登陆权限，则无法debug erp作业" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://darcyjoven.com/debug-in-tiptop/" /><meta property="og:image" content="https://darcyjoven.com/logo.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-12T08:15:00+00:00" />
+<meta property="article:modified_time" content="2023-12-12T08:15:00+00:00" /><meta property="og:site_name" content="DARCY&#39;S BLOG" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://darcyjoven.com/logo.png" /><meta name="twitter:title" content="如何DEBUG TIPTOP ERP作业"/>
+<meta name="twitter:description" content="如何DEBUG TIPTOP ERP作业 是否有权限DEBUG debug需要tiptop账号，如果你没有tiptop账号登陆权限，则无法debug erp作业"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://darcyjoven.com/debug-in-tiptop/" /><link rel="prev" href="https://darcyjoven.com/debug-in-webservice/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "如何DEBUG TIPTOP ERP作业",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/darcyjoven.com\/debug-in-tiptop\/"
+        },"image": ["https:\/\/darcyjoven.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "debug, erp, tiptop gp, T100","wordcount":  970 ,
+        "url": "https:\/\/darcyjoven.com\/debug-in-tiptop\/","datePublished": "2023-12-12T08:15:00+00:00","dateModified": "2023-12-12T08:15:00+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "darcy","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/darcyjoven.com\/images\/avatar.png",
+                    "width":  600 ,
+                    "height":  600 
+                }},"author": {
+                "@type": "Person",
+                "name": "darcy"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/md/bdl"> BDL </a><a class="menu-item" href="/md/help"> help </a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/debug-in-tiptop/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/md/bdl" title="">BDL</a><a class="menu-item" href="/md/help" title="">help</a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/debug-in-tiptop/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">如何DEBUG TIPTOP ERP作业</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="darcyjoven.com" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>darcy</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/erp%E9%97%AE%E9%A2%98/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>ERP问题</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023年 12月12日">2023年 12月12日</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 970 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#是否有权限debug">是否有权限DEBUG</a></li>
+    <li><a href="#环境准备">环境准备</a></li>
+    <li><a href="#运行前目录检查">运行前目录检查</a></li>
+    <li><a href="#debug画面介绍">DEBUG画面介绍</a>
+      <ul>
+        <li><a href="#查询代码">查询代码</a></li>
+        <li><a href="#重新运行">重新运行</a></li>
+        <li><a href="#运行">运行</a></li>
+        <li><a href="#进入函数">进入函数</a></li>
+        <li><a href="#跳出函数">跳出函数</a></li>
+        <li><a href="#单步运行">单步运行</a></li>
+        <li><a href="#运行到下个断点">运行到下个断点</a></li>
+        <li><a href="#监测变量值">监测变量值</a></li>
+        <li><a href="#增加断点">增加断点</a></li>
+      </ul>
+    </li>
+    <li><a href="#debug-命令">DEBUG 命令</a></li>
+    <li><a href="#指定函数断点">指定函数断点</a></li>
+    <li><a href="#改变变量的值">改变变量的值</a></li>
+    <li><a href="#当变量值变化时自动暂停">当变量值变化时自动暂停</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="如何debug-tiptop-erp作业">如何DEBUG TIPTOP ERP作业</h1>
+<h2 id="是否有权限debug">是否有权限DEBUG</h2>
+<p>debug需要tiptop账号，如果你没有tiptop账号登陆权限，则无法debug erp作业。</p>
+<p>有root权限也是可以切换到tiptop账号的。 su - tiptop 即可切换到tiptop账号，注意有两个空格。</p>
+<h2 id="环境准备">环境准备</h2>
+<ul>
+<li>登陆服务器</li>
+</ul>
+<p>使用tiptop 登陆到ERP服务器，登陆到要测试的区。</p>
+<ul>
+<li>打开画面测试</li>
+</ul>
+<p>我们在服务器打开任意erp作业，exe p_zz r.r azzi910。如果能打开作业，环境没有问题，否则要检查下端口是否正常。</p>
+<ul>
+<li>端口异常</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/Untitledjw8adJDSR.png"
+        data-srcset="./image/Untitledjw8adJDSR.png, ./image/Untitledjw8adJDSR.png 1.5x, ./image/Untitledjw8adJDSR.png 2x"
+        data-sizes="auto"
+        alt="./image/Untitledjw8adJDSR.png"
+        title="Untitledjw8adJDSR.png" /></p>
+<p>GDC的默认端口为6400，如果你的端口不是6400，则需要在服务器上指定一下端口， export FGLSERVER=$FGLSERVER:6401</p>
+<h2 id="运行前目录检查">运行前目录检查</h2>
+<p>debug时，我们也是通过调用42r文件运行作业的，所以不同目录我们可能运行不同作业。</p>
+<ul>
+<li>T100</li>
+</ul>
+<p>r.d azzi910 可以自动识别作业注册的目录，不用特意设置起始目录。（特殊情况可以切换到作业4gl目录下，使用r.dg azzi910，避免作业运行错误）</p>
+<ul>
+<li>TIPTOP GP</li>
+</ul>
+<p>我们要确保切换到要运行的作业4gl目录，运行 r.d2+ p_zz 开始debug作业。（42m等其它目录也可以，一般默认到4gl目录）</p>
+<h2 id="debug画面介绍">DEBUG画面介绍</h2>
+<h3 id="查询代码">查询代码</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/Untitledjw8-O1DSRz.png"
+        data-srcset="./image/Untitledjw8-O1DSRz.png, ./image/Untitledjw8-O1DSRz.png 1.5x, ./image/Untitledjw8-O1DSRz.png 2x"
+        data-sizes="auto"
+        alt="./image/Untitledjw8-O1DSRz.png"
+        title="Untitledjw8-O1DSRz.png" /></p>
+<p><strong>ctrl+F</strong>，可以弹出查询代码行数位置，可以跳转到指定代码位置，此方式只能查询当前代码位置</p>
+<h3 id="重新运行">重新运行</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledjwU-dJDIgm.png"
+        data-srcset="./image/UntitledjwU-dJDIgm.png, ./image/UntitledjwU-dJDIgm.png 1.5x, ./image/UntitledjwU-dJDIgm.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledjwU-dJDIgm.png"
+        title="UntitledjwU-dJDIgm.png" /></p>
+<p>重新启动，即相当于重新打开作业</p>
+<h3 id="运行">运行</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledjwU-d1DSgZ.png"
+        data-srcset="./image/UntitledjwU-d1DSgZ.png, ./image/UntitledjwU-d1DSgZ.png 1.5x, ./image/UntitledjwU-d1DSgZ.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledjwU-d1DSgZ.png"
+        title="UntitledjwU-d1DSgZ.png" /></p>
+<p>**F5 **运行到下一个断点处，如果没有断点，会一直运行到作业关闭</p>
+<h3 id="进入函数">进入函数</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledCwUadJvIgM.png"
+        data-srcset="./image/UntitledCwUadJvIgM.png, ./image/UntitledCwUadJvIgM.png 1.5x, ./image/UntitledCwUadJvIgM.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledCwUadJvIgM.png"
+        title="UntitledCwUadJvIgM.png" /></p>
+<p><strong>F11</strong> 进入函数，当前行如果有调用函数，使用此方式，可以进入函数内部</p>
+<h3 id="跳出函数">跳出函数</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledjQ8-OJvIR7.png"
+        data-srcset="./image/UntitledjQ8-OJvIR7.png, ./image/UntitledjQ8-OJvIR7.png 1.5x, ./image/UntitledjQ8-OJvIR7.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledjQ8-OJvIR7.png"
+        title="UntitledjQ8-OJvIR7.png" /></p>
+<p>**Shift+F11 **跳出函数，跳出当前运行的函数，如果时main函数，相当于运行到下一个断点</p>
+<h3 id="单步运行">单步运行</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledjQU-OJDIRV.png"
+        data-srcset="./image/UntitledjQU-OJDIRV.png, ./image/UntitledjQU-OJDIRV.png 1.5x, ./image/UntitledjQU-OJDIRV.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledjQU-OJDIRV.png"
+        title="UntitledjQU-OJDIRV.png" /></p>
+<p><strong>F10</strong> 可以单步运行，如果当前行有函数，会自动执行完函数，不会自动进入</p>
+<h3 id="运行到下个断点">运行到下个断点</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledjQ8-dJvIgI.png"
+        data-srcset="./image/UntitledjQ8-dJvIgI.png, ./image/UntitledjQ8-dJvIgI.png 1.5x, ./image/UntitledjQ8-dJvIgI.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledjQ8-dJvIgI.png"
+        title="UntitledjQ8-dJvIgI.png" /></p>
+<p>和F5功能差不多</p>
+<h3 id="监测变量值">监测变量值</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledCQU-dJvSRN.png"
+        data-srcset="./image/UntitledCQU-dJvSRN.png, ./image/UntitledCQU-dJvSRN.png 1.5x, ./image/UntitledCQU-dJvSRN.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledCQU-dJvSRN.png"
+        title="UntitledCQU-dJvSRN.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledCQU-OJDIgv.png"
+        data-srcset="./image/UntitledCQU-OJDIgv.png, ./image/UntitledCQU-OJDIgv.png 1.5x, ./image/UntitledCQU-OJDIgv.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledCQU-OJDIgv.png"
+        title="UntitledCQU-OJDIgv.png" /></p>
+<p>**Ctrl+I **，弹出变量监测窗口，你可以查看变量当前值，也可以将变量增加到监测窗口</p>
+<h3 id="增加断点">增加断点</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledjQ8-O1DIRO.png"
+        data-srcset="./image/UntitledjQ8-O1DIRO.png, ./image/UntitledjQ8-O1DIRO.png 1.5x, ./image/UntitledjQ8-O1DIRO.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledjQ8-O1DIRO.png"
+        title="UntitledjQ8-O1DIRO.png" /></p>
+<p>在选中行增加或取消断点，快捷键F9，或者鼠标双击</p>
+<h2 id="debug-命令">DEBUG 命令</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledjwU-OJvIRF.png"
+        data-srcset="./image/UntitledjwU-OJvIRF.png, ./image/UntitledjwU-OJvIRF.png 1.5x, ./image/UntitledjwU-OJvIRF.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledjwU-OJvIRF.png"
+        title="UntitledjwU-OJvIRF.png" /></p>
+<p>bdl中支持一些命令，可以方便debug，这里说一些比较常用的类型，更多类型可以看帮助文档。</p>
+<p>在画面中指定debug命令，要打开命令窗口运行，快捷键Ctrl+D，也可以在菜单Run→Execute Debugger Command</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledjQ8ad1vSgc.png"
+        data-srcset="./image/UntitledjQ8ad1vSgc.png, ./image/UntitledjQ8ad1vSgc.png 1.5x, ./image/UntitledjQ8ad1vSgc.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledjQ8ad1vSgc.png"
+        title="UntitledjQ8ad1vSgc.png" /></p>
+<h2 id="指定函数断点">指定函数断点</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledCQUadJDSRp.png"
+        data-srcset="./image/UntitledCQUadJDSRp.png, ./image/UntitledCQUadJDSRp.png 1.5x, ./image/UntitledCQUadJDSRp.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledCQUadJDSRp.png"
+        title="UntitledCQUadJDSRp.png" /></p>
+<p><code>b cl_cp_r 会在cl_cp_r</code>函数第一行下一个断点</p>
+<h2 id="改变变量的值">改变变量的值</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledCwU-O1DIRh.png"
+        data-srcset="./image/UntitledCwU-O1DIRh.png, ./image/UntitledCwU-O1DIRh.png 1.5x, ./image/UntitledCwU-O1DIRh.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledCwU-O1DIRh.png"
+        title="UntitledCwU-O1DIRh.png" /></p>
+<p><code>set variable g_user='tiptop’ </code>强行改变变量的值</p>
+<h2 id="当变量值变化时自动暂停">当变量值变化时自动暂停</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./image/UntitledjQU-OJvIRo.png"
+        data-srcset="./image/UntitledjQU-OJvIRo.png, ./image/UntitledjQU-OJvIRo.png 1.5x, ./image/UntitledjQU-OJvIRo.png 2x"
+        data-sizes="auto"
+        alt="./image/UntitledjQU-OJvIRo.png"
+        title="UntitledjQU-OJvIRo.png" /></p>
+<p><code>watch g_user if g_user='tiptop’</code> ，当g_user变量变为’tiptop‘时，自动暂停</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023年 12月12日</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/debug-in-tiptop/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://darcyjoven.com/debug-in-tiptop/" data-title="如何DEBUG TIPTOP ERP作业" data-hashtags="debug,erp,tiptop gp,T100"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://darcyjoven.com/debug-in-tiptop/" data-hashtag="debug"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://darcyjoven.com/debug-in-tiptop/" data-title="如何DEBUG TIPTOP ERP作业"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://darcyjoven.com/debug-in-tiptop/" data-title="如何DEBUG TIPTOP ERP作业"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://darcyjoven.com/debug-in-tiptop/" data-title="如何DEBUG TIPTOP ERP作业"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/debug/">Debug</a>,&nbsp;<a href="/tags/erp/">Erp</a>,&nbsp;<a href="/tags/tiptop-gp/">Tiptop Gp</a>,&nbsp;<a href="/tags/t100/">T100</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/debug-in-webservice/" class="prev" rel="prev" title="接口的DEBUG"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>接口的DEBUG</a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.124.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="darcyjoven.com" target="_blank">darcy</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"gitalk":{"admin":["darcyjoven"],"clientID":"6e52f9e4425ed0457dba","clientSecret":"31a9b51e366577dbc3da944c7e9ab64bd33f480a","id":"2023-12-12T08:15:00Z","owner":"darcyjoven","repo":"blog-comments","title":"如何DEBUG TIPTOP ERP作业"}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

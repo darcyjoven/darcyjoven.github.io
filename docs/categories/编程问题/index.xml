@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>编程问题 - 分类 - DARCY&#39;S BLOG</title>
+        <link>https://darcyjoven.com/categories/%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98/</link>
+        <description>编程问题 - 分类 - DARCY&#39;S BLOG</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Nov 2023 15:30:22 &#43;0800</lastBuildDate><atom:link href="https://darcyjoven.com/categories/%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+    <title>BDL调用C语言动态库.so</title>
+    <link>https://darcyjoven.com/bdl%D1%9Ec%D1%8F%D0%BF%D0%BC%D1%82.so/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:22 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/bdl%D1%9Ec%D1%8F%D0%BF%D0%BC%D1%82.so/</guid>
+    <description><![CDATA[引入fglExt.h头文件 fglExt.h 在$FGLDIR/include/f2c目录下，我们需要用到暴露函数的结构体UsrFunction和出栈popv]]></description>
+</item>
+<item>
+    <title>BDL调用dll库</title>
+    <link>https://darcyjoven.com/bdl%D1%9Edll%D1%82/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/bdl%D1%9Edll%D1%82/</guid>
+    <description><![CDATA[fgl BDL调用dll库 MAC 和LINUX 原则上都支持 .dyLib 和 .so 都支持，因为用户较少所以未测试。 利用vs开发 在新建项目中选择此项 新增头文件 文件名随意，以]]></description>
+</item>
+<item>
+    <title>BDL调用golang(cgo)</title>
+    <link>https://darcyjoven.com/bdl%D1%9Egolangcgo/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/bdl%D1%9Egolangcgo/</guid>
+    <description><![CDATA[golang 编译 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 package main import &#34;C&#34; import &#34;fmt&#34; //export hello func hello(){ fmt.Println(&#34;hello world&#34;) } //export add func add(a,b int) int { return a+b } func main(){ } golang中要导出的函数前要增加备注//expor]]></description>
+</item>
+<item>
+    <title>fgl bdl语言集成java包</title>
+    <link>https://darcyjoven.com/fgl-bdl%D1%8F%D0%BFjava/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/fgl-bdl%D1%8F%D0%BFjava/</guid>
+    <description><![CDATA[fgl bdl语言集成java包 确保java包版本和服务器jre版本一致 java -version 用静态类的方法返回值 bdl不支持面向对象编程（新版本支持单功能单一），]]></description>
+</item>
+<item>
+    <title>效能常规处理流程</title>
+    <link>https://darcyjoven.com/%D0%B7%D0%B3%D1%86%D0%B6%D1%8D%D1%9E/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/%D0%B7%D0%B3%D1%86%D0%B6%D1%8D%D1%9E/</guid>
+    <description><![CDATA[效能常规处理方法 大量作业都卡顿 当客户反馈所有作业都卡顿时，应当先检查服务器得基本状态，并保留截图，以便后面反馈给SE。 可检查得项目如下： 表空]]></description>
+</item>
+<item>
+    <title>新增BLOG</title>
+    <link>https://darcyjoven.com/%D1%9Eblog/</link>
+    <pubDate>Thu, 16 Nov 2023 14:30:06 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/%D1%9Eblog/</guid>
+    <description><![CDATA[引入fglExt.h头文件 fglExt.h 在$FGLDIR/include/f2c目录下，我们需要用到暴露函数的结构体UsrFunction和出栈popv]]></description>
+</item>
+<item>
+    <title>go 类型转换与断言</title>
+    <link>https://darcyjoven.com/go-inteface/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:06 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/go-inteface/</guid>
+    <description><![CDATA[断言—接口断言为确定类型 1 2 var greeting interface{} = &#34;hello world&#34; greetingStr := greeting.(string) 类型转换—底层结构一致的类型相互转换 1 2 greeting := []byte(&#34;hello world&#34;) greetingStr := string(greeting)]]></description>
+</item>
+<item>
+    <title>golang的文件写入</title>
+    <link>https://darcyjoven.com/golang-write/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:04 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/golang-write/</guid>
+    <description><![CDATA[1 2 3 4 // 一次性写入 if err := os.WriteFile(&#34;file.txt&#34;, []byte(&#34;Hello GOSAMPLES!&#34;), 0666); err != nil { log.Fatal(err) } 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 // 逐行写入 package main import ( &#34;log&#34; &#34;os&#34;]]></description>
+</item>
+<item>
+    <title>tiptop gp 常用的函数和编程方式</title>
+    <link>https://darcyjoven.com/tiptop-gp-%D0%B3%D0%BF%D1%80/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:02 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tiptop-gp-%D0%B3%D0%BF%D1%80/</guid>
+    <description><![CDATA[excel汇入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 DEFINE xlapp INTEGER DEFINE xlwb INTEGER]]></description>
+</item>
+<item>
+    <title>oracle sql语法</title>
+    <link>https://darcyjoven.com/oracle-sql%D1%8F%D0%B8/</link>
+    <pubDate>Thu, 16 Nov 2023 10:33:59 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/oracle-sql%D1%8F%D0%B8/</guid>
+    <description><![CDATA[递归查询 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 -- 递归遍历查询 select t.*, LEVEL from area_test t start with name = &#39;郑州市&#39; connect by prior id = parent_id; select bmb09 from bmb_file where bmb04 &lt;= ? and ( bmb05 is null or bmb05]]></description>
+</item>
+</channel>
+</rss>

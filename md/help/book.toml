@@ -1,0 +1,16 @@
+[book]
+authors = ["darcy"]
+language = "zh"
+multilingual = false
+src = "src"
+title = "Help-Docs"
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+[output.html.fold]
+enable = true
+
+[preprocessor]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"

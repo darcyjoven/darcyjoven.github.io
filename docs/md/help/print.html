@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Help-Docs</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="b1090cbd/index.html"><strong aria-hidden="true">1.</strong> demo</a></li><li class="chapter-item "><a href="b504b4bf/index.html"><strong aria-hidden="true">2.</strong> 操作手册</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="b504b4bf/bcc029ab/index.html"><strong aria-hidden="true">2.1.</strong> 新手介绍</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="b504b4bf/bcc029ab/6e26a138/index.html"><strong aria-hidden="true">2.1.1.</strong> 账号管理</a></li><li class="chapter-item "><a href="b504b4bf/bcc029ab/5e5a1241/index.html"><strong aria-hidden="true">2.1.2.</strong> erp登陆</a></li><li class="chapter-item "><a href="b504b4bf/bcc029ab/5f8ffeac/index.html"><strong aria-hidden="true">2.1.3.</strong> 作业介绍</a></li><li class="chapter-item "><a href="b504b4bf/bcc029ab/8776b26b/index.html"><strong aria-hidden="true">2.1.4.</strong> 首页菜单</a></li><li class="chapter-item "><a href="b504b4bf/bcc029ab/72ad0d7c/index.html"><strong aria-hidden="true">2.1.5.</strong> 运行程序</a></li></ol></li><li class="chapter-item "><a href="b504b4bf/43457976/index.html"><strong aria-hidden="true">2.2.</strong> 进阶使用</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="b504b4bf/43457976/e5b18822/index.html"><strong aria-hidden="true">2.2.1.</strong> 查询技巧</a></li><li class="chapter-item "><a href="b504b4bf/43457976/d6828795/index.html"><strong aria-hidden="true">2.2.2.</strong> 录入技巧</a></li><li class="chapter-item "><a href="b504b4bf/43457976/60b43671/index.html"><strong aria-hidden="true">2.2.3.</strong> excel汇入单身</a></li><li class="chapter-item "><a href="b504b4bf/43457976/5439441a/index.html"><strong aria-hidden="true">2.2.4.</strong> 浏览器设置</a></li><li class="chapter-item "><a href="b504b4bf/43457976/5be71ab4/index.html"><strong aria-hidden="true">2.2.5.</strong> 常用快捷键</a></li></ol></li></ol></li><li class="chapter-item "><a href="c6229330/index.html"><strong aria-hidden="true">3.</strong> 逻辑说明</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="c6229330/010c9262/index.html"><strong aria-hidden="true">3.1.</strong> 料件基础资料</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="c6229330/010c9262/0df90706/index.html"><strong aria-hidden="true">3.1.1.</strong> 产品设计</a></li></ol></li><li class="chapter-item "><a href="c6229330/93f7b705/index.html"><strong aria-hidden="true">3.2.</strong> 库存</a></li><li class="chapter-item "><a href="c6229330/5ec77022/index.html"><strong aria-hidden="true">3.3.</strong> BOM与工单</a></li><li class="chapter-item "><a href="c6229330/9870901a/index.html"><strong aria-hidden="true">3.4.</strong> 工艺与批单</a></li><li class="chapter-item "><a href="c6229330/0f822e24/index.html"><strong aria-hidden="true">3.5.</strong> 发料与退料</a></li></ol></li><li class="chapter-item "><a href="97bce7bb/index.html"><strong aria-hidden="true">4.</strong> 常见异常处理</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="97bce7bb/c5fb9e6d/index.html"><strong aria-hidden="true">4.1.</strong> 账号、登陆</a></li><li class="chapter-item "><a href="97bce7bb/23e0515f/index.html"><strong aria-hidden="true">4.2.</strong> 作业闪退、异常退出</a></li><li class="chapter-item "><a href="97bce7bb/88c03648/index.html"><strong aria-hidden="true">4.3.</strong> 导出excel异常</a></li><li class="chapter-item "><a href="97bce7bb/1e191cbe/index.html"><strong aria-hidden="true">4.4.</strong> 弹出浏览器异常</a></li><li class="chapter-item "><a href="97bce7bb/3905c214/index.html"><strong aria-hidden="true">4.5.</strong> 库存过账报错</a></li><li class="chapter-item "><a href="97bce7bb/ec5b8eab/index.html"><strong aria-hidden="true">4.6.</strong> 送签异常</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Help-Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <ul>
+<li>
+<p>工单修改是否报工</p>
+</li>
+<li>
+<p>工单删除完工、报废记录</p>
+</li>
+<li></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="账号管理"><a class="header" href="#账号管理">账号管理</a></h1>
+<h2 id="erp账号申请"><a class="header" href="#erp账号申请">ERP账号申请</a></h2>
+<p><img src="b504b4bf/bcc029ab/6e26a138/image/d24d03aa-2518-4053-b7d9-7e62925c817a-Untitled.png" alt="d24d03aa-2518-4053-b7d9-7e62925c817a-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/6e26a138/image/3b8e2aa7-48a3-414b-97cf-792122b41eb8-Untitled.png" alt="3b8e2aa7-48a3-414b-97cf-792122b41eb8-Untitled.png" /></p>
+<p>申请账号必须提供的信息：</p>
+<ol>
+<li>
+<p>申请的账号编号（即工号）</p>
+</li>
+<li>
+<p>账号的姓名与部门</p>
+</li>
+<li>
+<p>申请的权限</p>
+</li>
+</ol>
+<p>其中申请的权限描述请参考以下案例：</p>
+<ul>
+<li>
+<p>申请52948erp账号，姓名：李晓伟，部门：IT，权限：一般文员</p>
+</li>
+<li>
+<p>申请52948erp账号，姓名：李晓伟，部门：IT，权限：参考账号52900权限</p>
+</li>
+<li>
+<p>申请52948erp账号，姓名：李晓伟，部门：IT，权限：申请录入采购单apmt420、料件查询aimi100、杂项发料单aimt301录入权限</p>
+</li>
+</ul>
+<h2 id="忘记密码"><a class="header" href="#忘记密码">忘记密码</a></h2>
+<p>密码忘记</p>
+<p><img src="b504b4bf/bcc029ab/6e26a138/image/d8883cbc-a20e-465c-8e19-09402f038eda-Untitled.png" alt="d8883cbc-a20e-465c-8e19-09402f038eda-Untitled.png" /></p>
+<p>连续输入10次错误密码，账号将被锁定，无法登陆</p>
+<p><img src="b504b4bf/bcc029ab/6e26a138/image/43099b27-7ef1-4fcc-9b35-a6f8ed0f520e-Untitled.png" alt="43099b27-7ef1-4fcc-9b35-a6f8ed0f520e-Untitled.png" /></p>
+<p>在BPM系统账号权限申请账号重置密码</p>
+<p><img src="b504b4bf/bcc029ab/6e26a138/image/d2dbb07d-3464-46d3-ac8a-aac55ee98e83-Untitled.png" alt="d2dbb07d-3464-46d3-ac8a-aac55ee98e83-Untitled.png" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="erp登陆软件安装"><a class="header" href="#erp登陆软件安装">ERP登陆软件安装</a></h1>
+<h2 id="软件位置"><a class="header" href="#软件位置">软件位置</a></h2>
+<p>ERP软件安装地址为：\192.168.1.252\部门dpt\IT\ERP\APP\fjs-gdc-2.40.21-build4635.80-w32vc90.exe</p>
+<p>如果无权限打开，需要请IT人员安装。</p>
+<h2 id="安装过程"><a class="header" href="#安装过程">安装过程</a></h2>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/03809af1-5399-42d0-a97f-d7cc95293aa1-Untitled.png" alt="03809af1-5399-42d0-a97f-d7cc95293aa1-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/137ed4ca-a1bd-404d-b81d-8acce03f72c2-Untitled.png" alt="137ed4ca-a1bd-404d-b81d-8acce03f72c2-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/a394ada8-e81a-40b3-8b6e-0915e2418db7-Untitled.png" alt="a394ada8-e81a-40b3-8b6e-0915e2418db7-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/2f94ecfd-6421-474e-a3be-28b91cb8ba75-Untitled.png" alt="2f94ecfd-6421-474e-a3be-28b91cb8ba75-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/e90a05d3-4034-4731-bfd7-194fc515b4e2-Untitled.png" alt="e90a05d3-4034-4731-bfd7-194fc515b4e2-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/2f60ff9e-51f3-4598-b36d-5c86e0b297a0-Untitled.png" alt="2f60ff9e-51f3-4598-b36d-5c86e0b297a0-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/3de103e3-b30a-40e4-a13a-cc1296a303c5-Untitled.png" alt="3de103e3-b30a-40e4-a13a-cc1296a303c5-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/dbb36ba7-96ea-47eb-adbd-3dfd7da7574c-Untitled.png" alt="dbb36ba7-96ea-47eb-adbd-3dfd7da7574c-Untitled.png" /></p>
+<p>这个时候开始菜单已经增加以下软件图标</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/73ba22ee-8144-4530-bff7-e76e52c98ff8-Untitled.png" alt="73ba22ee-8144-4530-bff7-e76e52c98ff8-Untitled.png" /></p>
+<h1 id="配置erp地址"><a class="header" href="#配置erp地址">配置ERP地址</a></h1>
+<h2 id="将快捷方式放到桌面"><a class="header" href="#将快捷方式放到桌面">将快捷方式放到桌面</a></h2>
+<p>右键打开图标文件位置</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/cf7345ff-85d4-4361-bc10-cd7cd4835b74-Untitled.png" alt="cf7345ff-85d4-4361-bc10-cd7cd4835b74-Untitled.png" /></p>
+<p>右键/发送到/桌面快捷方式</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/3570f7c4-b376-44b2-a2b2-3c3b79662c75-Untitled.png" alt="3570f7c4-b376-44b2-a2b2-3c3b79662c75-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/fdb14ef5-19ea-461c-8aeb-8df2339e3cda-Untitled.png" alt="fdb14ef5-19ea-461c-8aeb-8df2339e3cda-Untitled.png" /></p>
+<h2 id="增加参数--a"><a class="header" href="#增加参数--a">增加参数 -a</a></h2>
+<p>右键快捷方式图标，打开属性面板</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/9befcaef-0b6c-44bd-8bb5-ef1db62b6f20-Untitled.png" alt="9befcaef-0b6c-44bd-8bb5-ef1db62b6f20-Untitled.png" /></p>
+<p>在目标后面输入” -a”，**-a之前有一个空格，**确认后即可配置</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/dd3f6638-f85d-430b-b8f7-fc34e866456e-Untitled.png" alt="dd3f6638-f85d-430b-b8f7-fc34e866456e-Untitled.png" /></p>
+<h2 id="配置登陆地址"><a class="header" href="#配置登陆地址">配置登陆地址</a></h2>
+<p>打开ERP登陆软件，将安全性设置为最低，防止每次连接ERP时弹窗</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/48a24667-b846-4700-ac0f-7c6bf99bd6a8-Untitled.png" alt="48a24667-b846-4700-ac0f-7c6bf99bd6a8-Untitled.png" /></p>
+<p>点击新增配置</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/9227a988-e117-4c74-9e74-cf0909caf0ab-Untitled.png" alt="9227a988-e117-4c74-9e74-cf0909caf0ab-Untitled.png" /></p>
+<p>name 按照自己喜好命名</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/f44fa2d2-22ae-4656-8c30-a28ae84435ba-Untitled.png" alt="f44fa2d2-22ae-4656-8c30-a28ae84435ba-Untitled.png" /></p>
+<p>在url中输入地址”<a href="https://192.168.1.19/gas/wa/r/gdc-tiptop-udm-intranet">https://192.168.1.19/gas/wa/r/gdc-tiptop-udm-intranet</a>”，输入完后点击完成</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/a678ac5c-fbac-4447-81d6-ffaff02c7c75-Untitled.png" alt="a678ac5c-fbac-4447-81d6-ffaff02c7c75-Untitled.png" /></p>
+<p>双击新出现的配置地址，或者选中点击Start</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/91238c6f-42c9-41a9-9186-4b852a20e153-Untitled.png" alt="91238c6f-42c9-41a9-9186-4b852a20e153-Untitled.png" /></p>
+<p>出现下面界面输入已申请好的ERP账号密码，登陆即可。</p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/367f5bc7-8d47-4f0a-b700-03c638f23f84-Untitled.png" alt="367f5bc7-8d47-4f0a-b700-03c638f23f84-Untitled.png" /></p>
+<p><img src="b504b4bf/bcc029ab/5e5a1241/image/ca31eaa0-1d0e-4b63-8e0b-6ca9505841d3-Untitled.png" alt="ca31eaa0-1d0e-4b63-8e0b-6ca9505841d3-Untitled.png" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="erp作业价绍"><a class="header" href="#erp作业价绍">ERP作业价绍</a></h1>
+<h2 id="标题"><a class="header" href="#标题">标题</a></h2>
+<h2 id="菜单区"><a class="header" href="#菜单区">菜单区</a></h2>
+<h2 id="状态栏"><a class="header" href="#状态栏">状态栏</a></h2>
+<h2 id="弹窗"><a class="header" href="#弹窗">弹窗</a></h2>
+<h1 id="模组与作业编号"><a class="header" href="#模组与作业编号">模组与作业编号</a></h1>
+<h2 id="模组"><a class="header" href="#模组">模组</a></h2>
+<h2 id="作业编号"><a class="header" href="#作业编号">作业编号</a></h2>
+<h2 id="查询作业"><a class="header" href="#查询作业">查询作业</a></h2>
+<h1 id="作业类型"><a class="header" href="#作业类型">作业类型</a></h1>
+<h2 id="t交易作业"><a class="header" href="#t交易作业">T—交易作业</a></h2>
+<h2 id="i基础资料维护作业"><a class="header" href="#i基础资料维护作业">I—基础资料维护作业</a></h2>
+<h2 id="q查询作业"><a class="header" href="#q查询作业">Q—查询作业</a></h2>
+<h2 id="r打印作业"><a class="header" href="#r打印作业">R—打印作业</a></h2>
+<h2 id="s参数作业"><a class="header" href="#s参数作业">S—参数作业</a></h2>
+<h2 id="p批量作业"><a class="header" href="#p批量作业">P—批量作业</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="首页功能介绍"><a class="header" href="#首页功能介绍">首页功能介绍</a></h1>
+<h2 id="菜单"><a class="header" href="#菜单">菜单</a></h2>
+<h2 id="修改密码"><a class="header" href="#修改密码">修改密码</a></h2>
+<h2 id="我的最爱"><a class="header" href="#我的最爱">我的最爱</a></h2>
+<h2 id="常用程序"><a class="header" href="#常用程序">常用程序</a></h2>
+<h2 id="帮助文档"><a class="header" href="#帮助文档">帮助文档</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="运行程序的几种方式"><a class="header" href="#运行程序的几种方式">运行程序的几种方式</a></h1>
+<h2 id="首页输入作业编号"><a class="header" href="#首页输入作业编号">首页输入作业编号</a></h2>
+<p>我的最爱</p>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h2 id="开窗录入查询条件"><a class="header" href="#开窗录入查询条件">开窗录入查询条件</a></h2>
+<h2 id="模糊查询"><a class="header" href="#模糊查询">模糊查询</a></h2>
+<h3 id="匹配任意一个字符"><a class="header" href="#匹配任意一个字符">匹配任意一个字符</a></h3>
+<h3 id="匹配任意多个字符"><a class="header" href="#匹配任意多个字符">匹配任意多个字符</a></h3>
+<h3 id="比较大小"><a class="header" href="#比较大小">比较大小</a></h3>
+<h3 id="日期范围"><a class="header" href="#日期范围">日期范围</a></h3>
+<h3 id="不等于某个值"><a class="header" href="#不等于某个值">不等于某个值</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="开窗录入"><a class="header" href="#开窗录入">开窗录入</a></h2>
+<h2 id="必要字段检查"><a class="header" href="#必要字段检查">必要字段检查</a></h2>
+<h2 id="复制上笔单身"><a class="header" href="#复制上笔单身">复制上笔单身</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="保证字段顺序一致"><a class="header" href="#保证字段顺序一致">保证字段顺序一致</a></h2>
+<h2 id="有下拉框栏位无法excel导入"><a class="header" href="#有下拉框栏位无法excel导入">有下拉框栏位无法excel导入</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="默认浏览器设置"><a class="header" href="#默认浏览器设置">默认浏览器设置</a></h2>
+<h2 id="强制使用ie浏览器"><a class="header" href="#强制使用ie浏览器">强制使用IE浏览器</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="查询"><a class="header" href="#查询">查询</a></h2>
+<h2 id="录入"><a class="header" href="#录入">录入</a></h2>
+<h2 id="修改"><a class="header" href="#修改">修改</a></h2>
+<h2 id="删除"><a class="header" href="#删除">删除</a></h2>
+<h2 id="下一个栏位"><a class="header" href="#下一个栏位">下一个栏位</a></h2>
+<h2 id="确定"><a class="header" href="#确定">确定</a></h2>
+<h2 id="取消"><a class="header" href="#取消">取消</a></h2>
+<h2 id="开窗"><a class="header" href="#开窗">开窗</a></h2>
+<h2 id="选择"><a class="header" href="#选择">选择</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h2 id="什么是料件"><a class="header" href="#什么是料件">什么是料件</a></h2>
+<p>料件是企业在生产、经营过程中用到的材料、物品的总称。</p>
+<p>根据用途分为以下几类：原材料（生产用到的材料）、半成品（生产过程中的中间物）、成品（生产的最终产品）和其它（办公用品、备品、固定资产等不直接参与生产的料件）。</p>
+<p>在ERP几乎每一个模块中都会使用到料件，采购、销售、财务会计、生产、库存管理、产品设计等都是围绕料件而产生的管理活动。</p>
+<div style="break-before: page; page-break-before: always;"></div><p>对于设计人员，在ERP中最终产出物是产品的BOM与工艺资料。</p>
+<p>我们最先知道是成品料件的属性，然后要确认生产此成品需要用到那些原材料，并设计合理的BOM结构与工艺路线。</p>
+<h1 id="基础资料"><a class="header" href="#基础资料">基础资料</a></h1>
+<p><img src="c6229330/010c9262/0df90706/image/6cbb76a9-7129-4f5a-b6f5-72b0ec898014-Untitled.png" alt="6cbb76a9-7129-4f5a-b6f5-72b0ec898014-Untitled.png" /></p>
+<p>新增一笔料件，需要维护相当多的参数条件，所以我们将同类的料件归类，建立统一的分群码。如油墨、干膜等。同一个分群码的料件拥有相同的属性，可能单位一致、名称类似、仓库相同、甚至保质期相同。</p>
+<h2 id="分群码-aimi110"><a class="header" href="#分群码-aimi110">分群码-<em>aimi110</em></a></h2>
+<p><img src="c6229330/010c9262/0df90706/image/9ab04730-e82c-4c48-9ed2-a2aa28f9c2f0-Untitled.png" alt="9ab04730-e82c-4c48-9ed2-a2aa28f9c2f0-Untitled.png" /></p>
+<p>如果新增分群码，我们要确认以上栏位是否设置正确，因为之后此分群码料件的默认参数将由此作业带出。</p>
+<p><img src="c6229330/010c9262/0df90706/image/a10330ba-fcb5-4c69-b44b-d97a6a9a2108-Untitled.png" alt="a10330ba-fcb5-4c69-b44b-d97a6a9a2108-Untitled.png" /></p>
+<p><strong>分群码和料件的会计科目、发出商品科目由财务提供，请勿随意修改。</strong></p>
+<h2 id="料件基础资料-aimi100"><a class="header" href="#料件基础资料-aimi100">料件基础资料-<em>aimi</em><em><strong>100</strong></em></a></h2>
+<p><img src="c6229330/010c9262/0df90706/image/59f6f5c5-7a39-42a2-b850-cab957c25fc7-Untitled.png" alt="59f6f5c5-7a39-42a2-b850-cab957c25fc7-Untitled.png" /></p>
+<p>料件除了分群码还有一个来源码，来源码用来区分此料件会通过什么方式入库，主要使用一下三种：</p>
+<ul>
+<li>
+<p>P:采购料件：料件只会通过采购入库方式入库</p>
+</li>
+<li>
+<p>S:委外加工料件：料件会通过委外采购、工单自制的方式入库</p>
+</li>
+<li>
+<p>M:自制料件：料件会通过工单自制的方式入库，也允许采购入库方式入库</p>
+</li>
+</ul>
+<p><img src="c6229330/010c9262/0df90706/image/f06d0d27-9065-4ced-9bde-f975e1d5f2bd-Untitled.png" alt="f06d0d27-9065-4ced-9bde-f975e1d5f2bd-Untitled.png" /></p>
+<p><img src="c6229330/010c9262/0df90706/image/08b3c3b5-dca0-47dd-8e7f-c98bf702ed25-Untitled.png" alt="08b3c3b5-dca0-47dd-8e7f-c98bf702ed25-Untitled.png" /></p>
+<p>停产和停用标记分表标记料件的不同状态、可以通过此状态限制物料哪些操作不可用，<em><strong>aimi115</strong></em>此作业可以整批管理料件停产、停用状态：</p>
+<ul>
+<li>
+<p>预计停产否：不可采购、自制料件不可开立工单</p>
+</li>
+<li>
+<p>设计停用：不可建立BOM、不可建立工艺资料</p>
+</li>
+</ul>
+<h2 id="单位换算管理"><a class="header" href="#单位换算管理">单位换算管理</a></h2>
+<p>特殊料件可能需要多个单位，如油墨，再采购时使用KG，但在工单中，因为KG单位太大，小数位数太长，所以可能同时使用G作为生产单位。</p>
+<h3 id="aooi102-通用单位换算管理"><a class="header" href="#aooi102-通用单位换算管理">***aooi102 ***<strong>通用单位换算管理</strong></a></h3>
+<p><img src="c6229330/010c9262/0df90706/image/e9e1f82d-cdbf-468f-98e4-5b91ee0858c1-Untitled.png" alt="e9e1f82d-cdbf-468f-98e4-5b91ee0858c1-Untitled.png" /></p>
+<p>在此作业中，可以维护通用的单位换算，如1KG=1000G，1L=1000ML。</p>
+<h3 id="aooi103-料件单位换算管理"><a class="header" href="#aooi103-料件单位换算管理"><em><strong>aooi103</strong></em>** 料件单位换算管理**</a></h3>
+<p><img src="c6229330/010c9262/0df90706/image/1824e02f-2d00-4384-9895-4f4e17ce848e-Untitled.png" alt="1824e02f-2d00-4384-9895-4f4e17ce848e-Untitled.png" /></p>
+<p>如果某些特殊料件，单位换算不固定，如1瓶=2KG，1卷=500PCS。可以在此作业中根据料件维护单位换算关系。</p>
+<h1 id="生产资料维护"><a class="header" href="#生产资料维护">生产资料维护</a></h1>
+<h2 id="分群码维护-aimi112"><a class="header" href="#分群码维护-aimi112">分群码维护-<em>aimi112</em></a></h2>
+<p><img src="c6229330/010c9262/0df90706/image/755b2f85-547f-4240-8169-f6502111a0a5-Untitled.png" alt="755b2f85-547f-4240-8169-f6502111a0a5-Untitled.png" /></p>
+<p><img src="c6229330/010c9262/0df90706/image/ea7888a4-5d22-4e79-a00f-3e2b8b35f2cf-Untitled.png" alt="ea7888a4-5d22-4e79-a00f-3e2b8b35f2cf-Untitled.png" /></p>
+<p>在此作业中，可以按照分群码设置一类料件的默认生产参数。</p>
+<ul>
+<li>
+<p><strong>消耗性料件</strong>：勾选后入库后倒扣料</p>
+</li>
+<li>
+<p><strong>生产单位</strong>：BOM默认单位（与库存单位不同时，要先维护好单位换算率）</p>
+</li>
+<li>
+<p><strong>生产单位批量</strong>：每次最少生产的批量</p>
+</li>
+<li>
+<p><strong>最少生产数量</strong>：每次最少生产的数量</p>
+</li>
+<li>
+<p><strong>生产时损耗率</strong>：生产时的默认损耗率</p>
+</li>
+<li>
+<p><strong>发料单位</strong>：工单发料时的默认单位</p>
+</li>
+<li>
+<p><strong>发料单位批量</strong>：每次最少发料的批量</p>
+</li>
+<li>
+<p><strong>最少发料批量</strong>：每次最少发料的数量</p>
+</li>
+</ul>
+<h2 id="生管资料维护-aimi104"><a class="header" href="#生管资料维护-aimi104">生管资料维护-<em>aimi104</em></a></h2>
+<p><img src="c6229330/010c9262/0df90706/image/441743aa-74de-49ba-8960-f722b18fbed5-Untitled.png" alt="441743aa-74de-49ba-8960-f722b18fbed5-Untitled.png" /></p>
+<p>当然还可以在此作业根据料件维护生产参数。</p>
+<h1 id="bom资料维护"><a class="header" href="#bom资料维护">BOM资料维护</a></h1>
+<p><img src="c6229330/010c9262/0df90706/image/0c059525-a0f9-4d1b-9e7c-dcdd60e297cd-Untitled.png" alt="0c059525-a0f9-4d1b-9e7c-dcdd60e297cd-Untitled.png" /></p>
+<p>BOM是由主键料号和元件料号组成的层级结构。其中主键料号是成品或半成品、元件料号是半成品或原材料。</p>
+<h2 id="新增bom资料-abmi600"><a class="header" href="#新增bom资料-abmi600">新增BOM资料-<em>abmi600</em></a></h2>
+<p>建立BOM资料时，既可以由原材料向上设计，也可以由成品向下设计。</p>
+<p><img src="c6229330/010c9262/0df90706/image/3a469204-6796-4a69-a931-7dd935d23b06-Untitled.png" alt="3a469204-6796-4a69-a931-7dd935d23b06-Untitled.png" /></p>
+<p>BOM中可以维护的参数有：</p>
+<ul>
+<li>
+<p><strong>作业编号</strong>：作业编号对应工艺资料中的作业编号，维护此编号来确认工艺中每步需要发料的料号</p>
+</li>
+<li>
+<p><strong>组成用来、主键底数</strong>：每个成品数量（生产单位）需要用组成用量/主键底数个元件料号。</p>
+</li>
+<li>
+<p><strong>损耗率</strong>：每次生产时损耗的原件比例，最终需要的元件数量为 生产套数*（1+损耗率）*组成用量/主键底数</p>
+</li>
+<li>
+<p><strong>工单展开选项</strong>：</p>
+<ul>
+<li>
+<p>**不展开：**不展开，如果是半成品，则展开到半成品就结束</p>
+</li>
+<li>
+<p>**不展开但自动开立工单：**母工单展开到半成品，然后开立半成品的子工单</p>
+</li>
+<li>
+<p>**展开：**自动将半成品的BOM展开到母工单</p>
+</li>
+<li>
+<p>**开窗询问是否展开：**有用户选择是否展开</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>BOM中的消耗特性会影响工单中的元件是否是消耗性料件。</strong></p>
+<h2 id="取替代料维护-abmi6042"><a class="header" href="#取替代料维护-abmi6042">取替代料维护-<em>abmi6042</em></a></h2>
+<p><img src="c6229330/010c9262/0df90706/image/e30cff2f-e88a-46dd-8eff-9458a235f7ea-Untitled.png" alt="e30cff2f-e88a-46dd-8eff-9458a235f7ea-Untitled.png" /></p>
+<p>如果某些元件料号不再使用了，先采购进一批新的料号，但库存中仍存在旧的元件，这个时候就需要维护取替代关系，让仓库将合适的料号发出。</p>
+<p>在此作业中，可以维护某个主键料号下的某个元件料号可以用哪个元件取替代，维护好之后，在工单之中就可以灵活将此元件取替换为想要更换的原件。</p>
+<ul>
+<li>
+<p><strong>取代</strong>：副料替代主料，默认优先发副料</p>
+</li>
+<li>
+<p><strong>替代</strong>：旧料取代新料，默认有限发新料</p>
+</li>
+</ul>
+<h2 id="bom变更-abmi720"><a class="header" href="#bom变更-abmi720">BOM变更-<em>abmi720</em></a></h2>
+<p><img src="c6229330/010c9262/0df90706/image/f30b5e06-7a4f-4fc9-a5fa-4cf1922bdac5-Untitled.png" alt="f30b5e06-7a4f-4fc9-a5fa-4cf1922bdac5-Untitled.png" /></p>
+<p>BOM的主键料号在已开立工单之后，就不允许还原了。所以当有某些内容需要修改的时候，需要用到BOM变更，BOM变更只能审核发放，不能取消。当做了错误的资料，需要再继续做一张变更单，重新变更为正确的资料。</p>
+<h1 id="工艺资料维护"><a class="header" href="#工艺资料维护">工艺资料维护</a></h1>
+<p><img src="c6229330/010c9262/0df90706/image/a3484143-29ee-4608-9204-50ba8a147c50-Untitled.png" alt="a3484143-29ee-4608-9204-50ba8a147c50-Untitled.png" /></p>
+<p>工艺资料不是生产的必要资料，但是如果要管控生产中每个步骤的明细，工艺是必要的基础资料。工艺资料与BOM是一一对应的。</p>
+<p>工艺资料是由BOM的主键料号+工艺编号进行维护的。</p>
+<h2 id="作业编号维护-aeci620"><a class="header" href="#作业编号维护-aeci620">作业编号维护-<em>aeci620</em></a></h2>
+<p>工艺资料就是由多个作业编号组合起来的流程资料。</p>
+<p><img src="c6229330/010c9262/0df90706/image/48510fe2-467c-406d-953e-357e4c6e43f2-Untitled.png" alt="48510fe2-467c-406d-953e-357e4c6e43f2-Untitled.png" /></p>
+<p>在作业编号资料维护中，你可以维护一下参数：</p>
+<ul>
+<li>
+<p><strong>工作站</strong>：每个作业编号都归属于一个工作站，一个工作站包含多个作业编号</p>
+</li>
+<li>
+<p><strong>检验否</strong>：勾选后需要检验</p>
+</li>
+<li>
+<p><strong>报工否</strong>：勾选后需要报工才会到下一道工序</p>
+</li>
+</ul>
+<h2 id="工作站维护-aeci600"><a class="header" href="#工作站维护-aeci600">工作站维护-<em>aeci600</em></a></h2>
+<p><img src="c6229330/010c9262/0df90706/image/cc226174-61c6-4404-aefd-25fdf52199d3-Untitled.png" alt="cc226174-61c6-4404-aefd-25fdf52199d3-Untitled.png" /></p>
+<p>工作站可以在此作业中维护，每个工作站需要归属到一个部门。</p>
+<h2 id="工艺维护-aeci100"><a class="header" href="#工艺维护-aeci100">工艺维护-*aeci100</a></h2>
+<ul>
+<li></li>
+</ul>
+<p><img src="c6229330/010c9262/0df90706/image/a3484143-29ee-4608-9204-50ba8a147c50-Untitled.png" alt="a3484143-29ee-4608-9204-50ba8a147c50-Untitled.png" /></p>
+<h1 id="整批复制与审核"><a class="header" href="#整批复制与审核">整批复制与审核</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="mermaid.min.js"></script>
+        <script src="mermaid-init.js"></script>
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

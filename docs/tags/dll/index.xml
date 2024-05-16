@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Dll - 标签 - DARCY&#39;S BLOG</title>
+        <link>https://darcyjoven.com/tags/dll/</link>
+        <description>Dll - 标签 - DARCY&#39;S BLOG</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</lastBuildDate><atom:link href="https://darcyjoven.com/tags/dll/" rel="self" type="application/rss+xml" /><item>
+    <title>BDL调用dll库</title>
+    <link>https://darcyjoven.com/bdl%D1%9Edll%D1%82/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/bdl%D1%9Edll%D1%82/</guid>
+    <description><![CDATA[fgl BDL调用dll库 MAC 和LINUX 原则上都支持 .dyLib 和 .so 都支持，因为用户较少所以未测试。 利用vs开发 在新建项目中选择此项 新增头文件 文件名随意，以]]></description>
+</item>
+</channel>
+</rss>

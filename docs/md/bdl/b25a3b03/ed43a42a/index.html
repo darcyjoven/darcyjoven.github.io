@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>画面档类型 - BDL-Guide</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../08d0905d/index.html"><strong aria-hidden="true">1.</strong> 语法介绍</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../08d0905d/210d46ca/index.html"><strong aria-hidden="true">1.1.</strong> 编译运行</a></li><li class="chapter-item "><a href="../../08d0905d/f3895e55/index.html"><strong aria-hidden="true">1.2.</strong> SQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../08d0905d/f3895e55/9982be1f/index.html"><strong aria-hidden="true">1.2.1.</strong> 静态SQL</a></li><li class="chapter-item "><a href="../../08d0905d/f3895e55/2ac3936f/index.html"><strong aria-hidden="true">1.2.2.</strong> 动态SQL</a></li></ol></li><li class="chapter-item "><a href="../../08d0905d/fa0b82fb/index.html"><strong aria-hidden="true">1.3.</strong> 变量</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../08d0905d/fa0b82fb/f9443020/index.html"><strong aria-hidden="true">1.3.1.</strong> 变量类型</a></li><li class="chapter-item "><a href="../../08d0905d/fa0b82fb/8c581a37/index.html"><strong aria-hidden="true">1.3.2.</strong> 变量赋值</a></li></ol></li><li class="chapter-item "><a href="../../08d0905d/5d5f66fc/index.html"><strong aria-hidden="true">1.4.</strong> 函数</a></li><li class="chapter-item "><a href="../../08d0905d/477b7a1b/index.html"><strong aria-hidden="true">1.5.</strong> 流程控制</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../08d0905d/477b7a1b/1afa85de/index.html"><strong aria-hidden="true">1.5.1.</strong> if else</a></li><li class="chapter-item "><a href="../../08d0905d/477b7a1b/6c2e1b1a/index.html"><strong aria-hidden="true">1.5.2.</strong> switch</a></li><li class="chapter-item "><a href="../../08d0905d/477b7a1b/72a6eaca/index.html"><strong aria-hidden="true">1.5.3.</strong> while</a></li><li class="chapter-item "><a href="../../08d0905d/477b7a1b/ea8c9c46/index.html"><strong aria-hidden="true">1.5.4.</strong> for</a></li><li class="chapter-item "><a href="../../08d0905d/477b7a1b/7adb1d43/index.html"><strong aria-hidden="true">1.5.5.</strong> try catch</a></li></ol></li><li class="chapter-item "><a href="../../08d0905d/36183291/index.html"><strong aria-hidden="true">1.6.</strong> 模组</a></li></ol></li><li class="chapter-item "><a href="../../b3bbb420/index.html"><strong aria-hidden="true">2.</strong> 画面档介绍</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../b3bbb420/8e8e973c/index.html"><strong aria-hidden="true">2.1.</strong> 编译、预览</a></li><li class="chapter-item "><a href="../../b3bbb420/60da4807/index.html"><strong aria-hidden="true">2.2.</strong> 容器</a></li><li class="chapter-item "><a href="../../b3bbb420/7259760c/index.html"><strong aria-hidden="true">2.3.</strong> 控件</a></li></ol></li><li class="chapter-item expanded "><a href="../../b25a3b03/index.html"><strong aria-hidden="true">3.</strong> 作业类型介绍</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../b25a3b03/ed43a42a/index.html" class="active"><strong aria-hidden="true">3.1.</strong> 画面档类型</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../b25a3b03/ed43a42a/83c0b813/index.html"><strong aria-hidden="true">3.1.1.</strong> 双档</a></li><li class="chapter-item "><a href="../../b25a3b03/ed43a42a/2de69b75/index.html"><strong aria-hidden="true">3.1.2.</strong> 单档</a></li></ol></li><li class="chapter-item "><a href="../../b25a3b03/87cdc024/index.html"><strong aria-hidden="true">3.2.</strong> 功能类型</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../b25a3b03/87cdc024/d85ec3c1/index.html"><strong aria-hidden="true">3.2.1.</strong> 维护</a></li><li class="chapter-item "><a href="../../b25a3b03/87cdc024/2cebc044/index.html"><strong aria-hidden="true">3.2.2.</strong> 查询</a></li></ol></li><li class="chapter-item "><a href="../../b25a3b03/44a79837/index.html"><strong aria-hidden="true">3.3.</strong> 代码流程</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../b25a3b03/44a79837/a7ed56a1/index.html"><strong aria-hidden="true">3.3.1.</strong> R报表</a></li><li class="chapter-item "><a href="../../b25a3b03/44a79837/4ef1670e/index.html"><strong aria-hidden="true">3.3.2.</strong> Q查询</a></li><li class="chapter-item "><a href="../../b25a3b03/44a79837/9ee5ee3e/index.html"><strong aria-hidden="true">3.3.3.</strong> I单档</a></li><li class="chapter-item "><a href="../../b25a3b03/44a79837/3c5a5ea7/index.html"><strong aria-hidden="true">3.3.4.</strong> T双档</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../ba16ad5d/index.html"><strong aria-hidden="true">4.</strong> 开发流程</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ba16ad5d/20623600/index.html"><strong aria-hidden="true">4.1.</strong> 注册</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ba16ad5d/20623600/83d37a77/index.html"><strong aria-hidden="true">4.1.1.</strong> p_link</a></li><li class="chapter-item "><a href="../../ba16ad5d/20623600/1733ad66/index.html"><strong aria-hidden="true">4.1.2.</strong> p_zz</a></li></ol></li><li class="chapter-item "><a href="../../ba16ad5d/9a408164/index.html"><strong aria-hidden="true">4.2.</strong> 资料维护</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ba16ad5d/9a408164/86f78930/index.html"><strong aria-hidden="true">4.2.1.</strong> p_base_action</a></li><li class="chapter-item "><a href="../../ba16ad5d/9a408164/ada30507/index.html"><strong aria-hidden="true">4.2.2.</strong> p_per</a></li></ol></li><li class="chapter-item "><a href="../../ba16ad5d/469372f7/index.html"><strong aria-hidden="true">4.3.</strong> 编译链接 </a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ba16ad5d/469372f7/0ab10771/index.html"><strong aria-hidden="true">4.3.1.</strong> 画面档</a></li><li class="chapter-item "><a href="../../ba16ad5d/469372f7/b70c421f/index.html"><strong aria-hidden="true">4.3.2.</strong> 代码</a></li></ol></li><li class="chapter-item "><a href="../../ba16ad5d/9faa726c/index.html"><strong aria-hidden="true">4.4.</strong> 测试</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ba16ad5d/9faa726c/52996041/index.html"><strong aria-hidden="true">4.4.1.</strong> DEBUG</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">BDL-Guide</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../b25a3b03/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../b25a3b03/ed43a42a/83c0b813/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../b25a3b03/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../b25a3b03/ed43a42a/83c0b813/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

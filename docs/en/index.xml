@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>DARCY&#39;S BLOG</title>
+        <link>https://darcyjoven.com/en/</link>
+        <description>darcy&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate>
+            <atom:link href="https://darcyjoven.com/en/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>

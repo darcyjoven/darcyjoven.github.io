@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - 标签 - DARCY&#39;S BLOG</title>
+        <link>https://darcyjoven.com/tags/</link>
+        <description>Tags - 标签 - DARCY&#39;S BLOG</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 12 Dec 2023 08:15:00 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Debug</title>
+    <link>https://darcyjoven.com/tags/debug/</link>
+    <pubDate>Tue, 12 Dec 2023 08:15:00 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/debug/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Erp</title>
+    <link>https://darcyjoven.com/tags/erp/</link>
+    <pubDate>Tue, 12 Dec 2023 08:15:00 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/erp/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>T100</title>
+    <link>https://darcyjoven.com/tags/t100/</link>
+    <pubDate>Tue, 12 Dec 2023 08:15:00 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/t100/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Tiptop Gp</title>
+    <link>https://darcyjoven.com/tags/tiptop-gp/</link>
+    <pubDate>Tue, 12 Dec 2023 08:15:00 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/tiptop-gp/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Bdl</title>
+    <link>https://darcyjoven.com/tags/bdl/</link>
+    <pubDate>Tue, 12 Dec 2023 05:31:00 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/bdl/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>运维</title>
+    <link>https://darcyjoven.com/tags/%E8%BF%90%E7%BB%B4/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:23 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/%E8%BF%90%E7%BB%B4/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>C语言</title>
+    <link>https://darcyjoven.com/tags/c%E8%AF%AD%E8%A8%80/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:22 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/c%E8%AF%AD%E8%A8%80/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Linux</title>
+    <link>https://darcyjoven.com/tags/linux/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:22 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/linux/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Dll</title>
+    <link>https://darcyjoven.com/tags/dll/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/dll/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Golang</title>
+    <link>https://darcyjoven.com/tags/golang/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tags/golang/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

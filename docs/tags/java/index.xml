@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Java - 标签 - DARCY&#39;S BLOG</title>
+        <link>https://darcyjoven.com/tags/java/</link>
+        <description>Java - 标签 - DARCY&#39;S BLOG</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</lastBuildDate><atom:link href="https://darcyjoven.com/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>fgl bdl语言集成java包</title>
+    <link>https://darcyjoven.com/fgl-bdl%D1%8F%D0%BFjava/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/fgl-bdl%D1%8F%D0%BFjava/</guid>
+    <description><![CDATA[fgl bdl语言集成java包 确保java包版本和服务器jre版本一致 java -version 用静态类的方法返回值 bdl不支持面向对象编程（新版本支持单功能单一），]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,48 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>ERP问题 - 分类 - DARCY&#39;S BLOG</title>
+        <link>https://darcyjoven.com/categories/erp%E9%97%AE%E9%A2%98/</link>
+        <description>ERP问题 - 分类 - DARCY&#39;S BLOG</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 12 Dec 2023 08:15:00 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/categories/erp%E9%97%AE%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+    <title>如何DEBUG TIPTOP ERP作业</title>
+    <link>https://darcyjoven.com/debug-in-tiptop/</link>
+    <pubDate>Tue, 12 Dec 2023 08:15:00 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/debug-in-tiptop/</guid>
+    <description><![CDATA[如何DEBUG TIPTOP ERP作业 是否有权限DEBUG debug需要tiptop账号，如果你没有tiptop账号登陆权限，则无法debug erp作业]]></description>
+</item>
+<item>
+    <title>接口的DEBUG</title>
+    <link>https://darcyjoven.com/debug-in-webservice/</link>
+    <pubDate>Tue, 12 Dec 2023 05:31:00 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/debug-in-webservice/</guid>
+    <description><![CDATA[接口的DEBUG 前提 普通作业的debug你已经会使用，后面会出一篇普通debug的使用。 事先准备 下载可以抛砖测试的api测试软件，如soap]]></description>
+</item>
+<item>
+    <title>ERP网络需求</title>
+    <link>https://darcyjoven.com/erp%D1%87%D1%88%D1%94/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:23 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/erp%D1%87%D1%88%D1%94/</guid>
+    <description><![CDATA[VPN和内部的网络访问只能是路由或是交换的方式，不能做NAT 客户端telnet到服务器后，在服务器端通过 echo $FGLSERVER 指令可以看到客户端VPN的IP 从]]></description>
+</item>
+<item>
+    <title>磁盘空间不足无法复制账套解决</title>
+    <link>https://darcyjoven.com/%D1%84%D1%83%D0%B8%D1%82%D1%9E/</link>
+    <pubDate>Thu, 16 Nov 2023 14:30:06 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/%D1%84%D1%83%D0%B8%D1%82%D1%9E/</guid>
+    <description><![CDATA[u1磁盘空间不足导致复制账套失败 情况适用于以下情况： 复制账套时，报错 EXP-00002: error in writing to export file 最后导出失败 如何判断是否是磁盘空间不足的2种方法 重新运行一]]></description>
+</item>
+<item>
+    <title>tiptop 效能排查</title>
+    <link>https://darcyjoven.com/tiptop-%D0%B7%D1%89/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:02 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tiptop-%D0%B7%D1%89/</guid>
+    <description><![CDATA[环境变量FGLSQLDEBUG 此环境变量，控制运行程序时，后台显示日期的等级。 最高等级为9，取消设置命令为unset FGLSQLDEBUG 将环境变量设置为9 后，]]></description>
+</item>
+</channel>
+</rss>

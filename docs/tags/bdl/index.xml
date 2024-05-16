@@ -1,0 +1,72 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Bdl - 标签 - DARCY&#39;S BLOG</title>
+        <link>https://darcyjoven.com/tags/bdl/</link>
+        <description>Bdl - 标签 - DARCY&#39;S BLOG</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 12 Dec 2023 05:31:00 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/tags/bdl/" rel="self" type="application/rss+xml" /><item>
+    <title>接口的DEBUG</title>
+    <link>https://darcyjoven.com/debug-in-webservice/</link>
+    <pubDate>Tue, 12 Dec 2023 05:31:00 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/debug-in-webservice/</guid>
+    <description><![CDATA[接口的DEBUG 前提 普通作业的debug你已经会使用，后面会出一篇普通debug的使用。 事先准备 下载可以抛砖测试的api测试软件，如soap]]></description>
+</item>
+<item>
+    <title>BDL调用C语言动态库.so</title>
+    <link>https://darcyjoven.com/bdl%D1%9Ec%D1%8F%D0%BF%D0%BC%D1%82.so/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:22 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/bdl%D1%9Ec%D1%8F%D0%BF%D0%BC%D1%82.so/</guid>
+    <description><![CDATA[引入fglExt.h头文件 fglExt.h 在$FGLDIR/include/f2c目录下，我们需要用到暴露函数的结构体UsrFunction和出栈popv]]></description>
+</item>
+<item>
+    <title>BDL调用dll库</title>
+    <link>https://darcyjoven.com/bdl%D1%9Edll%D1%82/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/bdl%D1%9Edll%D1%82/</guid>
+    <description><![CDATA[fgl BDL调用dll库 MAC 和LINUX 原则上都支持 .dyLib 和 .so 都支持，因为用户较少所以未测试。 利用vs开发 在新建项目中选择此项 新增头文件 文件名随意，以]]></description>
+</item>
+<item>
+    <title>效能常规处理流程</title>
+    <link>https://darcyjoven.com/%D0%B7%D0%B3%D1%86%D0%B6%D1%8D%D1%9E/</link>
+    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/%D0%B7%D0%B3%D1%86%D0%B6%D1%8D%D1%9E/</guid>
+    <description><![CDATA[效能常规处理方法 大量作业都卡顿 当客户反馈所有作业都卡顿时，应当先检查服务器得基本状态，并保留截图，以便后面反馈给SE。 可检查得项目如下： 表空]]></description>
+</item>
+<item>
+    <title>新增BLOG</title>
+    <link>https://darcyjoven.com/%D1%9Eblog/</link>
+    <pubDate>Thu, 16 Nov 2023 14:30:06 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/%D1%9Eblog/</guid>
+    <description><![CDATA[引入fglExt.h头文件 fglExt.h 在$FGLDIR/include/f2c目录下，我们需要用到暴露函数的结构体UsrFunction和出栈popv]]></description>
+</item>
+<item>
+    <title>ERP（TIPTOP）对象命名规则</title>
+    <link>https://darcyjoven.com/erp%D0%B3%D0%B8tiptop%D0%B3%D0%B9%D1%94%D1%86%D1%94/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:27 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/erp%D0%B3%D0%B8tiptop%D0%B3%D0%B9%D1%94%D1%86%D1%94/</guid>
+    <description><![CDATA[模组清单 模组看起来很多，常用的只有下面几个： AAP 应付账款 ABM 产品结构系统 产品BOM结构 AEC 工艺与工作站系统 产品的工艺资料 AGL 总账会计 AIM 库存料件资料管]]></description>
+</item>
+<item>
+    <title>tiptop gp 常用的函数和编程方式</title>
+    <link>https://darcyjoven.com/tiptop-gp-%D0%B3%D0%BF%D1%80/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:02 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tiptop-gp-%D0%B3%D0%BF%D1%80/</guid>
+    <description><![CDATA[excel汇入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 DEFINE xlapp INTEGER DEFINE xlwb INTEGER]]></description>
+</item>
+<item>
+    <title>tiptop 效能排查</title>
+    <link>https://darcyjoven.com/tiptop-%D0%B7%D1%89/</link>
+    <pubDate>Thu, 16 Nov 2023 10:34:02 &#43;0800</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/tiptop-%D0%B7%D1%89/</guid>
+    <description><![CDATA[环境变量FGLSQLDEBUG 此环境变量，控制运行程序时，后台显示日期的等级。 最高等级为9，取消设置命令为unset FGLSQLDEBUG 将环境变量设置为9 后，]]></description>
+</item>
+</channel>
+</rss>
