@@ -4,7 +4,15 @@
         <link>https://darcyjoven.com/posts/</link>
         <description>所有文章 | DARCY&#39;S BLOG</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
-            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 12 Dec 2023 08:15:00 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 May 2024 00:12:40 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>BDL部分开发问题</title>
+    <link>https://darcyjoven.com/eecc3b2c/</link>
+    <pubDate>Fri, 17 May 2024 00:12:40 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/eecc3b2c/</guid>
+    <description><![CDATA[DISPLAY 触发不了 DEFORE DISPLAY问题 利用page 标签 action 属性触发 主动触发row change 1 2 3 IF g_sfdc_d[l_ac].sfdc005 != g_sfdc_d_o.sfdc005 END IF CALL DIALOG.setFieldTouched(&#34;s_detail2.*&#34;, TRUE) END IF 修改部分字体大小 找到4st文件目录，此文]]></description>
+</item>
+<item>
     <title>如何DEBUG TIPTOP ERP作业</title>
     <link>https://darcyjoven.com/debug-in-tiptop/</link>
     <pubDate>Tue, 12 Dec 2023 08:15:00 &#43;0000</pubDate>
@@ -75,14 +83,6 @@
     <author>darcy</author>
     <guid>https://darcyjoven.com/%D1%84%D1%83%D0%B8%D1%82%D1%9E/</guid>
     <description><![CDATA[u1磁盘空间不足导致复制账套失败 情况适用于以下情况： 复制账套时，报错 EXP-00002: error in writing to export file 最后导出失败 如何判断是否是磁盘空间不足的2种方法 重新运行一]]></description>
-</item>
-<item>
-    <title>新增BLOG</title>
-    <link>https://darcyjoven.com/%D1%9Eblog/</link>
-    <pubDate>Thu, 16 Nov 2023 14:30:06 &#43;0800</pubDate>
-    <author>darcy</author>
-    <guid>https://darcyjoven.com/%D1%9Eblog/</guid>
-    <description><![CDATA[引入fglExt.h头文件 fglExt.h 在$FGLDIR/include/f2c目录下，我们需要用到暴露函数的结构体UsrFunction和出栈popv]]></description>
 </item>
 </channel>
 </rss>

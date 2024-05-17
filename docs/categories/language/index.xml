@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Language - 分类 - DARCY&#39;S BLOG</title>
+        <link>https://darcyjoven.com/categories/language/</link>
+        <description>Language - 分类 - DARCY&#39;S BLOG</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 May 2024 00:12:40 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/categories/language/" rel="self" type="application/rss+xml" /><item>
+    <title>BDL部分开发问题</title>
+    <link>https://darcyjoven.com/eecc3b2c/</link>
+    <pubDate>Fri, 17 May 2024 00:12:40 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/eecc3b2c/</guid>
+    <description><![CDATA[DISPLAY 触发不了 DEFORE DISPLAY问题 利用page 标签 action 属性触发 主动触发row change 1 2 3 IF g_sfdc_d[l_ac].sfdc005 != g_sfdc_d_o.sfdc005 END IF CALL DIALOG.setFieldTouched(&#34;s_detail2.*&#34;, TRUE) END IF 修改部分字体大小 找到4st文件目录，此文]]></description>
+</item>
+</channel>
+</rss>

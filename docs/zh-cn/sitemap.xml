@@ -2,7 +2,9 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://darcyjoven.com/categories/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://darcyjoven.com/tags/bdl/</loc><lastmod>2024-05-17T01:00:04&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/eecc3b2c/</loc><lastmod>2024-05-17T01:00:04&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/categories/</loc><lastmod>2024-05-17T01:00:04&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://darcyjoven.com/en/categories/"
@@ -11,7 +13,7 @@
                     hreflang="zh-cn"
                     href="https://darcyjoven.com/categories/"
                     /></url><url>
-            <loc>https://darcyjoven.com/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://darcyjoven.com/</loc><lastmod>2024-05-17T01:00:04&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://darcyjoven.com/en/"
@@ -20,12 +22,9 @@
                     hreflang="zh-cn"
                     href="https://darcyjoven.com/"
                     /></url><url>
-            <loc>https://darcyjoven.com/tags/debug/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://darcyjoven.com/tags/erp/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://darcyjoven.com/categories/erp%E9%97%AE%E9%A2%98/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://darcyjoven.com/posts/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://darcyjoven.com/tags/t100/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://darcyjoven.com/tags/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://darcyjoven.com/categories/language/</loc><lastmod>2024-05-17T01:00:04&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/posts/</loc><lastmod>2024-05-17T01:00:04&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/tags/</loc><lastmod>2024-05-17T01:00:04&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://darcyjoven.com/en/tags/"
@@ -34,9 +33,13 @@
                     hreflang="zh-cn"
                     href="https://darcyjoven.com/tags/"
                     /></url><url>
-            <loc>https://darcyjoven.com/tags/tiptop-gp/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://darcyjoven.com/debug-in-tiptop/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://darcyjoven.com/tags/bdl/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/tags/tiptop/</loc><lastmod>2024-05-17T01:00:04&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/tags/debug/</loc><lastmod>2024-05-16T06:28:03&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/tags/erp/</loc><lastmod>2024-05-16T06:28:03&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/categories/erp%E9%97%AE%E9%A2%98/</loc><lastmod>2024-05-16T06:28:03&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/tags/t100/</loc><lastmod>2024-05-16T06:28:03&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/tags/tiptop-gp/</loc><lastmod>2024-05-16T06:28:03&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://darcyjoven.com/debug-in-tiptop/</loc><lastmod>2024-05-16T06:28:03&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://darcyjoven.com/debug-in-webservice/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://darcyjoven.com/erp%D1%87%D1%88%D1%94/</loc><lastmod>2023-11-16T15:30:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://darcyjoven.com/tags/%E8%BF%90%E7%BB%B4/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
