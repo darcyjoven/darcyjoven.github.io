@@ -2,7 +2,7 @@
 # 提交信息commit
 current_time=$(date "+%Y-%m-%d %H:%M:%S")
 commit_msg="日常提交(时间:$current_time)"
-echo $commit_msg
+echo -e "\033[1;32m开始push $commit_msg...\033[0m"
 
 # add
 
