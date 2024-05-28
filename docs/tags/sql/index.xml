@@ -1,10 +1,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Sql - 标签 - DARCY&#39;S BLOG</title>
+        <title>SQL - 标签 - DARCY&#39;S BLOG</title>
         <link>https://darcyjoven.com/tags/sql/</link>
-        <description>Sql - 标签 - DARCY&#39;S BLOG</description>
+        <description>SQL - 标签 - DARCY&#39;S BLOG</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
-            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</lastBuildDate><atom:link href="https://darcyjoven.com/tags/sql/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 May 2024 08:08:47 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/tags/sql/" rel="self" type="application/rss+xml" /><item>
+    <title>ORACLE常用函数-进阶</title>
+    <link>https://darcyjoven.com/b8cae126/</link>
+    <pubDate>Tue, 28 May 2024 08:08:47 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/b8cae126/</guid>
+    <description><![CDATA[pivot 函数,列转行 1 2 3 4 5 6 7 8 9 10 11 WITH a AS (SELECT &#39;darcy&#39; na, &#39;语文&#39; ke, 23 score FROM dual), b AS (SELECT &#39;tom&#39;, &#39;语文&#39;, 23 FROM dual), c AS (SELECT &#39;darcy&#39;, &#39;]]></description>
+</item>
+<item>
     <title>效能常规处理流程</title>
     <link>https://darcyjoven.com/%D0%B7%D0%B3%D1%86%D0%B6%D1%8D%D1%9E/</link>
     <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>

@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>工艺资料维护 - Help-Docs</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../93cb19e6/index.html"><strong aria-hidden="true">1.</strong> 简介</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../93cb19e6/c0905e16/index.html"><strong aria-hidden="true">1.1.</strong> ERP概述</a></li><li class="chapter-item expanded "><a href="../../93cb19e6/6d1a811d/index.html"><strong aria-hidden="true">1.2.</strong> 目标用户与目的</a></li><li class="chapter-item expanded "><a href="../../93cb19e6/b3fb7a82/index.html"><strong aria-hidden="true">1.3.</strong> 系统基本要求与访问方式</a></li><li class="chapter-item expanded "><a href="../../93cb19e6/d8455f68/index.html"><strong aria-hidden="true">1.4.</strong> ERP登陆与账号管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../93cb19e6/d8455f68/6e26a138/index.html"><strong aria-hidden="true">1.4.1.</strong> 账号管理</a></li><li class="chapter-item expanded "><a href="../../93cb19e6/d8455f68/5e5a1241/index.html"><strong aria-hidden="true">1.4.2.</strong> ERP登陆</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../672842d4/index.html"><strong aria-hidden="true">2.</strong> 快速上手</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../672842d4/5c9c888b/index.html"><strong aria-hidden="true">2.1.</strong> 基本导航</a></li><li class="chapter-item expanded "><a href="../../672842d4/fe086ec3/index.html"><strong aria-hidden="true">2.2.</strong> 常用术语解释</a></li><li class="chapter-item expanded "><a href="../../672842d4/0baaa081/index.html"><strong aria-hidden="true">2.3.</strong> 画面介绍</a></li><li class="chapter-item expanded "><a href="../../672842d4/c29ff83e/index.html"><strong aria-hidden="true">2.4.</strong> 联系我们/反馈渠道</a></li><li class="chapter-item expanded "><a href="../../672842d4/6436ba78/index.html"><strong aria-hidden="true">2.5.</strong> 模块作业介绍</a></li></ol></li><li class="chapter-item expanded "><a href="../../9922a4b4/index.html"><strong aria-hidden="true">3.</strong> 常见问题解答（FAQ）</a></li><li class="chapter-item expanded "><a href="../../7b389cca/index.html"><strong aria-hidden="true">4.</strong> 生产模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../7b389cca/d2b8b992/index.html"><strong aria-hidden="true">4.1.</strong> 生产模块概述</a></li><li class="chapter-item expanded "><a href="../../7b389cca/704d3081/index.html"><strong aria-hidden="true">4.2.</strong> 物料管理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../7b389cca/704d3081/046c359f/index.html"><strong aria-hidden="true">4.2.1.</strong> 基础资料</a></li><li class="chapter-item expanded "><a href="../../7b389cca/704d3081/d016da72/index.html"><strong aria-hidden="true">4.2.2.</strong> 生产资料</a></li><li class="chapter-item expanded "><a href="../../7b389cca/704d3081/f85cde94/index.html"><strong aria-hidden="true">4.2.3.</strong> BOM资料维护</a></li></ol></li><li class="chapter-item expanded "><a href="../../7b389cca/fbcbf2dd/index.html" class="active"><strong aria-hidden="true">4.3.</strong> 工艺资料维护</a></li><li class="chapter-item expanded "><a href="../../7b389cca/3ddd4108/index.html"><strong aria-hidden="true">4.4.</strong> 生产工单管理</a></li><li class="chapter-item expanded "><a href="../../7b389cca/418ce95a/index.html"><strong aria-hidden="true">4.5.</strong> 生产追踪</a></li></ol></li><li class="chapter-item expanded "><a href="../../c4698de0/index.html"><strong aria-hidden="true">5.</strong> 采购模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../c4698de0/6169890b/index.html"><strong aria-hidden="true">5.1.</strong> 采购模块概述</a></li><li class="chapter-item expanded "><a href="../../c4698de0/09727da8/index.html"><strong aria-hidden="true">5.2.</strong> 供应商管理</a></li><li class="chapter-item expanded "><a href="../../c4698de0/440f67b8/index.html"><strong aria-hidden="true">5.3.</strong> 采购询价核价</a></li><li class="chapter-item expanded "><a href="../../c4698de0/2431846a/index.html"><strong aria-hidden="true">5.4.</strong> 采购订单处理</a></li></ol></li><li class="chapter-item expanded "><a href="../../fe1a358c/index.html"><strong aria-hidden="true">6.</strong> 销售模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../fe1a358c/ee947885/index.html"><strong aria-hidden="true">6.1.</strong> 销售模块概述</a></li><li class="chapter-item expanded "><a href="../../fe1a358c/74d73cb9/index.html"><strong aria-hidden="true">6.2.</strong> 客户管理</a></li><li class="chapter-item expanded "><a href="../../fe1a358c/54d03c92/index.html"><strong aria-hidden="true">6.3.</strong> 销售核价</a></li><li class="chapter-item expanded "><a href="../../fe1a358c/18a0ff26/index.html"><strong aria-hidden="true">6.4.</strong> 销售订单处理</a></li></ol></li><li class="chapter-item expanded "><a href="../../e91ed851/index.html"><strong aria-hidden="true">7.</strong> 仓库模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../e91ed851/966789f9/index.html"><strong aria-hidden="true">7.1.</strong> 仓库模块概述</a></li><li class="chapter-item expanded "><a href="../../e91ed851/d73e20ae/index.html"><strong aria-hidden="true">7.2.</strong> 库存管理</a></li><li class="chapter-item expanded "><a href="../../e91ed851/ccff855f/index.html"><strong aria-hidden="true">7.3.</strong> 入库与出库管理</a></li><li class="chapter-item expanded "><a href="../../e91ed851/bbe055e0/index.html"><strong aria-hidden="true">7.4.</strong> 仓库报表</a></li><li class="chapter-item expanded "><a href="../../e91ed851/8f872325/index.html"><strong aria-hidden="true">7.5.</strong> 库存盘点</a></li></ol></li><li class="chapter-item expanded "><a href="../../88923740/index.html"><strong aria-hidden="true">8.</strong> 财务模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../88923740/23debb39/index.html"><strong aria-hidden="true">8.1.</strong> 财务模块概述</a></li><li class="chapter-item expanded "><a href="../../88923740/c45679cd/index.html"><strong aria-hidden="true">8.2.</strong> 应付账款</a></li><li class="chapter-item expanded "><a href="../../88923740/a1c0528d/index.html"><strong aria-hidden="true">8.3.</strong> 应收账款</a></li><li class="chapter-item expanded "><a href="../../88923740/3b2d4696/index.html"><strong aria-hidden="true">8.4.</strong> 固资管理</a></li><li class="chapter-item expanded "><a href="../../88923740/190d1899/index.html"><strong aria-hidden="true">8.5.</strong> 成本会计</a></li><li class="chapter-item expanded "><a href="../../88923740/2fa72a10/index.html"><strong aria-hidden="true">8.6.</strong> 总账会计</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Help-Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="工艺资料维护"><a class="header" href="#工艺资料维护">工艺资料维护</a></h1>
+<p><img src="image/a3484143-29ee-4608-9204-50ba8a147c50-Untitled.png" alt="a3484143-29ee-4608-9204-50ba8a147c50-Untitled.png" /></p>
+<p>工艺资料不是生产的必要资料，但是如果要管控生产中每个步骤的明细，工艺是必要的基础资料。工艺资料与BOM是一一对应的。</p>
+<p>工艺资料是由BOM的主键料号+工艺编号进行维护的。</p>
+<h2 id="作业编号维护-aeci620"><a class="header" href="#作业编号维护-aeci620">作业编号维护-<em>aeci620</em></a></h2>
+<p>工艺资料就是由多个作业编号组合起来的流程资料。</p>
+<p><img src="image/48510fe2-467c-406d-953e-357e4c6e43f2-Untitled.png" alt="48510fe2-467c-406d-953e-357e4c6e43f2-Untitled.png" /></p>
+<p>在作业编号资料维护中，你可以维护一下参数：</p>
+<ul>
+<li>
+<p><strong>工作站</strong>：每个作业编号都归属于一个工作站，一个工作站包含多个作业编号</p>
+</li>
+<li>
+<p><strong>检验否</strong>：勾选后需要检验</p>
+</li>
+<li>
+<p><strong>报工否</strong>：勾选后需要报工才会到下一道工序</p>
+</li>
+</ul>
+<h2 id="工作站维护-aeci600"><a class="header" href="#工作站维护-aeci600">工作站维护-<em>aeci600</em></a></h2>
+<p><img src="image/cc226174-61c6-4404-aefd-25fdf52199d3-Untitled.png" alt="cc226174-61c6-4404-aefd-25fdf52199d3-Untitled.png" /></p>
+<p>工作站可以在此作业中维护，每个工作站需要归属到一个部门。</p>
+<h2 id="工艺维护-aeci100"><a class="header" href="#工艺维护-aeci100">工艺维护-*aeci100</a></h2>
+<ul>
+<li></li>
+</ul>
+<p><img src="image/a3484143-29ee-4608-9204-50ba8a147c50-Untitled.png" alt="a3484143-29ee-4608-9204-50ba8a147c50-Untitled.png" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../7b389cca/704d3081/f85cde94/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../7b389cca/3ddd4108/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../7b389cca/704d3081/f85cde94/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../7b389cca/3ddd4108/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../mermaid.min.js"></script>
+        <script src="../../mermaid-init.js"></script>
+
+
+    </div>
+    </body>
+</html>

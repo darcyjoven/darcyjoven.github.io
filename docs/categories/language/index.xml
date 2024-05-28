@@ -4,7 +4,15 @@
         <link>https://darcyjoven.com/categories/language/</link>
         <description>Language - 分类 - DARCY&#39;S BLOG</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
-            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 May 2024 00:12:40 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/categories/language/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 May 2024 08:08:47 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/categories/language/" rel="self" type="application/rss+xml" /><item>
+    <title>ORACLE常用函数-进阶</title>
+    <link>https://darcyjoven.com/b8cae126/</link>
+    <pubDate>Tue, 28 May 2024 08:08:47 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/b8cae126/</guid>
+    <description><![CDATA[pivot 函数,列转行 1 2 3 4 5 6 7 8 9 10 11 WITH a AS (SELECT &#39;darcy&#39; na, &#39;语文&#39; ke, 23 score FROM dual), b AS (SELECT &#39;tom&#39;, &#39;语文&#39;, 23 FROM dual), c AS (SELECT &#39;darcy&#39;, &#39;]]></description>
+</item>
+<item>
     <title>BDL部分开发问题</title>
     <link>https://darcyjoven.com/eecc3b2c/</link>
     <pubDate>Fri, 17 May 2024 00:12:40 &#43;0000</pubDate>

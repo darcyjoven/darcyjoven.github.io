@@ -4,7 +4,23 @@
         <link>https://darcyjoven.com/posts/</link>
         <description>所有文章 | DARCY&#39;S BLOG</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>darcyjoven@live.com (darcy)</managingEditor>
-            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 May 2024 00:12:40 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>darcyjoven@live.com (darcy)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 28 May 2024 08:08:47 &#43;0000</lastBuildDate><atom:link href="https://darcyjoven.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>ORACLE常用函数-进阶</title>
+    <link>https://darcyjoven.com/b8cae126/</link>
+    <pubDate>Tue, 28 May 2024 08:08:47 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/b8cae126/</guid>
+    <description><![CDATA[pivot 函数,列转行 1 2 3 4 5 6 7 8 9 10 11 WITH a AS (SELECT &#39;darcy&#39; na, &#39;语文&#39; ke, 23 score FROM dual), b AS (SELECT &#39;tom&#39;, &#39;语文&#39;, 23 FROM dual), c AS (SELECT &#39;darcy&#39;, &#39;]]></description>
+</item>
+<item>
+    <title>RedHat6.5 GCC升级到4.8</title>
+    <link>https://darcyjoven.com/8555b9e0/</link>
+    <pubDate>Tue, 28 May 2024 08:08:44 &#43;0000</pubDate>
+    <author>darcy</author>
+    <guid>https://darcyjoven.com/8555b9e0/</guid>
+    <description><![CDATA[升级前版本信息 red hat 1 2 [root@ERP-AP02 ~]# cat /etc/redhat-release Red Hat Enterprise Linux Server release 6.5 (Santiago) GCC 1 2 3 4 5 6 [root@ERP-AP02 ~]# gcc -v Using built-in specs. Target: x86_64-redhat-linux Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages=c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt=gtk --disable-dssi --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux Thread model: posix]]></description>
+</item>
+<item>
     <title>BDL部分开发问题</title>
     <link>https://darcyjoven.com/eecc3b2c/</link>
     <pubDate>Fri, 17 May 2024 00:12:40 &#43;0000</pubDate>
@@ -67,22 +83,6 @@
     <author>darcy</author>
     <guid>https://darcyjoven.com/fgl-bdl%D1%8F%D0%BFjava/</guid>
     <description><![CDATA[fgl bdl语言集成java包 确保java包版本和服务器jre版本一致 java -version 用静态类的方法返回值 bdl不支持面向对象编程（新版本支持单功能单一），]]></description>
-</item>
-<item>
-    <title>效能常规处理流程</title>
-    <link>https://darcyjoven.com/%D0%B7%D0%B3%D1%86%D0%B6%D1%8D%D1%9E/</link>
-    <pubDate>Thu, 16 Nov 2023 15:30:21 &#43;0800</pubDate>
-    <author>darcy</author>
-    <guid>https://darcyjoven.com/%D0%B7%D0%B3%D1%86%D0%B6%D1%8D%D1%9E/</guid>
-    <description><![CDATA[效能常规处理方法 大量作业都卡顿 当客户反馈所有作业都卡顿时，应当先检查服务器得基本状态，并保留截图，以便后面反馈给SE。 可检查得项目如下： 表空]]></description>
-</item>
-<item>
-    <title>磁盘空间不足无法复制账套解决</title>
-    <link>https://darcyjoven.com/%D1%84%D1%83%D0%B8%D1%82%D1%9E/</link>
-    <pubDate>Thu, 16 Nov 2023 14:30:06 &#43;0800</pubDate>
-    <author>darcy</author>
-    <guid>https://darcyjoven.com/%D1%84%D1%83%D0%B8%D1%82%D1%9E/</guid>
-    <description><![CDATA[u1磁盘空间不足导致复制账套失败 情况适用于以下情况： 复制账套时，报错 EXP-00002: error in writing to export file 最后导出失败 如何判断是否是磁盘空间不足的2种方法 重新运行一]]></description>
 </item>
 </channel>
 </rss>

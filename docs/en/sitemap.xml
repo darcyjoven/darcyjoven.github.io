@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://darcyjoven.com/en/about/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://darcyjoven.com/en/about/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://darcyjoven.com/about/"
@@ -11,7 +11,7 @@
                     hreflang="en"
                     href="https://darcyjoven.com/en/about/"
                     /></url><url>
-            <loc>https://darcyjoven.com/en/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://darcyjoven.com/en/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://darcyjoven.com/"
@@ -20,7 +20,7 @@
                     hreflang="en"
                     href="https://darcyjoven.com/en/"
                     /></url><url>
-            <loc>https://darcyjoven.com/en/categories/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://darcyjoven.com/en/categories/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://darcyjoven.com/categories/"
@@ -29,7 +29,7 @@
                     hreflang="en"
                     href="https://darcyjoven.com/en/categories/"
                     /></url><url>
-            <loc>https://darcyjoven.com/en/categories/documentation/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://darcyjoven.com/en/categories/documentation/</loc><lastmod>2024-05-16T05:12:51&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://darcyjoven.com/categories/documentation/"

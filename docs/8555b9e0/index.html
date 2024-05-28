@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>RedHat6.5 GCC升级到4.8 - DARCY&#39;S BLOG</title><meta name="Description" content="darcy&#39;s blog"><meta property="og:title" content="RedHat6.5 GCC升级到4.8" />
+<meta property="og:description" content="升级前版本信息 red hat 1 2 [root@ERP-AP02 ~]# cat /etc/redhat-release Red Hat Enterprise Linux Server release 6.5 (Santiago) GCC 1 2 3 4 5 6 [root@ERP-AP02 ~]# gcc -v Using built-in specs. Target: x86_64-redhat-linux Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages=c,c&#43;&#43;,objc,obj-c&#43;&#43;,java,fortran,ada --enable-java-awt=gtk --disable-dssi --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux Thread model: posix" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://darcyjoven.com/8555b9e0/" /><meta property="og:image" content="https://darcyjoven.com/logo.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-05-28T08:08:44+00:00" />
+<meta property="article:modified_time" content="2024-05-28T08:08:44+00:00" /><meta property="og:site_name" content="DARCY&#39;S BLOG" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://darcyjoven.com/logo.png" /><meta name="twitter:title" content="RedHat6.5 GCC升级到4.8"/>
+<meta name="twitter:description" content="升级前版本信息 red hat 1 2 [root@ERP-AP02 ~]# cat /etc/redhat-release Red Hat Enterprise Linux Server release 6.5 (Santiago) GCC 1 2 3 4 5 6 [root@ERP-AP02 ~]# gcc -v Using built-in specs. Target: x86_64-redhat-linux Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages=c,c&#43;&#43;,objc,obj-c&#43;&#43;,java,fortran,ada --enable-java-awt=gtk --disable-dssi --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux Thread model: posix"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://darcyjoven.com/8555b9e0/" /><link rel="prev" href="https://darcyjoven.com/eecc3b2c/" /><link rel="next" href="https://darcyjoven.com/b8cae126/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "RedHat6.5 GCC升级到4.8",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/darcyjoven.com\/8555b9e0\/"
+        },"image": ["https:\/\/darcyjoven.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "","wordcount":  163 ,
+        "url": "https:\/\/darcyjoven.com\/8555b9e0\/","datePublished": "2024-05-28T08:08:44+00:00","dateModified": "2024-05-28T08:08:44+00:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "darcy","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/darcyjoven.com\/images\/avatar.png",
+                    "width":  600 ,
+                    "height":  600 
+                }},"author": {
+                "@type": "Person",
+                "name": "darcy"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/md/bdl"> BDL </a><a class="menu-item" href="/md/help"> help </a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/8555b9e0/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="DARCY&#39;S BLOG">DARCY&#39;S BLOG</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/md/bdl" title="">BDL</a><a class="menu-item" href="/md/help" title="">help</a><a class="menu-item" href="https://github.com/darcyjoven/darcyjoven.github.io" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/8555b9e0/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">RedHat6.5 GCC升级到4.8</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="darcyjoven.com" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>darcy</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Categories</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024年 05月28日">2024年 05月28日</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 163 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#red-hat">red hat</a></li>
+    <li><a href="#gcc">GCC</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#安装scl"><del>安装SCL</del></a></li>
+    <li><a href="#下载源码">下载源码</a></li>
+    <li><a href="#下载依赖库">下载依赖库</a></li>
+    <li><a href="#建立输出目录">建立输出目录</a></li>
+    <li><a href="#产生makefile文件">产生makefile文件</a></li>
+    <li><a href="#编译">编译</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#切换新版本">切换新版本</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="升级前版本信息">升级前版本信息</h1>
+<h2 id="red-hat">red hat</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@ERP-AP02 ~<span class="o">]</span><span class="c1"># cat /etc/redhat-release</span>
+</span></span><span class="line"><span class="cl">Red Hat Enterprise Linux Server release 6.5 <span class="o">(</span>Santiago<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="gcc">GCC</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@ERP-AP02 ~<span class="o">]</span><span class="c1"># gcc -v</span>
+</span></span><span class="line"><span class="cl">Using built-in specs.
+</span></span><span class="line"><span class="cl">Target: x86_64-redhat-linux
+</span></span><span class="line"><span class="cl">Configured with: ../configure --prefix<span class="o">=</span>/usr --mandir<span class="o">=</span>/usr/share/man --infodir<span class="o">=</span>/usr/share/info --with-bugurl<span class="o">=</span>http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads<span class="o">=</span>posix --enable-checking<span class="o">=</span>release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages<span class="o">=</span>c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt<span class="o">=</span>gtk --disable-dssi --with-java-home<span class="o">=</span>/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar<span class="o">=</span>/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune<span class="o">=</span>generic --with-arch_32<span class="o">=</span>i686 --build<span class="o">=</span>x86_64-redhat-linux
+</span></span><span class="line"><span class="cl">Thread model: posix
+</span></span><span class="line"><span class="cl">gcc version 4.4.7 <span class="m">20120313</span> <span class="o">(</span>Red Hat 4.4.7-4<span class="o">)</span> <span class="o">(</span>GCC<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="升级顺序">升级顺序</h1>
+<h2 id="安装scl"><del>安装SCL</del></h2>
+<p><a href="https://prod-files-secure.s3.us-west-2.amazonaws.com/b1dbc1f7-4866-487d-86a2-41b94a254a88/fa71a4e6-eea0-402d-beb5-c49f2c53b5f3/centos-release-scl-rh-1-1.el6.centos.noarch.rpm?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240528%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20240528T081944Z&amp;X-Amz-Expires=3600&amp;X-Amz-Signature=d309fb2d933dd594f758066359b54bc42fb2cf62d93a03a3687613861c8803d9&amp;X-Amz-SignedHeaders=host&amp;x-id=GetObject" target="_blank" rel="noopener noreffer ">https://prod-files-secure.s3.us-west-2.amazonaws.com/b1dbc1f7-4866-487d-86a2-41b94a254a88/fa71a4e6-eea0-402d-beb5-c49f2c53b5f3/centos-release-scl-rh-1-1.el6.centos.noarch.rpm?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240528%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20240528T081944Z&amp;X-Amz-Expires=3600&amp;X-Amz-Signature=d309fb2d933dd594f758066359b54bc42fb2cf62d93a03a3687613861c8803d9&amp;X-Amz-SignedHeaders=host&amp;x-id=GetObject</a></p>
+<p><code>rpm -ivh centos-release-scl-rh-1-1.el6.centos.noarch.rpm</code></p>
+<h2 id="下载源码">下载源码</h2>
+<p>wget http:<a href="https://ftp.gnu.org/gnu/gcc/gcc-4.8.0/gcc-4.8.0.tar.bz2" target="_blank" rel="noopener noreffer ">//ftp.gnu.org/gnu/gcc/gcc-4.8.0/gcc-4.8.0.tar.bz2</a></p>
+<p>tar -jxvf  gcc-4.8.0.tar.bz2</p>
+<h2 id="下载依赖库">下载依赖库</h2>
+<p>cd gcc-4.8.0</p>
+<p>./contrib/download_prerequisites</p>
+<p>cd ..</p>
+<h2 id="建立输出目录">建立输出目录</h2>
+<p>mkdir gcc-build-4.8.0</p>
+<h2 id="产生makefile文件">产生makefile文件</h2>
+<p>cd  gcc-build-4.8.0</p>
+<p>../gcc-4.8.0/configure &ndash;enable-checking=release &ndash;enable-languages=c,c++ &ndash;disable-multilib</p>
+<h2 id="编译">编译</h2>
+<p>make -j4</p>
+<h2 id="安装">安装</h2>
+<p>make install</p>
+<h2 id="切换新版本">切换新版本</h2>
+<p>updatedb</p>
+<p>locate gcc-4.8|tail</p>
+<p>ls /usr/local/bin | grep gcc</p>
+<p>update-alternatives &ndash;install /usr/bin/gcc gcc /usr/local/bin/i686-pc-linux-gnu-gcc 40</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024年 05月28日</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/8555b9e0/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://darcyjoven.com/8555b9e0/" data-title="RedHat6.5 GCC升级到4.8" data-hashtags=""><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://darcyjoven.com/8555b9e0/" data-hashtag=""><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://darcyjoven.com/8555b9e0/" data-title="RedHat6.5 GCC升级到4.8"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://darcyjoven.com/8555b9e0/" data-title="RedHat6.5 GCC升级到4.8"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://darcyjoven.com/8555b9e0/" data-title="RedHat6.5 GCC升级到4.8"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/">Tags</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/eecc3b2c/" class="prev" rel="prev" title="BDL部分开发问题"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>BDL部分开发问题</a>
+            <a href="/b8cae126/" class="next" rel="next" title="ORACLE常用函数-进阶">ORACLE常用函数-进阶<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.124.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="darcyjoven.com" target="_blank">darcy</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{"gitalk":{"admin":["darcyjoven"],"clientID":"6e52f9e4425ed0457dba","clientSecret":"31a9b51e366577dbc3da944c7e9ab64bd33f480a","id":"2024-05-28T08:08:44.59Z","owner":"darcyjoven","repo":"blog-comments","title":"RedHat6.5 GCC升级到4.8"}},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
